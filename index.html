@@ -757,6 +757,154 @@
     text-align: center;
   }
 
+
+  /* Reading progress: CSS-only progressive enhancement. */
+  #hap-c4-knx-page .hap-reading-progress {
+    position: fixed;
+    z-index: 9999;
+    inset: 0 0 auto;
+    height: 3px;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  #hap-c4-knx-page .hap-reading-progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--hap-gold-deep), var(--hap-gold-soft));
+    box-shadow: 0 0 16px rgba(216, 182, 117, 0.48);
+    transform-origin: left center;
+  }
+
+  #hap-c4-knx-page .hap-jump-label {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    padding: 8px 13px 8px 10px;
+    color: var(--hap-gold);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #hap-c4-knx-page .hap-continue {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding: 11px 0;
+    color: #f2eee6;
+    font-size: 0.93rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  #hap-c4-knx-page .hap-continue span {
+    color: var(--hap-soft);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  #hap-c4-knx-page .hap-continue::after {
+    content: "\2193";
+    display: inline-grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid rgba(216, 182, 117, 0.34);
+    border-radius: 50%;
+    color: var(--hap-gold);
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+
+  #hap-c4-knx-page .hap-continue:hover {
+    color: #fff;
+  }
+
+  #hap-c4-knx-page .hap-continue:hover::after {
+    border-color: var(--hap-gold);
+    background: rgba(216, 182, 117, 0.08);
+    transform: translateY(3px);
+  }
+
+  #hap-c4-knx-page .hap-inline-cta {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 28px;
+    align-items: center;
+    margin: 6px 0 20px;
+    padding: 30px 32px;
+    overflow: hidden;
+    border: 1px solid var(--hap-border-strong);
+    border-radius: var(--hap-radius-md);
+    background:
+      radial-gradient(circle at 88% 10%, rgba(216, 182, 117, 0.14), transparent 28%),
+      linear-gradient(140deg, rgba(216, 182, 117, 0.085), rgba(255, 255, 255, 0.022));
+    box-shadow: var(--hap-shadow-sm);
+  }
+
+  #hap-c4-knx-page .hap-inline-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--hap-gold-soft), var(--hap-gold-deep));
+  }
+
+  #hap-c4-knx-page .hap-inline-cta-copy,
+  #hap-c4-knx-page .hap-inline-cta .hap-btn {
+    position: relative;
+    z-index: 1;
+  }
+
+  #hap-c4-knx-page .hap-inline-cta-title {
+    margin-bottom: 8px;
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
+  }
+
+  #hap-c4-knx-page .hap-inline-cta p {
+    max-width: 720px;
+    margin: 0;
+  }
+
+  @keyframes hap-progress {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+
+  @keyframes hap-section-reveal {
+    from { opacity: 0.35; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    #hap-c4-knx-page .hap-reading-progress-bar {
+      animation: hap-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      #hap-c4-knx-page .hap-section-heading,
+      #hap-c4-knx-page .hap-card,
+      #hap-c4-knx-page .hap-note,
+      #hap-c4-knx-page .hap-project,
+      #hap-c4-knx-page .hap-advisor,
+      #hap-c4-knx-page .hap-inline-cta {
+        animation: hap-section-reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 8% cover 23%;
+      }
+    }
+  }
+
   @keyframes hap-hero-in {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
@@ -902,6 +1050,16 @@
       padding: 16px;
     }
 
+    #hap-c4-knx-page .hap-inline-cta {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 26px 24px;
+    }
+
+    #hap-c4-knx-page .hap-inline-cta .hap-btn {
+      width: fit-content;
+    }
+
     #hap-c4-knx-page .hap-cta {
       margin-top: 46px;
       padding: 40px 22px;
@@ -931,13 +1089,14 @@
 </style>
 
 <article id="hap-c4-knx-page" aria-labelledby="hap-page-title">
+  <div class="hap-reading-progress" aria-hidden="true"><div class="hap-reading-progress-bar"></div></div>
   <header class="hap-hero">
     <div class="hap-shell">
       <p class="hap-eyebrow">Smart Home Comparison Guide</p>
       <h1 id="hap-page-title">Control4 vs KNX Singapore: Which Smart Home System Fits Your Home?</h1>
       <p class="hap-lead">A practical comparison of cost, flexibility, reliability, renovation suitability, new-build suitability and everyday user experience for Singapore homes.</p>
       <div class="hap-hero-actions">
-        <a class="hap-btn" href="https://www.hap.sg/appointment/2">Book a Smart Home Consultation</a>
+        <a class="hap-btn" target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/appointment/2">Book a Smart Home Consultation</a>
         <a class="hap-btn hap-btn-secondary" href="#hap-main-comparison">Compare the Systems</a>
       </div>
     </div>
@@ -951,6 +1110,7 @@
       </div>
 
       <nav class="hap-jump" aria-label="Article sections">
+        <span class="hap-jump-label" aria-hidden="true">On this page</span>
         <a href="#hap-main-comparison">Main differences</a>
         <a href="#hap-cost">Cost</a>
         <a href="#hap-flexibility">Flexibility</a>
@@ -958,6 +1118,8 @@
         <a href="#hap-renovation">Renovation</a>
         <a href="#hap-new-build">New builds</a>
         <a href="#hap-user-experience">User experience</a>
+        <a href="#hap-project-guide">Project guide</a>
+        <a href="#hap-hybrid">Hybrid approach</a>
         <a href="#hap-faq">FAQs</a>
       </nav>
 
@@ -1017,6 +1179,8 @@
             </tbody>
           </table>
         </div>
+
+        <a class="hap-continue" href="#hap-cost"><span>Continue reading</span>Compare cost and project scope</a>
       </section>
 
       <section class="hap-section">
@@ -1026,7 +1190,7 @@
             <h2>What Is Control4?</h2>
             <p>Control4 is a professionally installed home-automation platform that brings multiple systems into a consistent homeowner interface. Depending on the project, it can coordinate lighting, curtains, air-conditioning, cameras, door access, music, television and home theatre through mobile devices, touchscreens, keypads and handheld remotes.</p>
             <p>Its main strength is the experience layer. Instead of asking the family to use separate apps for every subsystem, the integrator can create scenes and controls around how the home is actually used.</p>
-            <p><a href="https://www.hap.sg/control4-smart-home-system-singapore-hap-platinum-dealer">Explore Control4 smart-home systems in Singapore</a>.</p>
+            <p><a target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/control4-smart-home-system-singapore-hap-platinum-dealer">Explore Control4 smart-home systems in Singapore</a>.</p>
           </div>
 
           <div class="hap-card">
@@ -1034,7 +1198,7 @@
             <h2>What Is KNX?</h2>
             <p>KNX is an open, internationally standardised building-automation protocol rather than a single consumer brand. KNX-certified products from different manufacturers can be selected for lighting, dimming, curtains, blinds, climate and sensors, then configured as part of one structured bus system.</p>
             <p>Its main strength is the building-control foundation. It is especially relevant when the electrical design can be coordinated before wiring, distribution-board space, switch points and ceiling works are fixed.</p>
-            <p><a href="https://www.hap.sg/why-knx-home-automation">Learn why KNX is considered for larger homes</a>.</p>
+            <p><a target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/why-knx-home-automation">Learn why KNX is considered for larger homes</a>.</p>
           </div>
         </div>
       </section>
@@ -1074,7 +1238,7 @@
 
         <div class="hap-note">
           <p><strong>HAP advice:</strong> Compare proposals using the same floor plan and the same required functions. Property size, keypad quantity, equipment racks, networking, security and renovation stage affect both approaches. A floor-plan-based proposal is more useful than comparing generic package prices.</p>
-          <p><a href="https://www.hap.sg/smart-home-cost-singapore">See the main smart-home cost factors in Singapore</a>.</p>
+          <p><a target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/smart-home-cost-singapore">See the main smart-home cost factors in Singapore</a>.</p>
         </div>
       </section>
 
@@ -1140,7 +1304,7 @@
         </div>
 
         <p class="hap-after-grid">For condominium projects, MCST rules and building conditions vary. A partial renovation may favour a less invasive approach, while a full electrical renovation may allow both platforms to be evaluated. Property type alone should not decide the system.</p>
-        <p><a href="https://www.hap.sg/smart-home-system-planning-installation-singapore">Read HAP's smart-home planning and installation guide</a>.</p>
+        <p><a target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/smart-home-system-planning-installation-singapore">Read HAP's smart-home planning and installation guide</a>.</p>
       </section>
 
       <section class="hap-section" id="hap-new-build">
@@ -1189,9 +1353,11 @@
         </div>
 
         <p class="hap-after-grid">In a hybrid design, Control4 may become the common interface while KNX operates behind the scenes. The better question is not only which protocol is better, but what the homeowner will physically press, see and use every day.</p>
+
+        <a class="hap-continue" href="#hap-project-guide"><span>Continue reading</span>Find the direction that fits your project</a>
       </section>
 
-      <section class="hap-section">
+      <section class="hap-section" id="hap-project-guide">
         <div class="hap-section-heading">
           <span class="hap-kicker">Project guide</span>
           <h2>Which Direction Should You Explore?</h2>
@@ -1250,13 +1416,22 @@
         <p class="hap-footnote">These are general planning directions, not fixed rules. The final recommendation should be based on the actual floor plan, electrical layout, lighting design, renovation stage and systems required.</p>
       </section>
 
+      <aside class="hap-inline-cta" aria-labelledby="hap-mid-cta-title">
+        <div class="hap-inline-cta-copy">
+          <span class="hap-kicker">Decision checkpoint</span>
+          <p class="hap-inline-cta-title" id="hap-mid-cta-title">Not Sure Which Direction Fits Your Floor Plan?</p>
+          <p>After comparing the main differences, HAP can review your property type, renovation stage and required systems before recommending Control4, KNX or a combined approach.</p>
+        </div>
+        <a class="hap-btn" target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/appointment/2">Discuss My Floor Plan with HAP</a>
+      </aside>
+
       <section class="hap-section">
         <div class="hap-grid-2">
           <div class="hap-card">
             <span class="hap-kicker">Lighting and climate</span>
             <h2>Lighting, Curtains and Air-Conditioning</h2>
             <p>KNX is commonly considered where a project requires a structured design with many lighting circuits, dimming channels, sensors, curtain actuators and climate zones. Control4 can control compatible equipment and integrate third-party systems, then bring these functions together with AV, security and scenes.</p>
-            <p><a href="https://www.hap.sg/best-lighting-control-singapore">Compare lighting-control approaches in Singapore</a>.</p>
+            <p><a target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/best-lighting-control-singapore">Compare lighting-control approaches in Singapore</a>.</p>
           </div>
 
           <div class="hap-card">
@@ -1294,7 +1469,7 @@
         </div>
       </section>
 
-      <section class="hap-section">
+      <section class="hap-section" id="hap-hybrid">
         <div class="hap-section-heading">
           <span class="hap-kicker">Hybrid design</span>
           <h2>When Control4 and KNX Work Together</h2>
@@ -1306,11 +1481,13 @@
         <div class="hap-project">
           <span class="hap-kicker">HAP project example</span>
           <h3>Swiss Club Road</h3>
-          <p>HAP's <a href="https://www.hap.sg/project-portfolio/landed/swiss-club-road-knx-control4-smart-home">Swiss Club Road KNX and Control4 smart-home project</a> demonstrates this layered approach. KNX was used for selected building-control functions, while Control4 brought multiple systems into a consistent user experience. The project shows why some homes should be assessed as an integrated design rather than a simple platform contest.</p>
+          <p>HAP's <a target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/project-portfolio/landed/swiss-club-road-knx-control4-smart-home">Swiss Club Road KNX and Control4 smart-home project</a> demonstrates this layered approach. KNX was used for selected building-control functions, while Control4 brought multiple systems into a consistent user experience. The project shows why some homes should be assessed as an integrated design rather than a simple platform contest.</p>
         </div>
+
+        <a class="hap-continue" href="#hap-trusted-review"><span>Continue reading</span>See how HAP evaluates a project</a>
       </section>
 
-      <section class="hap-section">
+      <section class="hap-section" id="hap-trusted-review">
         <div class="hap-section-heading">
           <span class="hap-kicker">Trusted advice</span>
           <h2>What HAP Reviews Before Recommending a System</h2>
@@ -1330,7 +1507,7 @@
           <li>Coordination with architects, IDs and electrical teams</li>
         </ul>
 
-        <p class="hap-after-grid"><a href="https://www.hap.sg/whole-home-automation">Explore HAP's whole-home automation approach</a>.</p>
+        <p class="hap-after-grid"><a target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/whole-home-automation">Explore HAP's whole-home automation approach</a>.</p>
       </section>
 
       <section class="hap-section">
@@ -1418,7 +1595,7 @@
           <span class="hap-kicker">Plan before wiring is finalised</span>
           <h2>Discuss Your Control4 or KNX Project with HAP</h2>
           <p>Share your floor plan, property type, renovation stage and the systems you want to control. HAP can review the project and advise whether Control4, KNX or a combined approach is the most suitable direction.</p>
-          <a class="hap-btn" href="https://www.hap.sg/appointment/2">Book a Smart Home Consultation</a>
+          <a class="hap-btn" target="_blank" rel="noopener noreferrer" href="https://www.hap.sg/appointment/2">Book a Smart Home Consultation</a>
         </div>
       </section>
     </div>
