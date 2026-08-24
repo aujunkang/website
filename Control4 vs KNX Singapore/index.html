@@ -1,0 +1,1482 @@
+<style>
+/* =========================================================
+   HAP | CONTROL4 VS KNX SINGAPORE
+   Luxury editorial + visual storytelling edition
+   Scoped for Odoo page use. No JavaScript required.
+   ========================================================= */
+#hap-c4-knx-page {
+  --hap-bg: #080909;
+  --hap-bg-2: #0d0f0f;
+  --hap-panel: #111313;
+  --hap-panel-2: #151717;
+  --hap-panel-soft: #191a19;
+  --hap-text: #f3efe6;
+  --hap-muted: #b9b5aa;
+  --hap-muted-2: #8d8a82;
+  --hap-gold: #d7b873;
+  --hap-gold-2: #ead69f;
+  --hap-line: rgba(234, 214, 159, .16);
+  --hap-line-strong: rgba(234, 214, 159, .32);
+  --hap-shadow: 0 28px 80px rgba(0,0,0,.28);
+  --hap-radius: 26px;
+  --hap-radius-sm: 16px;
+  color: var(--hap-text);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(215,184,115,.08), transparent 27rem),
+    radial-gradient(circle at 95% 22%, rgba(215,184,115,.045), transparent 32rem),
+    var(--hap-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.72;
+  overflow: clip;
+  position: relative;
+}
+
+#hap-c4-knx-page *,
+#hap-c4-knx-page *::before,
+#hap-c4-knx-page *::after { box-sizing: border-box; }
+
+#hap-c4-knx-page img { max-width: 100%; }
+#hap-c4-knx-page a { color: var(--hap-gold-2); text-underline-offset: 3px; }
+#hap-c4-knx-page a:hover { color: #fff0c7; }
+#hap-c4-knx-page a:focus-visible,
+#hap-c4-knx-page summary:focus-visible,
+#hap-c4-knx-page .hap-table-wrap:focus-visible {
+  outline: 3px solid rgba(234,210,159,.82);
+  outline-offset: 4px;
+}
+
+#hap-c4-knx-page h1,
+#hap-c4-knx-page h2,
+#hap-c4-knx-page h3,
+#hap-c4-knx-page p { margin-top: 0; }
+
+#hap-c4-knx-page h1,
+#hap-c4-knx-page h2,
+#hap-c4-knx-page h3 {
+  color: #fffaf0;
+  text-wrap: balance;
+  letter-spacing: -.025em;
+}
+
+#hap-c4-knx-page h1 {
+  font-size: clamp(2.45rem, 5.6vw, 5.7rem);
+  line-height: .98;
+  max-width: 1050px;
+  margin-bottom: 24px;
+  font-weight: 650;
+}
+
+#hap-c4-knx-page h2 {
+  font-size: clamp(1.85rem, 3.2vw, 3.25rem);
+  line-height: 1.08;
+  margin-bottom: 20px;
+  font-weight: 620;
+}
+
+#hap-c4-knx-page h3 {
+  font-size: clamp(1.12rem, 1.8vw, 1.48rem);
+  line-height: 1.25;
+  margin-bottom: 12px;
+  font-weight: 620;
+}
+
+#hap-c4-knx-page p { color: var(--hap-muted); }
+#hap-c4-knx-page strong { color: #fff7e7; }
+#hap-c4-knx-page ul { color: var(--hap-muted); }
+
+#hap-c4-knx-page .hap-wrap {
+  width: min(1180px, calc(100% - 44px));
+  margin-inline: auto;
+}
+
+#hap-c4-knx-page .hap-copy-narrow { max-width: 820px; }
+#hap-c4-knx-page .hap-copy-mid { max-width: 930px; }
+#hap-c4-knx-page .hap-section { padding: clamp(72px, 8vw, 116px) 0; position: relative; }
+#hap-c4-knx-page .hap-section + .hap-section { border-top: 1px solid rgba(255,255,255,.035); }
+#hap-c4-knx-page .hap-section-soft { background: linear-gradient(180deg, rgba(255,255,255,.018), transparent 70%); }
+
+#hap-c4-knx-page .hap-kicker,
+#hap-c4-knx-page .hap-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--hap-gold-2);
+  font-size: .78rem;
+  line-height: 1.2;
+  font-weight: 760;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+#hap-c4-knx-page .hap-kicker::before,
+#hap-c4-knx-page .hap-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--hap-gold);
+  opacity: .8;
+}
+
+#hap-c4-knx-page .hap-lead {
+  font-size: clamp(1.03rem, 1.5vw, 1.23rem);
+  line-height: 1.72;
+  color: #d7d3c9;
+}
+
+/* Progress */
+#hap-c4-knx-page .hap-reading-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  z-index: 10000;
+  pointer-events: none;
+  background: transparent;
+}
+#hap-c4-knx-page .hap-reading-progress-bar {
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #ac8a48, #ead69f 68%, #fff1c7);
+  box-shadow: 0 0 14px rgba(234,214,159,.4);
+}
+@keyframes hap-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@supports (animation-timeline: scroll()) {
+  #hap-c4-knx-page .hap-reading-progress-bar {
+    animation: hap-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+/* Hero */
+#hap-c4-knx-page .hap-hero {
+  min-height: min(920px, 94vh);
+  display: grid;
+  align-items: end;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--hap-line);
+}
+#hap-c4-knx-page .hap-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+}
+#hap-c4-knx-page .hap-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5,6,6,.94) 0%, rgba(5,6,6,.72) 45%, rgba(5,6,6,.18) 78%),
+    linear-gradient(0deg, #080909 0%, rgba(8,9,9,.12) 54%, rgba(8,9,9,.2) 100%);
+}
+#hap-c4-knx-page .hap-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.76) contrast(1.04) brightness(.82);
+  transform: scale(1.015);
+}
+#hap-c4-knx-page .hap-hero-grid {
+  padding: clamp(118px, 15vw, 190px) 0 78px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr);
+  gap: 44px;
+  align-items: end;
+}
+#hap-c4-knx-page .hap-hero-copy { max-width: 950px; }
+#hap-c4-knx-page .hap-hero-copy &amp;gt; p { max-width: 800px; font-size: clamp(1.04rem, 1.55vw, 1.28rem); }
+#hap-c4-knx-page .hap-hero-meta {
+  border-left: 1px solid var(--hap-line-strong);
+  padding-left: 28px;
+  display: grid;
+  gap: 20px;
+}
+#hap-c4-knx-page .hap-meta-item small { display:block; color:var(--hap-muted-2); text-transform:uppercase; letter-spacing:.13em; font-weight:760; font-size:.68rem; margin-bottom:4px; }
+#hap-c4-knx-page .hap-meta-item span { color:#fff7e8; font-size:.98rem; }
+#hap-c4-knx-page .hap-hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+
+#hap-c4-knx-page .hap-btn {
+  display:inline-flex;
+  min-height:52px;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 0 24px;
+  border-radius:999px;
+  text-decoration:none !important;
+  font-weight:780;
+  font-size:.94rem;
+  border:1px solid transparent;
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease, color .22s ease;
+}
+#hap-c4-knx-page .hap-btn::after { content:"→"; transition:transform .22s ease; }
+#hap-c4-knx-page .hap-btn:hover::after { transform:translateX(4px); }
+#hap-c4-knx-page .hap-btn-primary { background:var(--hap-gold); color:#13110d !important; box-shadow:0 14px 34px rgba(215,184,115,.14); }
+#hap-c4-knx-page .hap-btn-primary:hover { background:var(--hap-gold-2); transform:translateY(-2px); }
+#hap-c4-knx-page .hap-btn-secondary { border-color:var(--hap-line-strong); color:#f3ebdb !important; background:rgba(8,9,9,.38); backdrop-filter:blur(10px); }
+#hap-c4-knx-page .hap-btn-secondary:hover { border-color:rgba(234,214,159,.55); transform:translateY(-2px); }
+
+/* Sticky TOC */
+#hap-c4-knx-page .hap-toc-shell {
+  position: sticky;
+  top: 0;
+  z-index: 140;
+  background: rgba(8,9,9,.88);
+  backdrop-filter: blur(16px);
+  border-bottom:1px solid var(--hap-line);
+}
+#hap-c4-knx-page .hap-toc {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-height:58px;
+}
+#hap-c4-knx-page .hap-toc-label { color:#f7ead0; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.14em; white-space:nowrap; }
+#hap-c4-knx-page .hap-toc-links { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding:9px 0; }
+#hap-c4-knx-page .hap-toc-links::-webkit-scrollbar { display:none; }
+#hap-c4-knx-page .hap-toc-links a { flex:0 0 auto; color:#bdb7aa; text-decoration:none; font-size:.82rem; padding:8px 12px; border:1px solid transparent; border-radius:999px; }
+#hap-c4-knx-page .hap-toc-links a:hover { color:#fff4dd; border-color:var(--hap-line-strong); background:rgba(255,255,255,.025); }
+
+/* Cards / answer */
+#hap-c4-knx-page .hap-answer {
+  padding: 28px;
+  border:1px solid var(--hap-line-strong);
+  border-radius:var(--hap-radius);
+  background:linear-gradient(135deg, rgba(215,184,115,.09), rgba(255,255,255,.018));
+  box-shadow:var(--hap-shadow);
+  margin-bottom:30px;
+}
+#hap-c4-knx-page .hap-answer p { margin:0; color:#ded8ca; font-size:1.04rem; }
+#hap-c4-knx-page .hap-grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+#hap-c4-knx-page .hap-grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+#hap-c4-knx-page .hap-card {
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--hap-radius-sm);
+  background:linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.014));
+  padding:26px;
+  transition:transform .26s ease, border-color .26s ease, background .26s ease;
+}
+#hap-c4-knx-page .hap-card:hover { transform:translateY(-4px); border-color:var(--hap-line-strong); background:linear-gradient(145deg, rgba(215,184,115,.065), rgba(255,255,255,.018)); }
+#hap-c4-knx-page .hap-card p:last-child { margin-bottom:0; }
+#hap-c4-knx-page .hap-card-number { color:var(--hap-gold); font-size:.76rem; font-weight:800; letter-spacing:.14em; margin-bottom:18px; }
+
+/* Editorial visuals */
+#hap-c4-knx-page .hap-editorial {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(360px,.85fr);
+  gap:clamp(28px,5vw,68px);
+  align-items:center;
+}
+#hap-c4-knx-page .hap-editorial-reverse { grid-template-columns:minmax(360px,.85fr) minmax(0,1fr); }
+#hap-c4-knx-page .hap-visual {
+  margin:0;
+  border-radius:var(--hap-radius);
+  position:relative;
+  overflow:hidden;
+  background:#111;
+  border:1px solid rgba(255,255,255,.065);
+  box-shadow:var(--hap-shadow);
+}
+#hap-c4-knx-page .hap-visual::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+#hap-c4-knx-page .hap-visual img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s cubic-bezier(.2,.75,.25,1); }
+#hap-c4-knx-page .hap-visual:hover img { transform:scale(1.025); }
+#hap-c4-knx-page .hap-visual-wide { aspect-ratio:16/9; }
+#hap-c4-knx-page .hap-visual-portrait { aspect-ratio:4/5; }
+#hap-c4-knx-page .hap-visual-square { aspect-ratio:1/1; }
+#hap-c4-knx-page .hap-visual-caption { display:block; padding:12px 4px 0; color:var(--hap-muted-2); font-size:.78rem; }
+#hap-c4-knx-page .hap-visual-badge { position:absolute; top:16px; left:16px; z-index:2; background:rgba(6,7,7,.82); backdrop-filter:blur(10px); border:1px solid var(--hap-line); color:#f6e6c5; padding:7px 10px; border-radius:999px; font-size:.68rem; text-transform:uppercase; letter-spacing:.11em; font-weight:800; }
+
+#hap-c4-knx-page .hap-photo-pair { display:grid; grid-template-columns:1.2fr .8fr; gap:14px; margin-top:34px; }
+#hap-c4-knx-page .hap-photo-pair .hap-visual:first-child { aspect-ratio:16/11; }
+#hap-c4-knx-page .hap-photo-pair .hap-visual:last-child { aspect-ratio:4/5; }
+
+#hap-c4-knx-page .hap-photo-strip { display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:14px; margin-top:34px; }
+#hap-c4-knx-page .hap-photo-strip .hap-visual { aspect-ratio:4/3; }
+#hap-c4-knx-page .hap-photo-strip .hap-visual:first-child { aspect-ratio:16/10; }
+
+/* Tables */
+#hap-c4-knx-page .hap-table-wrap {
+  margin-top:30px;
+  overflow:auto;
+  border:1px solid var(--hap-line);
+  border-radius:var(--hap-radius-sm);
+  background:#0e1010;
+  -webkit-overflow-scrolling:touch;
+}
+#hap-c4-knx-page table { width:100%; min-width:790px; border-collapse:collapse; color:#d8d3c8; }
+#hap-c4-knx-page th,
+#hap-c4-knx-page td { padding:18px 20px; text-align:left; border-bottom:1px solid rgba(255,255,255,.06); vertical-align:top; }
+#hap-c4-knx-page thead th { position:sticky; top:0; z-index:2; background:#171817; color:#fff0cd; font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; }
+#hap-c4-knx-page tbody th { color:#fff5df; font-weight:700; background:#111313; min-width:180px; }
+#hap-c4-knx-page tr:last-child th,
+#hap-c4-knx-page tr:last-child td { border-bottom:0; }
+#hap-c4-knx-page .hap-sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+
+/* Cost map */
+#hap-c4-knx-page .hap-cost-map { margin-top:30px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+#hap-c4-knx-page .hap-cost-chip { min-height:120px; padding:20px; border:1px solid rgba(255,255,255,.065); border-radius:18px; background:linear-gradient(145deg,#111313,#0d0f0f); display:flex; flex-direction:column; justify-content:space-between; }
+#hap-c4-knx-page .hap-cost-chip span { width:35px; height:35px; display:grid; place-items:center; border:1px solid var(--hap-line-strong); border-radius:50%; color:var(--hap-gold-2); font-size:.72rem; font-weight:800; }
+#hap-c4-knx-page .hap-cost-chip strong { font-size:.94rem; }
+
+/* Architecture visual */
+#hap-c4-knx-page .hap-architecture {
+  margin-top:34px;
+  border:1px solid var(--hap-line-strong);
+  border-radius:var(--hap-radius);
+  background:
+    radial-gradient(circle at 50% -20%, rgba(215,184,115,.14), transparent 45%),
+    linear-gradient(180deg,#121414,#0b0d0d);
+  padding:clamp(24px,4vw,46px);
+  overflow:hidden;
+}
+#hap-c4-knx-page .hap-arch-top { text-align:center; margin-bottom:18px; }
+#hap-c4-knx-page .hap-arch-label { display:inline-block; color:var(--hap-muted-2); text-transform:uppercase; letter-spacing:.14em; font-size:.7rem; font-weight:800; margin-bottom:8px; }
+#hap-c4-knx-page .hap-arch-top strong { display:block; font-size:1.08rem; }
+#hap-c4-knx-page .hap-arch-stack { display:grid; gap:0; justify-items:center; }
+#hap-c4-knx-page .hap-arch-layer { width:min(780px,100%); padding:24px; border:1px solid rgba(255,255,255,.08); border-radius:18px; background:rgba(255,255,255,.028); text-align:center; }
+#hap-c4-knx-page .hap-arch-layer.is-control4 { border-color:rgba(215,184,115,.42); background:linear-gradient(135deg,rgba(215,184,115,.11),rgba(255,255,255,.025)); }
+#hap-c4-knx-page .hap-arch-layer.is-knx { background:linear-gradient(135deg,rgba(255,255,255,.035),rgba(215,184,115,.045)); }
+#hap-c4-knx-page .hap-arch-layer h3 { margin-bottom:6px; }
+#hap-c4-knx-page .hap-arch-layer p { margin:0; font-size:.92rem; }
+#hap-c4-knx-page .hap-arch-arrow { height:44px; width:1px; background:linear-gradient(var(--hap-gold),rgba(215,184,115,.15)); position:relative; }
+#hap-c4-knx-page .hap-arch-arrow::after { content:""; position:absolute; left:50%; bottom:-1px; width:8px; height:8px; border-right:1px solid var(--hap-gold); border-bottom:1px solid var(--hap-gold); transform:translateX(-50%) rotate(45deg); }
+#hap-c4-knx-page .hap-arch-nodes { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; width:min(880px,100%); }
+#hap-c4-knx-page .hap-arch-node { border:1px solid rgba(255,255,255,.07); border-radius:14px; padding:15px 10px; text-align:center; color:#d8d1c1; font-size:.82rem; background:#0e1010; }
+
+/* Reliability */
+#hap-c4-knx-page .hap-reliability-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:26px; }
+#hap-c4-knx-page .hap-reliability-card { padding:24px; border:1px solid rgba(255,255,255,.07); border-radius:20px; background:#101212; }
+#hap-c4-knx-page .hap-reliability-path { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:18px; }
+#hap-c4-knx-page .hap-reliability-path span { padding:8px 11px; border-radius:999px; border:1px solid var(--hap-line); color:#d9d4c8; font-size:.75rem; }
+#hap-c4-knx-page .hap-reliability-path b { color:var(--hap-gold); font-weight:500; }
+
+/* UX collage */
+#hap-c4-knx-page .hap-device-collage { display:grid; grid-template-columns:1.2fr .8fr; grid-template-rows:1fr 1fr; gap:14px; min-height:560px; }
+#hap-c4-knx-page .hap-device-collage .hap-visual:first-child { grid-row:1/3; }
+
+/* Timeline */
+#hap-c4-knx-page .hap-timeline { margin-top:28px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+#hap-c4-knx-page .hap-timeline-step { position:relative; padding:22px; border:1px solid rgba(255,255,255,.07); border-radius:18px; background:#111313; }
+#hap-c4-knx-page .hap-timeline-step::after { content:""; position:absolute; top:36px; left:100%; width:12px; height:1px; background:var(--hap-line-strong); }
+#hap-c4-knx-page .hap-timeline-step:last-child::after { display:none; }
+#hap-c4-knx-page .hap-timeline-step span { color:var(--hap-gold); font-size:.73rem; letter-spacing:.12em; font-weight:800; }
+#hap-c4-knx-page .hap-timeline-step h3 { margin-top:10px; font-size:1rem; }
+#hap-c4-knx-page .hap-timeline-step p { font-size:.86rem; margin-bottom:0; }
+
+/* Proof */
+#hap-c4-knx-page .hap-project-proof { display:grid; grid-template-columns:1.08fr .92fr; gap:0; border:1px solid var(--hap-line-strong); border-radius:var(--hap-radius); overflow:hidden; background:#101212; margin-top:34px; }
+#hap-c4-knx-page .hap-project-proof .hap-project-image { min-height:430px; }
+#hap-c4-knx-page .hap-project-proof .hap-project-image img { width:100%; height:100%; display:block; object-fit:cover; }
+#hap-c4-knx-page .hap-project-copy { padding:clamp(28px,5vw,54px); display:flex; flex-direction:column; justify-content:center; }
+#hap-c4-knx-page .hap-project-copy p:last-of-type { margin-bottom:0; }
+
+/* Decision checkpoint */
+#hap-c4-knx-page .hap-inline-cta {
+  margin-top:32px;
+  border:1px solid rgba(215,184,115,.38);
+  border-radius:var(--hap-radius);
+  padding:clamp(24px,4vw,38px);
+  background:linear-gradient(115deg,rgba(215,184,115,.11),rgba(255,255,255,.018));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+#hap-c4-knx-page .hap-inline-cta-copy { max-width:720px; }
+#hap-c4-knx-page .hap-inline-cta-title { color:#fff5df; font-size:1.26rem; font-weight:720; margin-bottom:8px; }
+#hap-c4-knx-page .hap-inline-cta p:last-child { margin-bottom:0; }
+
+/* Continue prompt */
+#hap-c4-knx-page .hap-continue { display:inline-flex; align-items:center; gap:10px; margin-top:24px; text-decoration:none; color:#dfd4be !important; font-size:.86rem; }
+#hap-c4-knx-page .hap-continue span { color:var(--hap-gold); text-transform:uppercase; letter-spacing:.13em; font-size:.68rem; font-weight:800; }
+#hap-c4-knx-page .hap-continue::after { content:"↓"; color:var(--hap-gold); }
+
+/* Advisor + checklist */
+#hap-c4-knx-page .hap-advisor-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:26px; }
+#hap-c4-knx-page .hap-advisor-item { padding:18px 20px; border-left:2px solid rgba(215,184,115,.5); background:rgba(255,255,255,.022); color:#d7d2c6; }
+#hap-c4-knx-page .hap-checklist { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding:0; list-style:none; margin:28px 0 0; }
+#hap-c4-knx-page .hap-checklist li { position:relative; padding:17px 18px 17px 50px; border:1px solid rgba(255,255,255,.065); border-radius:16px; background:#101212; color:#d6d1c5; }
+#hap-c4-knx-page .hap-checklist li::before { content:"✓"; position:absolute; left:18px; top:17px; width:21px; height:21px; border:1px solid var(--hap-line-strong); border-radius:50%; display:grid; place-items:center; color:var(--hap-gold-2); font-size:.72rem; }
+
+/* FAQ */
+#hap-c4-knx-page .hap-faq { display:grid; gap:10px; margin-top:28px; }
+#hap-c4-knx-page .hap-faq details { border:1px solid rgba(255,255,255,.07); border-radius:18px; background:#101212; overflow:hidden; }
+#hap-c4-knx-page .hap-faq summary { cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 22px; }
+#hap-c4-knx-page .hap-faq summary::-webkit-details-marker { display:none; }
+#hap-c4-knx-page .hap-faq summary h3 { margin:0; font-size:1rem; letter-spacing:-.01em; }
+#hap-c4-knx-page .hap-faq summary::after { content:"+"; flex:0 0 auto; width:30px; height:30px; display:grid; place-items:center; border:1px solid var(--hap-line); border-radius:50%; color:var(--hap-gold-2); transition:transform .22s ease; }
+#hap-c4-knx-page .hap-faq details[open] summary::after { transform:rotate(45deg); }
+#hap-c4-knx-page .hap-faq-answer { padding:0 22px 22px; max-width:920px; }
+#hap-c4-knx-page .hap-faq-answer p:last-child { margin-bottom:0; }
+
+/* Final CTA */
+#hap-c4-knx-page .hap-final {
+  position:relative;
+  isolation:isolate;
+  min-height:610px;
+  display:grid;
+  align-items:end;
+  overflow:hidden;
+}
+#hap-c4-knx-page .hap-final-media { position:absolute; inset:0; z-index:-2; }
+#hap-c4-knx-page .hap-final-media::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,#080909 0%,rgba(8,9,9,.7) 42%,rgba(8,9,9,.18) 100%),linear-gradient(90deg,rgba(8,9,9,.86),rgba(8,9,9,.2)); }
+#hap-c4-knx-page .hap-final-media img { width:100%; height:100%; object-fit:cover; filter:saturate(.75) brightness(.76); }
+#hap-c4-knx-page .hap-final-copy { padding:90px 0 74px; max-width:850px; }
+#hap-c4-knx-page .hap-final-copy p { max-width:720px; font-size:1.05rem; }
+
+/* Scroll reveals - CSS only */
+@keyframes hap-reveal { from { opacity:.25; transform:translateY(22px); } to { opacity:1; transform:none; } }
+@supports (animation-timeline: view()) {
+  #hap-c4-knx-page .hap-card,
+  #hap-c4-knx-page .hap-visual,
+  #hap-c4-knx-page .hap-architecture,
+  #hap-c4-knx-page .hap-project-proof,
+  #hap-c4-knx-page .hap-inline-cta {
+    animation: hap-reveal both linear;
+    animation-timeline:view();
+    animation-range:entry 4% cover 26%;
+  }
+}
+
+@media (max-width: 991px) {
+  #hap-c4-knx-page .hap-hero { min-height:auto; }
+  #hap-c4-knx-page .hap-hero-grid { grid-template-columns:1fr; padding-top:160px; }
+  #hap-c4-knx-page .hap-hero-meta { border-left:0; border-top:1px solid var(--hap-line); padding:22px 0 0; grid-template-columns:repeat(3,minmax(0,1fr)); }
+  #hap-c4-knx-page .hap-editorial,
+  #hap-c4-knx-page .hap-editorial-reverse { grid-template-columns:1fr; }
+  #hap-c4-knx-page .hap-editorial-reverse .hap-visual { order:2; }
+  #hap-c4-knx-page .hap-cost-map { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #hap-c4-knx-page .hap-project-proof { grid-template-columns:1fr; }
+  #hap-c4-knx-page .hap-project-proof .hap-project-image { min-height:360px; }
+  #hap-c4-knx-page .hap-timeline { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #hap-c4-knx-page .hap-timeline-step:nth-child(2)::after { display:none; }
+}
+
+@media (max-width: 767px) {
+  #hap-c4-knx-page { font-size:15.5px; }
+  #hap-c4-knx-page .hap-wrap { width:min(100% - 28px,1180px); }
+  #hap-c4-knx-page .hap-section { padding:64px 0; }
+  #hap-c4-knx-page .hap-hero { min-height:760px; align-items:end; }
+  #hap-c4-knx-page .hap-hero-media::after { background:linear-gradient(0deg,#080909 0%,rgba(8,9,9,.68) 54%,rgba(8,9,9,.25) 100%); }
+  #hap-c4-knx-page .hap-hero-media img { object-position:58% center; }
+  #hap-c4-knx-page .hap-hero-grid { padding:130px 0 46px; gap:26px; }
+  #hap-c4-knx-page .hap-hero-meta { grid-template-columns:1fr; gap:12px; }
+  #hap-c4-knx-page .hap-hero-actions { display:grid; grid-template-columns:1fr; }
+  #hap-c4-knx-page .hap-btn { width:100%; }
+  #hap-c4-knx-page .hap-toc { gap:10px; }
+  #hap-c4-knx-page .hap-toc-label { display:none; }
+  #hap-c4-knx-page .hap-grid-2,
+  #hap-c4-knx-page .hap-grid-3,
+  #hap-c4-knx-page .hap-cost-map,
+  #hap-c4-knx-page .hap-reliability-grid,
+  #hap-c4-knx-page .hap-advisor-grid,
+  #hap-c4-knx-page .hap-checklist,
+  #hap-c4-knx-page .hap-timeline { grid-template-columns:1fr; }
+  #hap-c4-knx-page .hap-photo-pair { grid-template-columns:1.25fr .75fr; gap:8px; }
+  #hap-c4-knx-page .hap-photo-pair .hap-visual:first-child { aspect-ratio:4/5; }
+  #hap-c4-knx-page .hap-photo-pair .hap-visual:last-child { aspect-ratio:3/4; }
+  #hap-c4-knx-page .hap-photo-strip { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:10px; padding-bottom:8px; }
+  #hap-c4-knx-page .hap-photo-strip .hap-visual { flex:0 0 84%; aspect-ratio:4/3 !important; scroll-snap-align:start; }
+  #hap-c4-knx-page .hap-device-collage { grid-template-columns:1fr 1fr; min-height:0; }
+  #hap-c4-knx-page .hap-device-collage .hap-visual:first-child { grid-column:1/3; grid-row:auto; aspect-ratio:16/11; }
+  #hap-c4-knx-page .hap-device-collage .hap-visual:not(:first-child) { aspect-ratio:1/1; }
+  #hap-c4-knx-page .hap-arch-nodes { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #hap-c4-knx-page .hap-inline-cta { align-items:flex-start; flex-direction:column; }
+  #hap-c4-knx-page .hap-timeline-step::after { display:none; }
+  #hap-c4-knx-page .hap-project-proof .hap-project-image { min-height:280px; }
+  #hap-c4-knx-page .hap-final { min-height:540px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hap-c4-knx-page *, #hap-c4-knx-page *::before, #hap-c4-knx-page *::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; }
+}
+
+@media (prefers-contrast: more) {
+  #hap-c4-knx-page { --hap-muted:#e3ded1; --hap-line:rgba(255,255,255,.28); --hap-line-strong:rgba(255,255,255,.48); }
+}
+
+
+/* =========================================================
+   FINAL LUXURY POLISH PASS
+   Presentation-only refinements. SEO/GEO copy, headings,
+   links, tables, FAQs, IDs and image alt text are preserved.
+   ========================================================= */
+#hap-c4-knx-page {
+  --hap-shadow: 0 22px 64px rgba(0,0,0,.20);
+  --hap-radius: 22px;
+  --hap-radius-sm: 14px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(215,184,115,.045), transparent 28rem),
+    var(--hap-bg);
+}
+
+/* Quieter editorial rhythm */
+#hap-c4-knx-page .hap-section {
+  padding: clamp(82px, 8vw, 122px) 0;
+}
+#hap-c4-knx-page .hap-section + .hap-section { border-top: 0; }
+#hap-c4-knx-page .hap-section-soft {
+  background: linear-gradient(180deg, rgba(255,255,255,.010), rgba(255,255,255,0) 72%);
+}
+
+/* Refined type scale: confident, not oversized */
+#hap-c4-knx-page h1 {
+  font-size: clamp(2.4rem, 5vw, 4.85rem);
+  line-height: 1.015;
+  font-weight: 610;
+  letter-spacing: -.032em;
+}
+#hap-c4-knx-page h2 {
+  font-size: clamp(1.78rem, 2.8vw, 2.72rem);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -.027em;
+}
+#hap-c4-knx-page h3 {
+  font-size: clamp(1.08rem, 1.55vw, 1.36rem);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -.018em;
+}
+#hap-c4-knx-page p,
+#hap-c4-knx-page li { line-height: 1.76; }
+#hap-c4-knx-page .hap-lead {
+  line-height: 1.68;
+  max-width: 800px;
+}
+#hap-c4-knx-page .hap-kicker,
+#hap-c4-knx-page .hap-eyebrow {
+  font-size: .72rem;
+  letter-spacing: .135em;
+  margin-bottom: 16px;
+}
+
+/* Hero: quieter luxury, less landing-page scale */
+#hap-c4-knx-page .hap-hero {
+  min-height: min(860px, 91vh);
+}
+#hap-c4-knx-page .hap-hero-grid {
+  grid-template-columns: minmax(0,1.45fr) minmax(240px,.55fr);
+  gap: 56px;
+  padding-bottom: 68px;
+}
+#hap-c4-knx-page .hap-hero-media::after {
+  background:
+    linear-gradient(90deg, rgba(5,6,6,.91) 0%, rgba(5,6,6,.65) 47%, rgba(5,6,6,.14) 80%),
+    linear-gradient(0deg, #080909 0%, rgba(8,9,9,.10) 56%, rgba(8,9,9,.15) 100%);
+}
+#hap-c4-knx-page .hap-hero-media img {
+  filter: saturate(.80) contrast(1.02) brightness(.86);
+  transform: none;
+}
+#hap-c4-knx-page .hap-hero-meta {
+  border-left-color: rgba(234,214,159,.23);
+  padding-left: 26px;
+}
+
+/* Buttons: intentional, compact, quieter */
+#hap-c4-knx-page .hap-btn {
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: .90rem;
+  font-weight: 730;
+  box-shadow: none;
+  transition: transform .20s ease, background .20s ease, border-color .20s ease, color .20s ease;
+}
+#hap-c4-knx-page .hap-btn-primary { box-shadow: 0 10px 26px rgba(215,184,115,.10); }
+#hap-c4-knx-page .hap-btn-primary:hover,
+#hap-c4-knx-page .hap-btn-secondary:hover { transform: translateY(-1px); }
+
+/* Sticky navigation becomes editorial rather than pill-heavy */
+#hap-c4-knx-page .hap-toc-shell {
+  background: rgba(8,9,9,.93);
+  backdrop-filter: blur(14px);
+  border-bottom-color: rgba(255,255,255,.055);
+}
+#hap-c4-knx-page .hap-toc { min-height: 52px; }
+#hap-c4-knx-page .hap-toc-links { gap: 16px; padding: 7px 0; }
+#hap-c4-knx-page .hap-toc-links a {
+  padding: 7px 1px 6px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  font-size: .80rem;
+}
+#hap-c4-knx-page .hap-toc-links a:hover {
+  background: transparent;
+  border-color: rgba(234,214,159,.55);
+}
+
+/* Direct answer: retain emphasis without floating-card heaviness */
+#hap-c4-knx-page .hap-answer {
+  padding: 26px 0 28px;
+  border: 0;
+  border-top: 1px solid rgba(215,184,115,.30);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 42px;
+}
+
+/* Cards: flatter, calmer, more architectural */
+#hap-c4-knx-page .hap-card {
+  border-color: rgba(255,255,255,.055);
+  border-radius: 14px;
+  background: rgba(255,255,255,.018);
+  padding: 25px;
+  transition: border-color .22s ease, background .22s ease;
+}
+#hap-c4-knx-page .hap-card:hover {
+  transform: none;
+  border-color: rgba(234,214,159,.20);
+  background: rgba(255,255,255,.024);
+}
+#hap-c4-knx-page .hap-grid-3 .hap-card {
+  border: 0;
+  border-top: 1px solid rgba(234,214,159,.22);
+  border-radius: 0;
+  background: transparent;
+  padding: 24px 4px 0;
+}
+#hap-c4-knx-page .hap-card-number {
+  margin-bottom: 14px;
+  font-size: .70rem;
+  letter-spacing: .12em;
+  opacity: .88;
+}
+
+/* Photography: image first, framing second */
+#hap-c4-knx-page .hap-visual {
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(0,0,0,.22);
+}
+#hap-c4-knx-page .hap-visual::after { display: none; }
+#hap-c4-knx-page .hap-visual img {
+  transition: transform .75s cubic-bezier(.2,.75,.25,1), filter .35s ease;
+}
+#hap-c4-knx-page .hap-visual:hover img { transform: scale(1.012); }
+#hap-c4-knx-page .hap-photo-pair,
+#hap-c4-knx-page .hap-photo-strip { gap: 18px; margin-top: 40px; }
+
+/* Tables: functional and precise, not card-like */
+#hap-c4-knx-page .hap-table-wrap {
+  margin-top: 34px;
+  border-color: rgba(255,255,255,.085);
+  border-radius: 12px;
+  background: #0c0e0e;
+}
+#hap-c4-knx-page th,
+#hap-c4-knx-page td { padding: 17px 19px; }
+#hap-c4-knx-page thead th {
+  background: #121414;
+  font-size: .78rem;
+  letter-spacing: .075em;
+}
+#hap-c4-knx-page tbody th { background: #0f1111; }
+
+/* Cost visual: editorial index rather than dashboard chips */
+#hap-c4-knx-page .hap-cost-map { gap: 0 28px; margin-top: 38px; }
+#hap-c4-knx-page .hap-cost-chip {
+  min-height: 100px;
+  padding: 20px 0 18px;
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.09);
+  border-radius: 0;
+  background: transparent;
+}
+#hap-c4-knx-page .hap-cost-chip span {
+  width: auto;
+  height: auto;
+  display: block;
+  border: 0;
+  border-radius: 0;
+  color: var(--hap-gold);
+  font-size: .67rem;
+  letter-spacing: .13em;
+}
+#hap-c4-knx-page .hap-cost-chip strong { font-size: .95rem; font-weight: 620; }
+
+/* Technical diagrams: one visual system, fewer nested boxes */
+#hap-c4-knx-page .hap-architecture {
+  margin-top: 40px;
+  border-color: rgba(234,214,159,.18);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #111313, #0b0d0d);
+  padding: clamp(26px,4vw,44px);
+}
+#hap-c4-knx-page .hap-arch-layer {
+  border-color: rgba(255,255,255,.075);
+  border-radius: 12px;
+  background: rgba(255,255,255,.018);
+}
+#hap-c4-knx-page .hap-arch-layer.is-control4 {
+  border-color: rgba(215,184,115,.30);
+  background: rgba(215,184,115,.065);
+}
+#hap-c4-knx-page .hap-arch-layer.is-knx {
+  background: rgba(255,255,255,.022);
+}
+#hap-c4-knx-page .hap-arch-node {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.09);
+  border-radius: 0;
+  background: transparent;
+  padding: 14px 8px 8px;
+}
+
+/* Reliability paths: remove pill overload */
+#hap-c4-knx-page .hap-reliability-grid { gap: 36px; margin-top: 34px; }
+#hap-c4-knx-page .hap-reliability-card {
+  padding: 22px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(234,214,159,.20);
+  border-radius: 0;
+  background: transparent;
+}
+#hap-c4-knx-page .hap-reliability-path { gap: 9px; }
+#hap-c4-knx-page .hap-reliability-path span {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: .78rem;
+}
+
+/* Timeline: editorial progression */
+#hap-c4-knx-page .hap-timeline { gap: 22px; margin-top: 34px; }
+#hap-c4-knx-page .hap-timeline-step {
+  padding: 22px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.09);
+  border-radius: 0;
+  background: transparent;
+}
+#hap-c4-knx-page .hap-timeline-step::after {
+  top: 0;
+  width: 22px;
+  background: rgba(215,184,115,.30);
+}
+
+/* Real-project proof deserves emphasis without a heavy frame */
+#hap-c4-knx-page .hap-project-proof {
+  border-color: rgba(255,255,255,.08);
+  border-radius: 18px;
+  background: #0e1010;
+  margin-top: 40px;
+}
+#hap-c4-knx-page .hap-project-copy { padding: clamp(32px,5vw,56px); }
+
+/* Mid-page conversion point: quiet and intentional */
+#hap-c4-knx-page .hap-inline-cta {
+  margin-top: 40px;
+  border-color: rgba(215,184,115,.25);
+  border-radius: 18px;
+  background: rgba(215,184,115,.045);
+  padding: clamp(26px,4vw,36px);
+}
+
+/* Supporting advisory blocks */
+#hap-c4-knx-page .hap-advisor-item {
+  background: transparent;
+  border-left-color: rgba(215,184,115,.34);
+  padding: 14px 18px;
+}
+#hap-c4-knx-page .hap-checklist li {
+  border-color: rgba(255,255,255,.055);
+  border-radius: 12px;
+  background: rgba(255,255,255,.016);
+}
+
+/* FAQ: publication-style accordion rather than stacked cards */
+#hap-c4-knx-page .hap-faq { gap: 0; margin-top: 34px; }
+#hap-c4-knx-page .hap-faq details {
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.085);
+  border-radius: 0;
+  background: transparent;
+}
+#hap-c4-knx-page .hap-faq details:first-child { border-top: 1px solid rgba(255,255,255,.085); }
+#hap-c4-knx-page .hap-faq summary { padding: 22px 2px; }
+#hap-c4-knx-page .hap-faq-answer { padding: 0 44px 24px 2px; }
+#hap-c4-knx-page .hap-faq summary::after {
+  width: 26px;
+  height: 26px;
+  border-color: rgba(234,214,159,.24);
+}
+
+/* Final close: retain image, reduce visual treatment */
+#hap-c4-knx-page .hap-final { min-height: 570px; }
+#hap-c4-knx-page .hap-final-media::after {
+  background:
+    linear-gradient(0deg,#080909 0%,rgba(8,9,9,.66) 44%,rgba(8,9,9,.14) 100%),
+    linear-gradient(90deg,rgba(8,9,9,.82),rgba(8,9,9,.16));
+}
+
+/* Motion stays almost imperceptible */
+@keyframes hap-reveal {
+  from { opacity: .78; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@supports (animation-timeline: view()) {
+  #hap-c4-knx-page .hap-card,
+  #hap-c4-knx-page .hap-visual,
+  #hap-c4-knx-page .hap-architecture,
+  #hap-c4-knx-page .hap-project-proof,
+  #hap-c4-knx-page .hap-inline-cta {
+    animation-range: entry 0% cover 16%;
+  }
+}
+
+@media (max-width: 991px) {
+  #hap-c4-knx-page .hap-hero-grid { gap: 34px; }
+  #hap-c4-knx-page .hap-editorial,
+  #hap-c4-knx-page .hap-editorial-reverse { gap: 32px; }
+}
+
+@media (max-width: 767px) {
+  #hap-c4-knx-page .hap-section { padding: 58px 0; }
+  #hap-c4-knx-page h1 { font-size: clamp(2.18rem, 10.2vw, 3.25rem); line-height: 1.035; }
+  #hap-c4-knx-page h2 { font-size: clamp(1.62rem, 7vw, 2.05rem); line-height: 1.16; }
+  #hap-c4-knx-page h3 { font-size: 1.12rem; }
+  #hap-c4-knx-page .hap-hero { min-height: 700px; }
+  #hap-c4-knx-page .hap-hero-grid { padding: 108px 0 42px; }
+  #hap-c4-knx-page .hap-hero-media img { object-position: 60% center; }
+  #hap-c4-knx-page .hap-hero-actions { gap: 10px; }
+  #hap-c4-knx-page .hap-btn { min-height: 48px; }
+
+  /* Editorial image rhythm on phones: no narrow side-by-side crops */
+  #hap-c4-knx-page .hap-photo-pair {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  #hap-c4-knx-page .hap-photo-pair .hap-visual:first-child,
+  #hap-c4-knx-page .hap-photo-pair .hap-visual:last-child { aspect-ratio: 4 / 3; }
+
+  #hap-c4-knx-page .hap-photo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: visible;
+    gap: 10px;
+    padding-bottom: 0;
+  }
+  #hap-c4-knx-page .hap-photo-strip .hap-visual {
+    width: auto;
+    aspect-ratio: 1 / 1 !important;
+  }
+  #hap-c4-knx-page .hap-photo-strip .hap-visual:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  #hap-c4-knx-page .hap-device-collage { gap: 10px; }
+  #hap-c4-knx-page .hap-architecture { padding: 24px 16px; }
+  #hap-c4-knx-page .hap-arch-layer { padding: 20px 14px; }
+  #hap-c4-knx-page .hap-table-wrap { border-radius: 10px; }
+  #hap-c4-knx-page .hap-inline-cta { padding: 24px 20px; }
+  #hap-c4-knx-page .hap-faq summary { padding: 20px 0; }
+  #hap-c4-knx-page .hap-faq-answer { padding: 0 34px 22px 0; }
+  #hap-c4-knx-page .hap-final { min-height: 500px; }
+}
+
+#hap-c4-knx-page .hap-cost-chip small{display:block;margin-top:7px;color:var(--hap-muted);font-size:.84rem;line-height:1.55;font-weight:400;}
+#hap-c4-knx-page .hap-advisor-intro{margin:22px 0 18px;max-width:880px;color:var(--hap-muted-2);}
+
+
+/* FINAL REVIEW: small usability/performance polish only */
+#hap-c4-knx-page .hap-table-wrap {
+  overscroll-behavior-inline: contain;
+}
+@media (max-width: 767px) {
+  /* Keep the comparison aspect visible while users swipe across Control4 and KNX columns. */
+  #hap-c4-knx-page .hap-table-wrap thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    box-shadow: 1px 0 0 rgba(255,255,255,.08);
+  }
+  #hap-c4-knx-page .hap-table-wrap tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    box-shadow: 1px 0 0 rgba(255,255,255,.07);
+  }
+}
+
+/* FINAL CTA: mobile-first copy spacing */
+#hap-c4-knx-page .hap-final-copy h2 {
+  max-width: 720px;
+  text-wrap: balance;
+}
+#hap-c4-knx-page .hap-final-copy p {
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  #hap-c4-knx-page .hap-final-copy {
+    padding: 64px 0 52px;
+  }
+  #hap-c4-knx-page .hap-final-copy h2 {
+    max-width: 520px;
+    margin-bottom: 18px;
+  }
+  #hap-c4-knx-page .hap-final-copy p {
+    max-width: 100%;
+    margin-bottom: 26px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  #hap-c4-knx-page .hap-final-copy .hap-btn {
+    min-height: 50px;
+    padding: 13px 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE HERO FIX — ODOO PHONE LAYOUT
+   Fixes the late luxury-polish desktop grid overriding the
+   earlier responsive hero layout. Content/SEO is unchanged.
+   ========================================================= */
+@media (max-width: 991px) {
+  #hap-c4-knx-page .hap-hero-grid {
+    grid-template-columns: 1fr;
+    width: min(100% - 36px, 760px);
+    gap: 28px;
+  }
+
+  #hap-c4-knx-page .hap-hero-copy {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  #hap-c4-knx-page .hap-hero-meta {
+    width: 100%;
+    max-width: 760px;
+    border-left: 0;
+    border-top: 1px solid var(--hap-line);
+    padding: 20px 0 0;
+  }
+}
+
+@media (max-width: 767px) {
+  #hap-c4-knx-page .hap-hero {
+    min-height: auto;
+    align-items: end;
+  }
+
+  #hap-c4-knx-page .hap-hero-grid {
+    grid-template-columns: 1fr;
+    width: min(100% - 32px, 720px);
+    padding: 82px 0 34px;
+    gap: 24px;
+  }
+
+  #hap-c4-knx-page .hap-hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+
+  #hap-c4-knx-page .hap-eyebrow {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 14px;
+    font-size: .66rem;
+    line-height: 1.35;
+    letter-spacing: .12em;
+  }
+
+  #hap-c4-knx-page .hap-eyebrow::before {
+    width: 22px;
+    flex: 0 0 22px;
+  }
+
+  #hap-c4-knx-page h1 {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 18px;
+    font-size: clamp(2.05rem, 9vw, 2.45rem);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    text-wrap: pretty;
+  }
+
+  #hap-c4-knx-page .hap-hero-copy &amp;gt; p {
+    max-width: 36rem;
+    margin-bottom: 0;
+    font-size: .98rem;
+    line-height: 1.58;
+    color: #d7d3c9;
+  }
+
+  #hap-c4-knx-page .hap-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-top: 24px;
+  }
+
+  #hap-c4-knx-page .hap-hero-actions .hap-btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 18px;
+    font-size: .88rem;
+  }
+
+  #hap-c4-knx-page .hap-hero-meta {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 16px;
+  }
+
+  #hap-c4-knx-page .hap-meta-item {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,.055);
+  }
+
+  #hap-c4-knx-page .hap-meta-item:last-child {
+    border-bottom: 0;
+  }
+
+  #hap-c4-knx-page .hap-meta-item small {
+    margin: 2px 0 0;
+    font-size: .62rem;
+    line-height: 1.35;
+  }
+
+  #hap-c4-knx-page .hap-meta-item span {
+    font-size: .88rem;
+    line-height: 1.45;
+  }
+
+  #hap-c4-knx-page .hap-hero-media::after {
+    background:
+      linear-gradient(90deg, rgba(5,6,6,.92) 0%, rgba(5,6,6,.70) 58%, rgba(5,6,6,.34) 100%),
+      linear-gradient(0deg, #080909 0%, rgba(8,9,9,.58) 38%, rgba(8,9,9,.18) 100%);
+  }
+
+  #hap-c4-knx-page .hap-hero-media img {
+    object-position: 64% center;
+  }
+}
+
+@media (max-width: 420px) {
+  #hap-c4-knx-page .hap-hero-grid {
+    width: calc(100% - 28px);
+    padding-top: 72px;
+  }
+
+  #hap-c4-knx-page h1 {
+    font-size: clamp(2rem, 8.8vw, 2.28rem);
+  }
+
+  #hap-c4-knx-page .hap-hero-copy &amp;gt; p {
+    font-size: .95rem;
+  }
+}
+
+</style>
+<article aria-labelledby="hap-page-title" id="hap-c4-knx-page">
+<div aria-hidden="true" class="hap-reading-progress"><div class="hap-reading-progress-bar"></div></div>
+
+<header class="hap-hero">
+<div aria-hidden="true" class="hap-hero-media">
+<img alt="Luxury living room with architectural lighting in a premium landed home" decoding="async" fetchpriority="high" height="1000" loading="eager" sizes="100vw" src="/web/image/93884-bb2d1625/Lutron_lighting_living.jpg?width=1600" srcset="/web/image/93884-bb2d1625/Lutron_lighting_living.jpg?width=720 720w, /web/image/93884-bb2d1625/Lutron_lighting_living.jpg?width=1100 1100w, /web/image/93884-bb2d1625/Lutron_lighting_living.jpg?width=1600 1600w" width="1600">
+</div>
+<div class="hap-wrap hap-hero-grid">
+<div class="hap-hero-copy">
+<div class="hap-eyebrow">Singapore Smart Home Comparison Guide</div>
+<h1 id="hap-page-title">Control4 vs KNX Singapore: Which Smart Home System Fits Your Home?</h1>
+<p>Compare Control4 and KNX for Singapore homes across cost, flexibility, reliability, renovation suitability, new-build suitability and everyday user experience — without forcing every project into the same platform.</p>
+<div class="hap-hero-actions">
+<a class="hap-btn hap-btn-primary" href="https://www.hap.sg/appointment/2" rel="noopener noreferrer" target="_blank">Book a Smart Home Consultation</a>
+<a class="hap-btn hap-btn-secondary" href="#hap-main-comparison">
+  Compare the Systems
+</a>
+</div>
+</div>
+<div aria-label="Article summary" class="hap-hero-meta">
+<div class="hap-meta-item"><small>Decision</small><span>Control4, KNX or a hybrid approach</span></div>
+<div class="hap-meta-item"><small>Best time to plan</small><span>Before wiring, ceilings and carpentry are finalised</span></div>
+<div class="hap-meta-item"><small>HAP approach</small><span>Advice shaped around your home and renovation stage</span></div>
+</div>
+</div>
+</header>
+
+<nav aria-label="Article sections" class="hap-toc-shell">
+<div class="hap-wrap hap-toc">
+<div class="hap-toc-label">On this page</div>
+<div class="hap-toc-links">
+<a href="#hap-main-comparison">Differences</a>
+<a href="#hap-cost">Cost</a>
+<a href="#hap-flexibility">Flexibility</a>
+<a href="#hap-reliability">Reliability</a>
+<a href="#hap-renovation">Renovation</a>
+<a href="#hap-new-build">New builds</a>
+<a href="#hap-user-experience">User experience</a>
+<a href="#hap-project-guide">Project guide</a>
+<a href="#hap-hybrid">Hybrid</a>
+<a href="#hap-faq">FAQs</a>
+</div>
+</div>
+</nav>
+
+<section class="hap-section hap-section-soft">
+<div class="hap-wrap">
+<div class="hap-answer">
+<div class="hap-kicker">Direct Answer</div>
+<p><strong>Control4</strong> often makes sense when the priority is one user experience for AV, lighting, curtains, security, climate and personalised scenes. <strong>KNX</strong> is often worth considering when the project needs a structured building-automation foundation for lighting, curtains, blinds, climate and sensors. For some larger Singapore landed homes, a combination of KNX infrastructure and Control4 as the homeowner-facing integration layer may be worth exploring.</p>
+</div>
+<div class="hap-copy-mid">
+<div class="hap-kicker">Key Takeaways</div>
+<h2>Control4 and KNX solve different parts of the smart-home problem.</h2>
+</div>
+<div class="hap-grid-3">
+<article class="hap-card"><div class="hap-card-number">01</div><h3>Control4</h3><p>A unified control platform for whole-home experience, AV, home theatre, scenes, app control, touchscreens, remotes and integration across multiple home systems.</p></article>
+<article class="hap-card"><div class="hap-card-number">02</div><h3>KNX</h3><p>An open building-automation standard commonly implemented with dedicated KNX bus wiring for lighting, curtains, blinds, climate and sensors, with flexibility across certified manufacturers.</p></article>
+<article class="hap-card"><div class="hap-card-number">03</div><h3>Sometimes Both</h3><p>For a large landed home, KNX can handle core building controls while Control4 provides the interface and integrates entertainment, security and scenes.</p></article>
+</div>
+</div>
+</section>
+
+<section class="hap-section" id="hap-main-comparison">
+<div class="hap-wrap">
+<div class="hap-copy-mid">
+<div class="hap-kicker">Main Comparison</div>
+<h2>Control4 vs KNX Singapore: Understanding the Two Systems</h2>
+<p class="hap-lead">Before comparing features, it helps to understand what each platform actually is. They are not direct competitors in the traditional sense. They sit at different layers of a smart home.</p>
+</div>
+<div aria-label="Control4 and KNX main comparison table" class="hap-table-wrap" role="region" tabindex="0">
+<table>
+<caption class="hap-sr-only">Main differences between Control4 and KNX for Singapore homes</caption>
+<thead><tr><th scope="col">Aspect</th><th scope="col">Control4</th><th scope="col">KNX</th></tr></thead>
+<tbody>
+<tr><th scope="row">Primary Role</th><td>Whole-home control, user interface, AV and personalised scenes</td><td>Structured building automation and wired infrastructure</td></tr>
+<tr><th scope="row">Architecture</th><td>Controller-led platform using IP, wired and wireless integrations depending on the project</td><td>Open building-automation standard commonly implemented on a dedicated KNX bus, with distributed devices and manufacturer-independent configuration through ETS</td></tr>
+<tr><th scope="row">Strongest Areas</th><td>AV, home theatre, multi-room music, apps, remotes, touchscreens and system-wide scenes</td><td>Lighting, curtains, blinds, climate, sensors and structured building control</td></tr>
+<tr><th scope="row">Renovation Fit</th><td>Can be adaptable where full rewiring is not practical, subject to the existing electrical and network design</td><td>Most flexible when bus wiring and distribution-board requirements can be planned early</td></tr>
+<tr><th scope="row">New-Build Fit</th><td>Strong where integrated AV, security, entertainment and one consistent user experience are priorities</td><td>Strong as an early-planned wired building-control foundation</td></tr>
+<tr><th scope="row">User Experience</th><td>Consistent app, touchscreen, remote and scene experience</td><td>Depends on the selected keypad, visualisation, app and supervisory layer</td></tr>
+</tbody>
+</table>
+</div>
+<a class="hap-continue" href="#hap-cost"><span>Continue reading</span>Compare cost and project scope</a>
+</div>
+</section>
+
+<section class="hap-section hap-section-soft">
+<div class="hap-wrap">
+<div class="hap-copy-mid" style="margin-bottom:42px;">
+<div class="hap-kicker">What Each System Does</div>
+<h2>Control4 and KNX: Two Different Layers of a Smart Home</h2>
+<p>Control4 is primarily experienced as the integration and user-control layer, while KNX is commonly designed as part of the wired building-automation foundation. Seeing the two roles separately makes the rest of the comparison much easier to understand.</p>
+</div>
+<div class="hap-editorial">
+<div>
+<div class="hap-kicker">Experience Layer</div>
+<h3>What Is Control4?</h3>
+<p>Control4 is a home automation platform built around a controller that can bring lighting, curtains, air-conditioning, security, music and home theatre into one user experience. Homeowners can interact through a mobile app, wall-mounted touchscreens, keypads and handheld remotes.</p>
+<p>Its strength is integration. A well-planned Control4 system can make several otherwise separate technologies feel like one home. HAP plans Control4 around the home layout, network, AV rack, lighting, curtain zones and the way the family wants to use scenes. Learn more about <a href="https://www.hap.sg/control4-smart-home-system-singapore-hap-platinum-dealer" rel="noopener noreferrer" target="_blank">Control4 smart home systems in Singapore</a>.</p>
+</div>
+<figure class="hap-visual hap-visual-wide">
+<img alt="Control4 touchscreen interface for lighting, music and whole-home control" decoding="async" height="760" loading="lazy" sizes="(max-width: 991px) 100vw, 46vw" src="/web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=1200" srcset="/web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=640 640w, /web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=960 960w, /web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=1200 1200w" width="1200">
+</figure>
+</div>
+<div class="hap-editorial hap-editorial-reverse" style="margin-top:72px;">
+<figure class="hap-visual hap-visual-wide">
+<img alt="BTicino LivingNow KNX keypad integrated with a premium interior wall design" decoding="async" height="760" loading="lazy" sizes="(max-width: 991px) 100vw, 46vw" src="/web/image/94938-418f9d9e/Btcino_LivingNow_Interior_Concept.png?width=1200" srcset="/web/image/94938-418f9d9e/Btcino_LivingNow_Interior_Concept.png?width=640 640w, /web/image/94938-418f9d9e/Btcino_LivingNow_Interior_Concept.png?width=960 960w, /web/image/94938-418f9d9e/Btcino_LivingNow_Interior_Concept.png?width=1200 1200w" width="1200">
+</figure>
+<div>
+<div class="hap-kicker">Building Automation Layer</div>
+<h3>What Is KNX?</h3>
+<p>KNX is an open, internationally standardised protocol for building automation. It is not one single brand. Certified products from different manufacturers can communicate within the same KNX system when compatible functions are planned and commissioned correctly, commonly through a dedicated KNX bus in residential projects.</p>
+<p>KNX is commonly specified for lighting circuits, curtain and blind motors, climate control and sensor networks in larger or more complex properties. The technology can sit behind premium keypads that blend into the interior rather than making the home look technical. Read HAP’s guide to <a href="https://www.hap.sg/why-knx-home-automation" rel="noopener noreferrer" target="_blank">KNX home automation in Singapore</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hap-section" id="hap-cost">
+<div class="hap-wrap">
+<div class="hap-copy-mid">
+<div class="hap-kicker">Cost</div>
+<h2>Cost Considerations for Control4 vs KNX Singapore Projects</h2>
+<p class="hap-lead">There’s no simple answer to whether Control4 or KNX costs more. The overall cost depends heavily on what you want the system to control and how the home is being renovated.</p>
+<p>For homeowners comparing Control4 Singapore and KNX Singapore, it is more useful to look at the scope of the home than the platform name alone. Property size, lighting and dimming requirements, keypads, touchscreens, curtains, air-conditioning, AV, security, networking and the renovation stage can all change the amount of hardware, integration and programming involved.</p>
+</div>
+<div aria-label="Main smart home cost drivers" class="hap-cost-map">
+<div class="hap-cost-chip"><span>01</span><strong>Property Size &amp; Rooms</strong><small>More rooms, floors and control points usually mean more devices, wiring and setup.</small></div>
+<div class="hap-cost-chip"><span>02</span><strong>Lighting Circuits &amp; Dimming</strong><small>The number of circuits and the type of dimming can change the hardware and setup required.</small></div>
+<div class="hap-cost-chip"><span>03</span><strong>Keypads &amp; Touchscreens</strong><small>Quantity, placement, finish and interface choice can all affect the overall budget.</small></div>
+<div class="hap-cost-chip"><span>04</span><strong>Curtains, Blinds &amp; Climate</strong><small>Each motorised zone or air-conditioning interface adds another part of the home to integrate and test.</small></div>
+<div class="hap-cost-chip"><span>05</span><strong>AV, Security &amp; Networking</strong><small>Home theatre, multi-room audio, cameras, intercom, gate control and network scope can make a meaningful difference.</small></div>
+<div class="hap-cost-chip"><span>06</span><strong>Programming &amp; Renovation Stage</strong><small>Planning before wiring and finishes are fixed is usually easier than adding control after the renovation is largely complete.</small></div>
+</div>
+<p style="margin-top:26px; max-width:900px;">A multi-storey landed home with many lighting circuits, several curtain runs and multi-room AV will naturally have a very different budget from a condominium using selected lighting and entertainment control. If you are still working out the likely scope, HAP can help you look at the floor plan and discuss the main cost drivers. See our <a href="https://www.hap.sg/smart-home-cost-singapore" rel="noopener noreferrer" target="_blank">smart home cost Singapore</a> guide for more detail.</p>
+</div>
+</section>
+
+<section class="hap-section hap-section-soft">
+<div class="hap-wrap">
+<div class="hap-copy-mid">
+<div class="hap-kicker">Architecture</div>
+<h2>System Architecture: Wired Building Automation vs Integrated Home Control</h2>
+<p>Architecture is one of the easiest ways to understand the difference. In many residential KNX projects, a dedicated KNX bus forms the building-control backbone. Control4, by comparison, is often used to bring the wider home experience together through a controller and compatible integrations.</p>
+</div>
+<div aria-label="Visual explanation of Control4 and KNX system layers" class="hap-architecture">
+<div class="hap-arch-top"><span class="hap-arch-label">Homeowner Experience</span><strong>One simple way to use the home</strong></div>
+<div class="hap-arch-stack">
+<div class="hap-arch-layer is-control4"><h3>Control4 — Experience &amp; Integration Layer</h3><p>Touchscreens · App · Remote · AV · Security · Whole-home scenes</p></div>
+<div aria-hidden="true" class="hap-arch-arrow"></div>
+<div class="hap-arch-layer is-knx"><h3>KNX — Building Automation Foundation</h3><p>Structured wired control that can support lighting, shading, climate and sensors</p></div>
+<div aria-hidden="true" class="hap-arch-arrow"></div>
+<div class="hap-arch-nodes">
+<div class="hap-arch-node">Lighting</div><div class="hap-arch-node">Curtains / Blinds</div><div class="hap-arch-node">Climate</div><div class="hap-arch-node">Sensors</div>
+</div>
+</div>
+</div>
+<div class="hap-grid-2" style="margin-top:34px;">
+<article class="hap-card" id="hap-flexibility"><div class="hap-card-number">Flexibility</div><h3>Flexibility and Customisation</h3><p>Control4 offers flexibility at the integration and interface layer. Adding supported AV equipment, entertainment sources, scenes or third-party systems may be primarily a programming and integration task rather than a whole-home rewiring exercise.</p><p>KNX offers flexibility at the building-control infrastructure layer. Once the bus, actuators and control points are properly planned, lighting scenes, groups, keypad functions and climate logic can often be reconfigured without changing every cable route.</p></article>
+<article class="hap-card" id="hap-reliability"><div class="hap-card-number">Reliability</div><h3>Reliability and Local Control</h3><p>KNX distributes control intelligence across the relevant devices rather than relying entirely on one visualisation server. Selected lighting, curtain or climate functions may therefore continue operating if a visualisation interface is unavailable, provided the KNX bus power supply and relevant devices remain operational.</p><p>Control4 processes core automation locally through its controller. Normal local operation does not require a constant internet connection, although remote-access and selected connected services depend on the applicable network and service configuration.</p></article>
+</div>
+<div class="hap-reliability-grid">
+<div class="hap-reliability-card"><h3>KNX local-control path</h3><div class="hap-reliability-path"><span>Wall keypad</span><b>→</b><span>KNX bus</span><b>→</b><span>Actuator</span><b>→</b><span>Lighting / curtain</span></div></div>
+<div class="hap-reliability-card"><h3>Control4 local-control path</h3><div class="hap-reliability-path"><span>App / keypad / remote</span><b>→</b><span>Control4 controller</span><b>→</b><span>Integrated systems</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="hap-section" id="hap-renovation">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Project Stage</div><h2>Renovation, New-Build and Condominium Suitability</h2><p class="hap-lead">The stage of the project matters as much as the platform. A full rewire creates different options from a partial renovation where ceilings, walls and switch points are already fixed.</p></div>
+<div class="hap-editorial" style="margin-top:42px;">
+<div>
+<h3>Smart Home Renovation Singapore: Timing Matters</h3>
+<p>For a smart home renovation Singapore project where hacking and rewiring are limited, Control4 may provide a more adaptable starting point because it can use a mix of IP, wired and wireless integrations depending on what already exists.</p>
+<p>If the renovation includes a full electrical rewire, a KNX backbone becomes much more practical because the bus cable, distribution board, keypad positions and control zones can be coordinated before finishes are locked in. HAP’s <a href="https://www.hap.sg/smart-home-system-planning-installation-singapore" rel="noopener noreferrer" target="_blank">smart home system planning and installation</a> guide explains why these decisions are easier to make before finishes are locked in.</p>
+</div>
+<figure class="hap-visual hap-visual-wide">
+<img alt="AV and network equipment rack prepared for a premium smart home installation" decoding="async" height="820" loading="lazy" src="/web/image/77926-8742a3ef/Rack.jpeg?height=1200" width="1200" sizes="(max-width: 767px) 100vw, (max-width: 991px) 100vw, 54vw" srcset="/web/image/77926-8742a3ef/Rack.jpeg?width=480 480w, /web/image/77926-8742a3ef/Rack.jpeg?width=800 800w, /web/image/77926-8742a3ef/Rack.jpeg?width=1200 1200w">
+</figure>
+</div>
+<div class="hap-editorial hap-editorial-reverse" id="hap-new-build" style="margin-top:72px;">
+<figure class="hap-visual hap-visual-wide">
+<img alt="Completed landed home smart home project by HAP in Singapore" decoding="async" height="760" loading="lazy" sizes="(max-width: 991px) 100vw, 46vw" src="/web/image/94732-ce7c75c4/2025-03-27.jpg?width=1200" srcset="/web/image/94732-ce7c75c4/2025-03-27.jpg?width=640 640w, /web/image/94732-ce7c75c4/2025-03-27.jpg?width=960 960w, /web/image/94732-ce7c75c4/2025-03-27.jpg?width=1200 1200w" width="1200">
+</figure>
+<div>
+<h3>New-Build and Landed-Home Suitability</h3>
+<p>New-build homes give the project team the most freedom because lighting circuits, curtain power, equipment racks, keypads, network points and automation cabling can be designed before construction closes up.</p>
+<p>For a smart home for landed house Singapore project, the answer may be KNX, Control4 or both. Larger properties with extensive lighting and shading may benefit from a KNX foundation, while Control4 can unify AV, security and daily scenes. Browse HAP’s <a href="https://www.hap.sg/project-portfolio/landed" rel="noopener noreferrer" target="_blank">landed home project portfolio</a> for real project examples.</p>
+</div>
+</div>
+<div class="hap-card" style="margin-top:30px;">
+<h3>Condominium Suitability</h3>
+<p>For partial condominium renovations where extensive rewiring is not practical, Control4 may be a more adaptable starting point. KNX can still be suitable for a condominium undergoing a full electrical renovation when bus wiring, distribution-board space and control points can be planned early. The decision should be based on the actual renovation scope, not the property category alone.</p>
+</div>
+</div>
+</section>
+
+<section class="hap-section hap-section-soft">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Daily Comfort</div><h2>Lighting, Curtains and Air-Conditioning Control</h2><p>Lighting, curtains and air-conditioning are where the KNX vs Control4 distinction becomes practical. KNX can form the structured control foundation, while Control4 can bring those functions into wider scenes alongside AV, security and entertainment.</p></div>
+<div aria-label="Smart lighting curtains and comfort examples" class="hap-photo-strip">
+<figure class="hap-visual"><img alt="Smart lighting scene in a modern home controlled through home automation" decoding="async" height="750" loading="lazy" src="/web/image/18773-4b72c7c7/home%20automation_smart%20lights%20control4_Home%20Action%20Party_2.webp?width=1000" width="1000" sizes="(max-width: 767px) 100vw, 42vw" srcset="/web/image/18773-4b72c7c7/home%20automation_smart%20lights%20control4_Home%20Action%20Party_2.webp?width=420 420w, /web/image/18773-4b72c7c7/home%20automation_smart%20lights%20control4_Home%20Action%20Party_2.webp?width=700 700w, /web/image/18773-4b72c7c7/home%20automation_smart%20lights%20control4_Home%20Action%20Party_2.webp?width=1000 1000w"></figure>
+<figure class="hap-visual"><img alt="Motorised curtains and blinds integrated with a whole-home automation system" decoding="async" height="675" loading="lazy" src="/web/image/92502-c76bdebd/Curtain_Blind_Whole_Home_Automation.jpg?width=900" width="900" sizes="(max-width: 767px) 50vw, 29vw" srcset="/web/image/92502-c76bdebd/Curtain_Blind_Whole_Home_Automation.jpg?width=420 420w, /web/image/92502-c76bdebd/Curtain_Blind_Whole_Home_Automation.jpg?width=700 700w, /web/image/92502-c76bdebd/Curtain_Blind_Whole_Home_Automation.jpg?width=900 900w"></figure>
+<figure class="hap-visual"><img alt="Smart home comfort interface for lighting curtains and air-conditioning scenes" decoding="async" height="675" loading="lazy" src="/web/image/13855-169d409f/C4_Images_Primary_UI_8.jpg?width=900" width="900" sizes="(max-width: 767px) 50vw, 29vw" srcset="/web/image/13855-169d409f/C4_Images_Primary_UI_8.jpg?width=420 420w, /web/image/13855-169d409f/C4_Images_Primary_UI_8.jpg?width=700 700w, /web/image/13855-169d409f/C4_Images_Primary_UI_8.jpg?width=900 900w"></figure>
+</div>
+<p style="margin-top:26px; max-width:900px;">For lighting specifically, the more suitable approach depends on circuit count, dimming type, keypad design, scene requirements and how much of the lighting system you want to keep on a dedicated building-control platform. See HAP’s <a href="https://www.hap.sg/best-lighting-control-singapore" rel="noopener noreferrer" target="_blank">lighting control system comparison</a> for more detail.</p>
+</div>
+</section>
+
+<section class="hap-section">
+<div class="hap-wrap hap-editorial">
+<div>
+<div class="hap-kicker">Entertainment</div>
+<h2>Audio Visual and Home Theatre Integration</h2>
+<p class="hap-lead">Control4 is more directly designed for AV and home-theatre orchestration than KNX.</p>
+<p>Multi-room audio, surround processors, TVs, projectors, streaming sources and movie scenes can sit inside the same Control4 experience as lighting and curtains. KNX can trigger or integrate selected AV functions through compatible interfaces, but it is not normally used as the dedicated platform for AV source selection, signal routing, multi-room entertainment and home-theatre control.</p>
+</div>
+<figure class="hap-visual hap-visual-wide">
+<img alt="Home theatre and AV control integrated with Control4 home automation" decoding="async" height="760" loading="lazy" sizes="(max-width: 991px) 100vw, 46vw" src="/web/image/92523-f676f24f/Control4_Home_Theater_AV_Control.jpeg?width=1200" srcset="/web/image/92523-f676f24f/Control4_Home_Theater_AV_Control.jpeg?width=640 640w, /web/image/92523-f676f24f/Control4_Home_Theater_AV_Control.jpeg?width=960 960w, /web/image/92523-f676f24f/Control4_Home_Theater_AV_Control.jpeg?width=1200 1200w" width="1200">
+</figure>
+</div>
+</section>
+
+<section class="hap-section hap-section-soft" id="hap-user-experience">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">User Experience</div><h2>Mobile App, Touchscreen, Remote and Keypad Experience</h2><p class="hap-lead">The protocol behind the wall matters less to the family than whether daily control feels obvious, consistent and fast.</p></div>
+<div class="hap-editorial" style="margin-top:40px;">
+<div>
+<p>Control4 can give homeowners a consistent experience across mobile app, in-wall touchscreens, remotes and programmed keypads. KNX systems are commonly used through premium wall keypads, KNX-compatible visualisations or a separate supervisory interface depending on the project.</p>
+<h3>Ease of Use for Family and Guests</h3>
+<p>A luxury smart home should not require technical knowledge for simple daily tasks. A clear keypad layout, sensible scene names and one consistent visual experience can matter more to the household than the protocol underneath.</p>
+<p>When KNX and Control4 are combined, Control4 may become the primary homeowner-facing interface while KNX handles selected building-control functions behind the scenes.</p>
+<a class="hap-continue" href="#hap-project-guide"><span>Continue reading</span>Find the direction that fits your project</a>
+</div>
+<div class="hap-device-collage">
+<figure class="hap-visual"><img alt="Control4 wall touchscreen showing whole-home control options" decoding="async" height="760" loading="lazy" src="/web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=1000" width="1000" sizes="(max-width: 767px) 100vw, 52vw" srcset="/web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=420 420w, /web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=700 700w, /web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png?width=1000 1000w"></figure>
+<figure class="hap-visual"><img alt="Control4 smart keypad installed for everyday scene control" decoding="async" height="700" loading="lazy" src="/web/image/14527-69ee7fa4/408392239_834351168700394_7248065967231418087_n.jpg?width=700" width="700" sizes="(max-width: 767px) 50vw, 24vw" srcset="/web/image/14527-69ee7fa4/408392239_834351168700394_7248065967231418087_n.jpg?width=360 360w, /web/image/14527-69ee7fa4/408392239_834351168700394_7248065967231418087_n.jpg?width=560 560w, /web/image/14527-69ee7fa4/408392239_834351168700394_7248065967231418087_n.jpg?width=700 700w"></figure>
+<figure class="hap-visual"><img alt="BTicino LivingNow KNX keypad formats for premium wall control" decoding="async" height="700" loading="lazy" src="/web/image/94934-f05e19ea/Bticino_LivingNow_2module_3module_keypads.png?width=700" width="700" sizes="(max-width: 767px) 50vw, 24vw" srcset="/web/image/94934-f05e19ea/Bticino_LivingNow_2module_3module_keypads.png?width=360 360w, /web/image/94934-f05e19ea/Bticino_LivingNow_2module_3module_keypads.png?width=560 560w, /web/image/94934-f05e19ea/Bticino_LivingNow_2module_3module_keypads.png?width=700 700w"></figure>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hap-section">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Long-Term Ownership</div><h2>Future Expansion, Maintenance and After-Sales Support</h2><p>Future-proofing looks different for each system. Control4 expansion often means adding supported devices, drivers, rooms or AV components to an existing controller environment. KNX expansion may involve adding or reconfiguring devices on the building-control bus, subject to spare capacity, cabling and project design.</p><p>Both systems benefit from good documentation, backups, proper commissioning and a clear support arrangement. Homeowners should know who can make future changes, where project files are stored and how system updates are handled.</p></div>
+<div aria-label="Smart home ownership journey" class="hap-timeline">
+<article class="hap-timeline-step"><span>01</span><h3>Plan</h3><p>Define rooms, systems, wiring, keypads and user experience before renovation decisions close.</p></article>
+<article class="hap-timeline-step"><span>02</span><h3>Commission</h3><p>Test scenes, interfaces, lighting behaviour, network stability and integration logic.</p></article>
+<article class="hap-timeline-step"><span>03</span><h3>Live</h3><p>Use the home normally and refine scene names, keypad functions or entertainment workflows.</p></article>
+<article class="hap-timeline-step"><span>04</span><h3>Expand</h3><p>Add supported rooms, devices or integrations as the household and technology change.</p></article>
+</div>
+</div>
+</section>
+
+<section class="hap-section hap-section-soft">
+<div class="hap-wrap">
+<div class="hap-grid-2">
+<article class="hap-card"><div class="hap-kicker">Control4 Direction</div><h2>When Control4 May Be More Suitable</h2><ul><li>Renovations where a full KNX bus rewire is not practical</li><li>Projects where AV, home theatre and multi-room music are central</li><li>Homes that prioritise one consistent app, remote and touchscreen experience</li><li>Projects with several third-party systems that need to work together</li><li>Homeowners who want scenes spanning entertainment, lighting, curtains and security</li></ul></article>
+<article class="hap-card"><div class="hap-kicker">KNX Direction</div><h2>When KNX May Be More Suitable</h2><ul><li>New builds or major renovations where bus wiring can be planned from the start</li><li>Homes with many lighting circuits, curtain zones and climate-control points</li><li>Projects that prioritise a structured open-standard building-control foundation</li><li>Larger landed homes where lighting and shading infrastructure is a major part of the brief</li><li>Architect-led projects where keypad design and long-term building control are central considerations</li></ul></article>
+</div>
+</div>
+</section>
+
+<section class="hap-section" id="hap-hybrid">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Hybrid Approach</div><h2>Control4 KNX Integration: When to Combine Both Systems</h2><p class="hap-lead">For some larger Singapore homes, the answer to Control4 or KNX is not either-or. Each platform can serve a different layer of the home.</p><p>In one common project approach, KNX handles selected wired building controls such as lighting, curtains and climate, while Control4 provides a unified user interface and connects those functions with AV, security and whole-home scenes. The exact architecture should still be designed around the actual systems and interfaces available in the project.</p></div>
+<div aria-label="Hybrid KNX and Control4 architecture" class="hap-architecture">
+<div class="hap-arch-top"><span class="hap-arch-label">Hybrid Example</span><strong>Building automation below. Simple homeowner experience above.</strong></div>
+<div class="hap-arch-stack">
+<div class="hap-arch-layer is-control4"><h3>Control4</h3><p>Touchscreen · App · Remote · Home theatre · Security · Personalised scenes</p></div>
+<div aria-hidden="true" class="hap-arch-arrow"></div>
+<div class="hap-arch-layer is-knx"><h3>KNX</h3><p>Lighting · Curtains · Climate · Sensors</p></div>
+<div aria-hidden="true" class="hap-arch-arrow"></div>
+<div class="hap-arch-nodes"><div class="hap-arch-node">Lighting Loads</div><div class="hap-arch-node">Curtain Motors</div><div class="hap-arch-node">AC Interfaces</div><div class="hap-arch-node">Room Sensors</div></div>
+</div>
+</div>
+<div class="hap-project-proof">
+<div class="hap-project-image">
+<img alt="Swiss Club Road landed home project integrating KNX lighting with Control4 automation" decoding="async" height="850" loading="lazy" sizes="(max-width: 991px) 100vw, 54vw" src="/web/image/15682-50e024a9/WhatsApp%20Image%202024-05-15%20at%2011.40.28_6d85680d.jpg?width=1200" srcset="/web/image/15682-50e024a9/WhatsApp%20Image%202024-05-15%20at%2011.40.28_6d85680d.jpg?width=640 640w, /web/image/15682-50e024a9/WhatsApp%20Image%202024-05-15%20at%2011.40.28_6d85680d.jpg?width=960 960w, /web/image/15682-50e024a9/WhatsApp%20Image%202024-05-15%20at%2011.40.28_6d85680d.jpg?width=1200 1200w" width="1200">
+</div>
+<div class="hap-project-copy">
+<div class="hap-kicker">HAP Project Proof</div>
+<h3>Swiss Club Road: KNX + Control4 in One Landed Home</h3>
+<p>HAP’s Swiss Club Road project integrated KNX lighting, motorised curtain control and air-conditioning control into the Control4 platform so the homeowner could manage key functions through a cleaner, more consistent experience.</p>
+<p>This is a useful example of why larger projects do not always need to be treated as a simple platform-versus-platform decision. See the <a href="https://www.hap.sg/project-portfolio/landed/swiss-club-road-knx-control4-smart-home" rel="noopener noreferrer" target="_blank">Swiss Club Road KNX and Control4 project</a>.</p>
+<a class="hap-continue" href="#hap-advisor"><span>Continue reading</span>See what to consider before choosing</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hap-section hap-section-soft" id="hap-project-guide">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Decision Guide</div><h2>Control4 vs KNX Singapore: Which System Should You Choose?</h2><p>There is no single answer that fits every property. The right decision depends on the floor plan, renovation stage, electrical design, aesthetic requirements, budget, AV scope and long-term support expectations.</p></div>
+<div aria-label="Control4 and KNX project situation guide" class="hap-table-wrap" role="region" tabindex="0">
+<table>
+<caption class="hap-sr-only">General project directions for choosing Control4, KNX or a hybrid smart home approach</caption>
+<thead><tr><th scope="col">Project Situation</th><th scope="col">Worth Considering</th><th scope="col">Why</th></tr></thead>
+<tbody>
+<tr><th scope="row">Partial condominium renovation</th><td>Control4 may be worth exploring</td><td>Less-invasive integration may be possible depending on the existing electrical and network infrastructure.</td></tr>
+<tr><th scope="row">Full condominium renovation</th><td>Compare Control4 and KNX</td><td>KNX becomes more practical when bus wiring and distribution-board space can be planned early.</td></tr>
+<tr><th scope="row">Existing landed-home retrofit</th><td>Control4 or a hybrid approach may fit</td><td>The answer depends on existing wiring, lighting requirements and how much infrastructure is being replaced.</td></tr>
+<tr><th scope="row">New landed-home construction</th><td>Compare all three approaches</td><td>The project team can design the complete infrastructure and interface strategy from the start.</td></tr>
+<tr><th scope="row">AV and home-theatre-led project</th><td>Control4 often fits well</td><td>Control4 is more directly designed for entertainment integration, remotes and scene orchestration.</td></tr>
+<tr><th scope="row">Lighting and architecture-led project</th><td>KNX or a hybrid approach may fit</td><td>A structured lighting and building-control foundation may be valuable where there are many circuits and zones.</td></tr>
+<tr><th scope="row">Large GCB with many subsystems</th><td>Hybrid may be worth exploring</td><td>Different layers may be handled by different platforms while still presenting one simple homeowner experience.</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:18px; color:var(--hap-muted-2); font-size:.84rem;">These are general planning directions, not fixed rules. It is worth looking at the floor plan, electrical layout, lighting design, integration requirements and renovation scope before deciding which approach makes the most sense.</p>
+<aside aria-labelledby="hap-mid-cta-title" class="hap-inline-cta">
+<div class="hap-inline-cta-copy">
+<div class="hap-kicker">Decision Checkpoint</div>
+<p class="hap-inline-cta-title" id="hap-mid-cta-title">Not Sure Which Direction Fits Your Floor Plan?</p>
+<p>After comparing the main differences, HAP can help you look at your property type, renovation stage and the systems you want to integrate, then discuss whether Control4, KNX or a combined approach may be worth exploring.</p>
+</div>
+<a class="hap-btn hap-btn-primary" href="https://www.hap.sg/appointment/2" rel="noopener noreferrer" target="_blank">Discuss My Floor Plan with HAP</a>
+</aside>
+</div>
+</section>
+
+<section class="hap-section" id="hap-advisor">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Choosing What Fits</div><h2>How HAP Helps You Compare Control4 and KNX</h2><p>There’s no single system that makes sense for every home. The right approach depends on the property, renovation stage, systems you want to integrate and how you want to use the home.</p></div>
+<p class="hap-advisor-intro">For homeowners comparing Control4 Singapore and KNX Singapore, some of the things worth considering include:</p><div class="hap-advisor-grid">
+<div class="hap-advisor-item">Property type, floor plan and number of levels</div>
+<div class="hap-advisor-item">New build, full renovation or partial retrofit</div>
+<div class="hap-advisor-item">Lighting circuits, dimming and keypad requirements</div>
+<div class="hap-advisor-item">Curtain, blind and motor locations</div>
+<div class="hap-advisor-item">Air-conditioning system and available interfaces</div>
+<div class="hap-advisor-item">Home theatre, multi-room audio and entertainment scope</div>
+<div class="hap-advisor-item">Security, intercom, gate and CCTV integrations</div>
+<div class="hap-advisor-item">WiFi, data points, network and equipment-rack planning</div>
+<div class="hap-advisor-item">Preferred keypads, touchscreens, remotes and app control</div>
+<div class="hap-advisor-item">Project timing and coordination with the ID, architpusect and electrician</div>
+</div>
+<p style="margin-top:26px; max-width:900px;">For homeowners still comparing the overall scope rather than only the control platform, HAP’s <a href="https://www.hap.sg/whole-home-automation" rel="noopener noreferrer" target="_blank">whole-home automation</a> page explains how lighting, curtains, AV, security, networking and daily scenes can be planned as one project.</p>
+</div>
+</section>
+
+<section class="hap-section hap-section-soft">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Before Renovation</div><h2>Homeowner Checklist Before You Renovate</h2><p>Having these answers ready makes a Control4 vs KNX consultation much more useful.</p></div>
+<ul class="hap-checklist">
+<li>Confirm whether the project is pre-wiring, mid-renovation or already completed.</li>
+<li>Map the lighting circuits, dimming requirements and curtain or blind zones.</li>
+<li>List AV and home-theatre requirements, including multi-room audio.</li>
+<li>Identify the air-conditioning system type and whether integration is required.</li>
+<li>Confirm condominium renovation restrictions or other site constraints where applicable.</li>
+<li>Share the latest floor plan before switch points and ceilings are finalised.</li>
+<li>Decide where touchscreens, keypads and remotes should be available.</li>
+<li>Ask whether a combined Control4 KNX integration makes sense for the project.</li>
+</ul>
+</div>
+</section>
+
+<section class="hap-section" id="hap-faq">
+<div class="hap-wrap">
+<div class="hap-copy-mid"><div class="hap-kicker">Frequently Asked Questions</div><h2>Control4 vs KNX Singapore FAQs</h2></div>
+<div class="hap-faq">
+<details><summary><h3>Is Control4 or KNX better for a Singapore condominium?</h3></summary><div class="hap-faq-answer"><p>Control4 may be more practical for partial condominium renovations with limited rewiring access. KNX can still be considered when the unit is undergoing a full renovation and the necessary bus wiring, distribution-board space and control points can be planned before electrical work begins.</p></div></details>
+<details><summary><h3>Can Control4 and KNX work together in the same home?</h3></summary><div class="hap-faq-answer"><p>Yes. A larger project can use KNX for selected wired building controls such as lighting, curtains and climate, with Control4 providing the homeowner-facing interface and integrating AV, security and scenes. HAP’s Swiss Club Road project is one example.</p></div></details>
+<details><summary><h3>Is KNX more reliable than Control4?</h3></summary><div class="hap-faq-answer"><p>They use different architectures, so reliability should not be judged by the platform name alone. KNX distributes control across relevant bus devices, while Control4 uses a local controller for the integrated experience. Proper design, power, networking, commissioning and maintenance matter for both.</p></div></details>
+<details><summary><h3>How much does a Control4 or KNX system cost in Singapore?</h3></summary><div class="hap-faq-answer"><p>Cost depends on property size, lighting circuits, dimming, keypad and touchscreen quantity, curtain zones, air-conditioning integration, AV scope, networking, security, programming and renovation stage. A floor-plan-based proposal is more useful than a generic package price.</p></div></details>
+<details><summary><h3>Which system is better for a landed house renovation in Singapore?</h3></summary><div class="hap-faq-answer"><p>It depends on how extensive the renovation is. A full rewire can make KNX practical as a structured foundation. Where wiring access is limited, Control4 may be easier to integrate. Large projects can also combine the two.</p></div></details>
+<details><summary><h3>Does KNX support home theatre and AV integration?</h3></summary><div class="hap-faq-answer"><p>KNX can trigger or exchange selected AV commands through compatible interfaces, but it is not normally the dedicated platform for AV signal routing, source control, multi-room entertainment and home-theatre operation. Control4 is more directly designed for those functions.</p></div></details>
+<details><summary><h3>Does Control4 require internet or a subscription?</h3></summary><div class="hap-faq-answer"><p>Core Control4 automation can operate locally without a constant internet connection. Control4 also offers optional connected services for features such as remote access and enhanced support, depending on the system configuration. If you are considering Control4 Singapore, HAP can explain which services apply to the setup being discussed.</p></div></details>
+<details><summary><h3>Can KNX work without internet?</h3></summary><div class="hap-faq-answer"><p>Core KNX bus functions such as programmed lighting, blinds or climate control can operate locally without an internet connection when they are designed on the KNX bus. Remote access, cloud services and app-based visualisation may still depend on the selected gateway, server and network design.</p></div></details>
+<details><summary><h3>When should I plan my smart home system during a renovation?</h3></summary><div class="hap-faq-answer"><p>Smart home planning should happen before electrical wiring, switch positions, ceiling work, curtain pockets, network points and equipment-rack locations are finalised. Early planning keeps both Control4 and KNX options open and reduces expensive rework later.</p></div></details>
+</div>
+</div>
+</section>
+
+<section class="hap-final">
+<div aria-hidden="true" class="hap-final-media">
+<img alt="" decoding="async" height="1000" loading="lazy" sizes="100vw" src="/web/image/15519-270ccd09/WhatsApp%20Image%202024-05-15%20at%2010.44.27_46f6b784.jpg?width=1600" srcset="/web/image/15519-270ccd09/WhatsApp%20Image%202024-05-15%20at%2010.44.27_46f6b784.jpg?width=720 720w, /web/image/15519-270ccd09/WhatsApp%20Image%202024-05-15%20at%2010.44.27_46f6b784.jpg?width=1100 1100w, /web/image/15519-270ccd09/WhatsApp%20Image%202024-05-15%20at%2010.44.27_46f6b784.jpg?width=1600 1600w" width="1600" role="presentation">
+</div>
+<div class="hap-wrap hap-final-copy">
+<div class="hap-kicker">Planning Your Smart Home?</div>
+<h2>Let’s Explore the Right Approach for Your Project.</h2>
+<p>If you’re planning a smart home or renovation, HAP would be happy to discuss your property, renovation stage and the systems you’d like to integrate—from lighting and curtains to air-conditioning, AV and security. Whether you’re considering Control4, KNX or a combination of both, we can help you explore an approach that suits the way you want to live.</p>
+<a class="hap-btn hap-btn-primary" href="https://www.hap.sg/appointment/2" rel="noopener noreferrer" target="_blank">Book a Smart Home Consultation</a>
+</div>
+</section>
+</article>
