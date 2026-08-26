@@ -1,3 +1,12 @@
+<!--
+ODOO PAGE SEO SETTINGS (set in Website > Optimize SEO / page properties)
+Meta Title: McIntosh Singapore | Amplifiers, Streaming & Home Theater | HAP
+Meta Description: Explore McIntosh in Singapore with HAP. Compare amplifiers, streaming, stereo and home theater components, with system planning for your room and smart home.
+OG Title: McIntosh Singapore | Amplifiers, Streaming & Home Theater | HAP
+OG Description: Explore McIntosh in Singapore with HAP. Compare amplifiers, streaming, stereo and home theater components, with system planning for your room and smart home.
+OG Image: use the current private-cinema hero image already used on this page.
+Canonical: https://www.hap.sg/mcintosh-singapore (published page URL verified; keep Odoo's self-referencing canonical if already managed automatically).
+-->
 <div class="hap-mc-page" id="hap-mc-page">
 <style>
     .hap-mc-page,
@@ -799,6 +808,128 @@
     }
 
 
+
+    /* BROAD MCINTOSH SINGAPORE OVERVIEW */
+    .hap-mc-ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 40px;
+      border-top: 1px solid var(--mc-border);
+      border-bottom: 1px solid var(--mc-border);
+    }
+
+    .hap-mc-ecosystem-item {
+      min-width: 0;
+      padding: 28px 30px 28px 0;
+    }
+
+    .hap-mc-ecosystem-item + .hap-mc-ecosystem-item {
+      padding-left: 30px;
+      border-left: 1px solid var(--mc-border);
+    }
+
+    .hap-mc-ecosystem-item small {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--mc-accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .hap-mc-ecosystem-item h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .hap-mc-ecosystem-item p {
+      margin-bottom: 14px;
+      color: var(--mc-text-muted);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .hap-mc-ecosystem-models {
+      color: var(--mc-text-strong);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    /* POPULAR MCINTOSH COMPARISONS */
+    .hap-mc-comparison-list {
+      margin-top: 42px;
+      border-top: 1px solid var(--mc-border);
+    }
+
+    .hap-mc-comparison-row {
+      display: grid;
+      grid-template-columns: minmax(210px, .72fr) minmax(0, 1.28fr);
+      gap: 42px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--mc-border);
+    }
+
+    .hap-mc-comparison-title span {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--mc-accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .hap-mc-comparison-title h3 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.28;
+    }
+
+    .hap-mc-comparison-body {
+      min-width: 0;
+    }
+
+    .hap-mc-comparison-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .hap-mc-comparison-option {
+      padding-left: 18px;
+      border-left: 1px solid var(--mc-border);
+    }
+
+    .hap-mc-comparison-option strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--mc-text-strong);
+      font-size: 16px;
+    }
+
+    .hap-mc-comparison-option p,
+    .hap-mc-comparison-best {
+      color: var(--mc-text-muted);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .hap-mc-comparison-option p {
+      margin: 0;
+    }
+
+    .hap-mc-comparison-best {
+      margin: 18px 0 0 !important;
+    }
+
+    .hap-mc-comparison-best strong {
+      color: var(--mc-text);
+      font-weight: 700;
+    }
+
     /* CUSTOMER SITUATION RECOMMENDATIONS */
     .hap-mc-fit-list {
       margin-top: 42px;
@@ -1249,8 +1380,21 @@
       }
 
       .hap-mc-planning-grid,
-      .hap-mc-products {
+      .hap-mc-products,
+      .hap-mc-ecosystem-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hap-mc-ecosystem-item:nth-child(3) {
+        grid-column: 1 / -1;
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--mc-border);
+      }
+
+      .hap-mc-comparison-row {
+        grid-template-columns: minmax(180px, .55fr) minmax(0, 1.45fr);
+        gap: 28px;
       }
 
       .hap-mc-compare-grid {
@@ -1309,8 +1453,33 @@
       .hap-mc-topic-grid,
       .hap-mc-process,
       .hap-mc-cost-list,
-      .hap-mc-checklist {
+      .hap-mc-checklist,
+      .hap-mc-ecosystem-grid,
+      .hap-mc-comparison-row,
+      .hap-mc-comparison-options {
         grid-template-columns: 1fr;
+      }
+
+      .hap-mc-ecosystem-item,
+      .hap-mc-ecosystem-item + .hap-mc-ecosystem-item,
+      .hap-mc-ecosystem-item:nth-child(3) {
+        padding: 24px 0;
+        border-left: 0;
+        border-top: 0;
+        border-bottom: 1px solid var(--mc-border);
+      }
+
+      .hap-mc-ecosystem-grid {
+        border-bottom: 0;
+      }
+
+      .hap-mc-comparison-row {
+        gap: 18px;
+        padding: 26px 0;
+      }
+
+      .hap-mc-comparison-options {
+        gap: 16px;
       }
 
       .hap-mc-planning-item {
@@ -1434,10 +1603,10 @@
       }
     }
   </style>
-
+<!-- HERO -->
 <section aria-labelledby="hap-mc-h1" class="hap-mc-hero">
 <div class="hap-mc-hero-bg">
-<img alt="Dedicated private cinema with McIntosh home theater equipment integrated into the room" height="827" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-3---fully-custom.jpg?mh=827&amp;mw=1240&amp;rev=4417700211cf4da9819f0897743be0ce&amp;revision=44177002-11cf-4da9-819f-0897743be0ce" width="1240" loading="lazy">
+<img alt="Dedicated private cinema with McIntosh home theater equipment integrated into the room" height="827" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-3---fully-custom.jpg?mh=827&amp;mw=1240&amp;rev=4417700211cf4da9819f0897743be0ce&amp;revision=44177002-11cf-4da9-819f-0897743be0ce" width="1240"/>
 </div>
 <div class="hap-mc-hero-inner">
 <div class="hap-mc-hero-content">
@@ -1454,6 +1623,35 @@
 </div>
 </section>
 
+<!-- BROAD MCINTOSH SINGAPORE OVERVIEW -->
+<section class="hap-mc-section" id="hap-mc-overview">
+<div class="hap-mc-shell">
+<div class="hap-mc-kicker">McIntosh Singapore</div>
+<h2>McIntosh Systems Available in Singapore</h2>
+<p class="hap-mc-section-intro">HAP's current McIntosh range spans streaming and integrated stereo, separate preamplification and power amplification, plus home-theatre and custom-install components. This gives McIntosh Singapore buyers several system directions before the exact room, speakers and project requirements are considered.</p>
+<div class="hap-mc-ecosystem-grid">
+<article class="hap-mc-ecosystem-item">
+<small>01 · Music &amp; Digital Sources</small>
+<h3>Stereo &amp; Streaming</h3>
+<p>For customers adding network streaming, choosing an integrated amplifier, or building a focused two-channel system with fewer separate components.</p>
+<div class="hap-mc-ecosystem-models">DS200 · MSA5500 · MA12000</div>
+</article>
+<article class="hap-mc-ecosystem-item">
+<small>02 · Separate Components</small>
+<h3>Separates &amp; Amplification</h3>
+<p>For McIntosh systems built around a dedicated preamplifier and power amplifier, with a more modular signal chain and upgrade path.</p>
+<div class="hap-mc-ecosystem-models">C55 · C2800 · MC462</div>
+</article>
+<article class="hap-mc-ecosystem-item">
+<small>03 · Cinema &amp; Integration</small>
+<h3>Home Theater &amp; Custom Installation</h3>
+<p>For receiver-based cinemas, processor-based private theatres and multichannel amplification within a wider residential AV system.</p>
+<div class="hap-mc-ecosystem-models">MHT300 · MX124 · MI128</div>
+</article>
+</div>
+</div>
+</section>
+<!-- SYSTEM PLANNING -->
 <section class="hap-mc-section" id="hap-mc-planning">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">System Planning</div>
@@ -1487,7 +1685,7 @@
 </div>
 </div>
 </section>
-
+<!-- WHAT IS MCINTOSH -->
 <section class="hap-mc-section" id="hap-mc-known-for">
 <div class="hap-mc-shell hap-mc-editorial">
 <div class="hap-mc-editorial-sticky">
@@ -1496,7 +1694,7 @@
 <p class="hap-mc-section-intro">McIntosh Singapore buyers often begin with the brand itself. The useful answer is not a long history lesson; it is understanding why McIntosh remains relevant when planning a complete home theater, private cinema or high-end audio Singapore system.</p>
 <span class="hap-mc-inline-note">Explore HAP's McIntosh range below.</span>
 <figure class="hap-mc-editorial-media">
-<img alt="McIntosh C55 preamplifier front panel with blue output meters and black glass design" height="827" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/c55/c55-angle-left-background.jpg" width="1240">
+<img alt="McIntosh C55 preamplifier front panel with blue output meters and black glass design" height="827" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/c55/c55-angle-left-background.jpg" width="1240"/>
 </figure>
 </div>
 <div class="hap-mc-feature-list">
@@ -1523,7 +1721,7 @@
 </div>
 </div>
 </section>
-
+<!-- MUSIC VS CINEMA -->
 <section class="hap-mc-section" id="hap-mc-music-cinema">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">Music · Cinema · Both</div>
@@ -1531,7 +1729,7 @@
 <p class="hap-mc-section-intro">In McIntosh Singapore planning, the better question is how you want the system to work day to day. McIntosh home audio and McIntosh home cinema Singapore can serve different priorities even when they share the same room.</p>
 <div class="hap-mc-compare-grid">
 <article class="hap-mc-compare-card">
-<div class="hap-mc-compare-media"><img alt="McIntosh stereo listening system in a warm residential room" height="563" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/msa5500/msa5500-lifestyle2.jpg" width="1000"></div>
+<div class="hap-mc-compare-media"><img alt="McIntosh stereo listening system in a warm residential room" height="563" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/msa5500/msa5500-lifestyle2.jpg" width="1000"/></div>
 <span class="hap-mc-card-label">Stereo Music</span>
 <h3>Stereo Music Listening Priorities</h3>
 <p>For music, the front stage and room relationship come first.</p>
@@ -1543,7 +1741,7 @@
 </ul>
 </article>
 <article class="hap-mc-compare-card">
-<div class="hap-mc-compare-media"><img alt="Dedicated home cinema with McIntosh equipment integrated into the room" height="667" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-3---fully-custom.jpg" width="1000"></div>
+<div class="hap-mc-compare-media"><img alt="Dedicated home cinema with McIntosh equipment integrated into the room" height="667" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-3---fully-custom.jpg" width="1000"/></div>
 <span class="hap-mc-card-label">Home Cinema</span>
 <h3>Home Cinema Priorities</h3>
 <p>For home theatre, the full room geometry becomes part of the design.</p>
@@ -1555,7 +1753,7 @@
 </ul>
 </article>
 <article class="hap-mc-compare-card">
-<div class="hap-mc-compare-media"><img alt="McIntosh home entertainment system integrated into a bright living room" height="667" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-1---living-room.jpg" width="1000"></div>
+<div class="hap-mc-compare-media"><img alt="McIntosh home entertainment system integrated into a bright living room" height="667" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-1---living-room.jpg" width="1000"/></div>
 <span class="hap-mc-card-label">Combined System</span>
 <h3>Music and Cinema Together</h3>
 <p>A combined system can work well when the priorities are separated into layers. Music can remain the reference for the front stage while surround capability is added around it without making everyday listening unnecessarily complicated.</p>
@@ -1564,7 +1762,7 @@
 </div>
 </div>
 </section>
-
+<!-- SYSTEM TYPES -->
 <section class="hap-mc-section" id="hap-mc-systems">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">Where Should I Start?</div>
@@ -1572,7 +1770,7 @@
 <p class="hap-mc-section-intro">When homeowners search for McIntosh Singapore, they often need a clear route through the options without turning the decision into a product catalogue. Start with the system direction first, then shortlist the right components.</p>
 <div class="hap-mc-path-grid">
 <article class="hap-mc-path">
-<div class="hap-mc-path-media"><img alt="McIntosh MSA5500 streaming integrated amplifier from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3218/image_1920"></div>
+<div class="hap-mc-path-media"><img alt="McIntosh MSA5500 streaming integrated amplifier from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3218/image_1920"/></div>
 <div class="hap-mc-path-body">
 <span class="hap-mc-path-number">01 · Simple Stereo</span>
 <h3>Integrated Amplifier System for Music</h3>
@@ -1580,7 +1778,7 @@
 </div>
 </article>
 <article class="hap-mc-path">
-<div class="hap-mc-path-media"><img alt="McIntosh C55 preamplifier from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3086/image_1920"></div>
+<div class="hap-mc-path-media"><img alt="McIntosh C55 preamplifier from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3086/image_1920"/></div>
 <div class="hap-mc-path-body">
 <span class="hap-mc-path-number">02 · Flexible Stereo</span>
 <h3>Stereo Separates for Upgrades</h3>
@@ -1588,7 +1786,7 @@
 </div>
 </article>
 <article class="hap-mc-path">
-<div class="hap-mc-path-media"><img alt="McIntosh MA12000 integrated amplifier from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3034/image_1920"></div>
+<div class="hap-mc-path-media"><img alt="McIntosh MA12000 integrated amplifier from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3034/image_1920"/></div>
 <div class="hap-mc-path-body">
 <span class="hap-mc-path-number">03 · Everyday Living</span>
 <h3>Music and Television System</h3>
@@ -1596,7 +1794,7 @@
 </div>
 </article>
 <article class="hap-mc-path">
-<div class="hap-mc-path-media"><img alt="McIntosh MHT300 home theater receiver from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3195/image_1920"></div>
+<div class="hap-mc-path-media"><img alt="McIntosh MHT300 home theater receiver from HAP Singapore" loading="lazy" src="https://www.hap.sg/web/image/product.template/3195/image_1920"/></div>
 <div class="hap-mc-path-body">
 <span class="hap-mc-path-number">04 · Dedicated Cinema</span>
 <h3>Dedicated Home Cinema System</h3>
@@ -1606,7 +1804,7 @@
 </div>
 </div>
 </section>
-
+<!-- MCINTOSH PRODUCTS -->
 <section class="hap-mc-section" id="hap-mc-products">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">HAP McIntosh Range</div>
@@ -1620,8 +1818,8 @@
 <div class="hap-mc-products">
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh DS200 Streaming DAC from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3033/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh DS200<br>Use verified HAP product asset</div>
+<img alt="McIntosh DS200 Streaming DAC from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3033/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh DS200<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">Streaming DAC</div>
@@ -1636,8 +1834,8 @@
 </article>
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh MSA5500 2-Channel Streaming Integrated Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3218/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh MSA5500<br>Use verified HAP product asset</div>
+<img alt="McIntosh MSA5500 2-Channel Streaming Integrated Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3218/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh MSA5500<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">Streaming Integrated Amplifier</div>
@@ -1652,8 +1850,8 @@
 </article>
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh MA12000 2-Channel Integrated Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3034/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh MA12000<br>Use verified HAP product asset</div>
+<img alt="McIntosh MA12000 2-Channel Integrated Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3034/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh MA12000<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">Integrated Amplifier</div>
@@ -1676,8 +1874,8 @@
 <div class="hap-mc-products">
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh C55 2-Channel Preamplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3086/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh C55<br>Use verified HAP product asset</div>
+<img alt="McIntosh C55 2-Channel Preamplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3086/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh C55<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">Preamplifier</div>
@@ -1692,8 +1890,8 @@
 </article>
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh C2800 2-Channel Preamplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3035/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh C2800<br>Use verified HAP product asset</div>
+<img alt="McIntosh C2800 2-Channel Preamplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3035/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh C2800<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">Preamplifier</div>
@@ -1708,8 +1906,8 @@
 </article>
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh MC462 2-Channel Power Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3036/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh MC462<br>Use verified HAP product asset</div>
+<img alt="McIntosh MC462 2-Channel Power Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3036/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh MC462<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">Power Amplifier</div>
@@ -1732,8 +1930,8 @@
 <div class="hap-mc-products">
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh MHT300 Home Theater Receiver from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3195/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh MHT300<br>Use verified HAP product asset</div>
+<img alt="McIntosh MHT300 Home Theater Receiver from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3195/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh MHT300<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">Home Theater Receiver</div>
@@ -1748,8 +1946,8 @@
 </article>
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh MX124 A/V Processor from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3186/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh MX124<br>Use verified HAP product asset</div>
+<img alt="McIntosh MX124 A/V Processor from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3186/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh MX124<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">A/V Processor</div>
@@ -1764,8 +1962,8 @@
 </article>
 <article class="hap-mc-product">
 <div class="hap-mc-product-media">
-<img alt="McIntosh MI128 8-Channel Power Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3187/image_1920">
-<div class="hap-mc-product-fallback" hidden="">Product image slot<br>McIntosh MI128<br>Use verified HAP product asset</div>
+<img alt="McIntosh MI128 8-Channel Power Amplifier from HAP Singapore" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" src="https://www.hap.sg/web/image/product.template/3187/image_1920"/>
+<div class="hap-mc-product-fallback" hidden="">Product image slot<br/>McIntosh MI128<br/>Use verified HAP product asset</div>
 </div>
 <div class="hap-mc-product-body">
 <div class="hap-mc-product-category">8-Channel Power Amplifier</div>
@@ -1781,7 +1979,7 @@
 </div>
 </div>
 </div>
-</section>
+</section><!-- CUSTOMER SITUATION RECOMMENDATIONS -->
 <section class="hap-mc-section" id="hap-mc-fit">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">Choose by Situation</div>
@@ -1824,8 +2022,49 @@
 <p>A multichannel amplification direction for custom-install scenarios where several speaker channels need to be driven from one component, rather than a direct substitute for a dedicated stereo power amplifier such as the MC462.</p>
 </article>
 </div>
+</div>
+</section>
+
+<!-- POPULAR MCINTOSH COMPARISONS -->
+<section class="hap-mc-section" id="hap-mc-comparisons">
+<div class="hap-mc-shell">
+<div class="hap-mc-kicker">Decision Support</div>
+<h2>Popular McIntosh Comparisons</h2>
+<p class="hap-mc-section-intro">These comparisons focus on architecture and use case rather than declaring one McIntosh product universally better. They are useful starting points before the final system is matched to your room, sources, speakers and cinema requirements.</p>
+<div class="hap-mc-comparison-list">
+<article class="hap-mc-comparison-row">
+<div class="hap-mc-comparison-title"><span>01 · Integrated Stereo</span><h3>MSA5500 vs MA12000</h3></div>
+<div class="hap-mc-comparison-body">
+<div class="hap-mc-comparison-options">
+<div class="hap-mc-comparison-option"><strong>MSA5500</strong><p>A streaming integrated direction that combines network music playback, source control and loudspeaker amplification in one component.</p></div>
+<div class="hap-mc-comparison-option"><strong>MA12000</strong><p>A more substantial hybrid integrated-amplifier architecture that combines vacuum-tube preamplification with solid-state power amplification; streaming is handled by a suitable source component.</p></div>
+</div>
+<p class="hap-mc-comparison-best"><strong>Best suited when:</strong> choose the MSA5500 when built-in streaming and fewer boxes are priorities; investigate the MA12000 when the integrated amplifier itself is the centre of a higher-level two-channel system.</p>
+</div>
+</article>
+<article class="hap-mc-comparison-row">
+<div class="hap-mc-comparison-title"><span>02 · Stereo Separates</span><h3>C55 vs C2800</h3></div>
+<div class="hap-mc-comparison-body">
+<div class="hap-mc-comparison-options">
+<div class="hap-mc-comparison-option"><strong>C55</strong><p>A solid-state two-channel preamplifier for a separates system, providing source and volume control ahead of dedicated power amplification.</p></div>
+<div class="hap-mc-comparison-option"><strong>C2800</strong><p>A vacuum-tube two-channel preamplifier serving the same separates role through a different preamplifier architecture.</p></div>
+</div>
+<p class="hap-mc-comparison-best"><strong>Best suited when:</strong> first decide whether you want the C55 solid-state or C2800 vacuum-tube preamplifier direction, then match the chosen preamplifier with appropriate power amplification such as the MC462 where suitable.</p>
+</div>
+</article>
+<article class="hap-mc-comparison-row">
+<div class="hap-mc-comparison-title"><span>03 · Home Theater</span><h3>MHT300 vs MX124</h3></div>
+<div class="hap-mc-comparison-body">
+<div class="hap-mc-comparison-options">
+<div class="hap-mc-comparison-option"><strong>MHT300</strong><p>A receiver-based cinema architecture with multichannel processing and built-in speaker amplification in the main component.</p></div>
+<div class="hap-mc-comparison-option"><strong>MX124</strong><p>A processor-based cinema architecture. It manages multichannel audio/video processing and requires appropriate external power amplification for the speakers.</p></div>
+</div>
+<p class="hap-mc-comparison-best"><strong>Best suited when:</strong> start with the MHT300 for a more consolidated receiver-based cinema; investigate the MX124 when the project calls for a more modular processor-and-power-amplifier private-cinema architecture.</p>
+</div>
+</article>
+</div>
 <div aria-label="McIntosh system consultation" class="hap-mc-middle-cta">
-<p>Not sure which route fits your room, speakers or existing equipment? HAP can help narrow the system before you commit to individual components.</p>
+<p>Not sure which architecture fits your room, speakers or existing equipment? HAP can help narrow the system before you commit to individual components.</p>
 <div class="hap-mc-btn-row">
 <a class="hap-mc-btn hap-mc-btn--primary" data-cta-position="middle" href="https://www.hap.sg/contact-us" rel="noopener" target="_blank">Discuss Your McIntosh System</a>
 </div>
@@ -1833,13 +2072,14 @@
 </div>
 </section>
 
+<!-- SINGAPORE HOME PLANNING -->
 <section class="hap-mc-section" id="hap-mc-singapore-home">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">Residential Planning</div>
 <h2>Planning McIntosh for a Singapore Home</h2>
 <p class="hap-mc-section-intro">McIntosh amplifier Singapore installations work best when the infrastructure behind the room is planned early. For McIntosh system design, HAP looks beyond equipment placement to how the room, cabinetry, network and renovation stage affect everyday use.</p>
 <figure class="hap-mc-wide-media">
-<img alt="McIntosh home entertainment system integrated into a residential living room" height="827" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-1---living-room.jpg" width="1240">
+<img alt="McIntosh home entertainment system integrated into a residential living room" height="827" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-1---living-room.jpg" width="1240"/>
 <figcaption>Room layout, equipment location, cabling and access should be considered before the interior is locked in.</figcaption>
 </figure>
 <div class="hap-mc-topic-grid">
@@ -1886,7 +2126,7 @@
 </div>
 </div>
 </section>
-
+<!-- SPEAKER MATCHING -->
 <section class="hap-mc-section" id="hap-mc-speaker-matching">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">System Matching</div>
@@ -1894,7 +2134,7 @@
 <p class="hap-mc-section-intro">A McIntosh amplifier Singapore purchase is only one part of the result. McIntosh speaker matching, placement and room acoustics belong in the same conversation because the final sound is created by the complete chain.</p>
 <div class="hap-mc-speaker-layout">
 <figure class="hap-mc-speaker-media">
-<img alt="McIntosh stereo electronics with loudspeakers positioned in a residential listening room" height="698" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/msa5500/msa5500-lifestyle2.jpg" width="1240">
+<img alt="McIntosh stereo electronics with loudspeakers positioned in a residential listening room" height="698" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/msa5500/msa5500-lifestyle2.jpg" width="1240"/>
 </figure>
 <div class="hap-mc-speaker-copy">
 <div class="hap-mc-prose-panel">
@@ -1919,7 +2159,7 @@
 </div>
 </div>
 </section>
-
+<!-- SMART HOME -->
 <section class="hap-mc-section" id="hap-mc-smart-home">
 <div class="hap-mc-shell hap-mc-editorial">
 <div class="hap-mc-editorial-sticky">
@@ -1930,7 +2170,7 @@
 </div>
 <div>
 <figure class="hap-mc-integration-media">
-<img alt="Integrated home cinema with McIntosh equipment rack and residential AV system" height="827" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-3---fully-custom.jpg" width="1240">
+<img alt="Integrated home cinema with McIntosh equipment rack and residential AV system" height="827" loading="lazy" src="https://www.mcintoshlabs.com/-/media/images/mcintoshlabs/products/productimages/mht300/mht300-lifestyle-3---fully-custom.jpg" width="1240"/>
 </figure>
 <div class="hap-mc-feature-list">
 <div class="hap-mc-feature">
@@ -1953,12 +2193,12 @@
 </div>
 </div>
 </section>
-
+<!-- HAP PROCESS -->
 <section class="hap-mc-section" id="hap-mc-hap-process">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">HAP System Planning</div>
 <h2>How HAP Can Help Plan the Complete System</h2>
-<p class="hap-mc-section-intro">HAP plans the technology layer around the room and renovation so premium audio, home theatre, networking and wider home integration are considered before the finished interior locks in important decisions.</p><p class="hap-mc-process-links">See how this planning approach carries through HAP's <a class="hap-mc-text-link" href="https://www.hap.sg/project-portfolio/entertainment" rel="noopener" target="_blank">project portfolio</a> and <a class="hap-mc-text-link" href="https://www.hap.sg/whole-home-automation" rel="noopener" target="_blank">whole-home automation</a> work.</p>
+<p class="hap-mc-section-intro">HAP plans the technology layer around the room and renovation so premium audio, home theatre, networking and wider home integration are considered before the finished interior locks in important decisions.</p><p class="hap-mc-process-links">See how this planning approach carries through HAP's <a class="hap-mc-text-link" href="https://www.hap.sg/project-portfolio/landed" rel="noopener" target="_blank">project portfolio</a> and <a class="hap-mc-text-link" href="https://www.hap.sg/whole-home-automation" rel="noopener" target="_blank">whole-home automation</a> work.</p>
 <div class="hap-mc-process">
 <article class="hap-mc-process-step">
 <span>01</span>
@@ -1983,7 +2223,7 @@
 </div>
 </div>
 </section>
-
+<!-- COST -->
 <section class="hap-mc-section" id="hap-mc-cost">
 <div class="hap-mc-shell hap-mc-cost-grid">
 <div>
@@ -2006,7 +2246,7 @@
 </div>
 </div>
 </section>
-
+<!-- QUESTIONS -->
 <section class="hap-mc-section" id="hap-mc-questions">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">Before You Choose</div>
@@ -2026,7 +2266,7 @@
 </ul>
 </div>
 </section>
-
+<!-- SHOWROOM -->
 <section class="hap-mc-section" id="hap-mc-showroom">
 <div class="hap-mc-shell">
 <div class="hap-mc-showroom">
@@ -2046,12 +2286,12 @@
 </div>
 </div>
 </section>
-
+<!-- FAQ -->
 <section class="hap-mc-section" id="hap-mc-faq">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">FAQ</div>
 <h2>Frequently Asked Questions About McIntosh Singapore</h2>
-<p class="hap-mc-section-intro">Direct answers to common questions about McIntosh audio Singapore, stereo, home cinema, speaker matching, renovation planning and smart-home integration.</p>
+<p class="hap-mc-section-intro">Direct answers to common questions about McIntosh Singapore products, stereo, streaming, home cinema, speaker matching, renovation planning and smart-home integration.</p>
 <div class="hap-mc-faq">
 <details open="">
 <summary>What is McIntosh known for in high-end audio Singapore?</summary>
@@ -2085,10 +2325,31 @@
 <summary>Can McIntosh form part of a smart home?</summary>
 <div class="hap-mc-faq-answer"><p>It can form part of a wider smart-home and AV plan, but control capability should be verified for the exact McIntosh model and project. HAP plans the control layer, network and equipment access around the selected system rather than assuming identical Control4 or automation compatibility across every component.</p></div>
 </details>
+
+<details>
+<summary>Where can I explore McIntosh products in Singapore?</summary>
+<div class="hap-mc-faq-answer"><p>HAP's McIntosh Singapore page currently presents nine components across streaming and integrated stereo, separate preamplification and power amplification, plus home-theatre and custom-install categories, with published component prices. Contact HAP to confirm current availability and discuss the system direction that fits your room before visiting.</p></div>
+</details>
+<details>
+<summary>Which McIntosh product should I choose?</summary>
+<div class="hap-mc-faq-answer"><p>Start with the job the system needs to do rather than choosing the most expensive component. The DS200 suits an existing amplifier-and-speaker system that needs streaming; the MSA5500 is a streaming integrated route; the MA12000 is a more substantial integrated-amplifier direction; C55 or C2800 with separate power amplification suit a separates system; MHT300 and MX124 address different home-cinema architectures; and MI128 is intended for multichannel/custom-install amplification.</p></div>
+</details>
+<details>
+<summary>What is the difference between the McIntosh MHT300 and MX124?</summary>
+<div class="hap-mc-faq-answer"><p>The MHT300 is a receiver-based home-theatre component with processing and built-in speaker amplification. The MX124 is an A/V processor, so it handles the cinema processing and system control but requires appropriate external power amplification for the loudspeakers. The better architecture depends on the room, channel plan, rack space and level of system flexibility required.</p></div>
+</details>
+<details>
+<summary>Does the McIntosh MX124 need external amplification?</summary>
+<div class="hap-mc-faq-answer"><p>Yes. The MX124 is an A/V processor rather than a receiver with built-in speaker power amplification. A complete MX124-based cinema therefore needs suitable external power amplification selected around the speaker layout and project requirements.</p></div>
+</details>
+<details>
+<summary>Can HAP help plan a McIntosh private cinema in Singapore?</summary>
+<div class="hap-mc-faq-answer"><p>HAP can help plan the wider home-theatre and AV system around the room, speaker layout, equipment location, networking, cable routes, rack and ventilation requirements, renovation timing and smart-home integration. The exact McIntosh components should then be selected around that complete project plan and current availability.</p></div>
+</details>
 </div>
 </div>
 </section>
-
+<!-- FINAL CTA -->
 <section aria-labelledby="hap-mc-final-heading" class="hap-mc-final">
 <div class="hap-mc-shell">
 <div class="hap-mc-kicker">McIntosh Singapore</div>
