@@ -1,0 +1,1238 @@
+<t t-name="website.epson-projector-singapore">
+    <t t-call="website.layout">
+        <t t-set="title">Epson Projector Singapore | Supply &amp; Installation | HAP</t>
+        <t t-set="description">Compare Epson EH-LS670B, EH-LS970B and EH-LS12000B projectors in Singapore. HAP provides room planning, screen advice, pricing guidance and installation.</t>
+
+        <div id="wrap" class="oe_structure oe_empty">
+            <style>
+                .hap-epson-page {
+                    --bg: #050505;
+                    --panel: #10100f;
+                    --panel-2: #151411;
+                    --text: #fbf7ee;
+                    --muted: rgba(251, 247, 238, .72);
+                    --soft: rgba(251, 247, 238, .56);
+                    --line: rgba(255, 255, 255, .12);
+                    --gold: #d8b86f;
+                    --gold-light: #f4dc9a;
+                    --gold-dark: #8a6829;
+                    --max: 1180px;
+                    color: var(--text);
+                    background: var(--bg);
+                    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+                    line-height: 1.65;
+                    overflow: hidden;
+                }
+
+                .hap-epson-page * {
+                    box-sizing: border-box;
+                }
+
+                .hap-epson-page a {
+                    color: inherit;
+                    text-decoration: none;
+                }
+
+                .hap-epson-page img {
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                .hap-epson-page .wrap {
+                    width: min(var(--max), calc(100% - 40px));
+                    margin: 0 auto;
+                }
+
+                .hap-epson-page .section {
+                    padding: 88px 0;
+                }
+
+                .hap-epson-page .section-soft {
+                    background: #0b0b0a;
+                    border-top: 1px solid rgba(216, 184, 111, .12);
+                    border-bottom: 1px solid rgba(216, 184, 111, .12);
+                }
+
+                .hap-epson-page h1,
+                .hap-epson-page h2,
+                .hap-epson-page h3 {
+                    margin: 0;
+                    color: var(--text);
+                }
+
+                .hap-epson-page h1,
+                .hap-epson-page h2 {
+                    font-weight: 900;
+                    letter-spacing: -.045em;
+                    line-height: 1.04;
+                    text-wrap: balance;
+                }
+
+                .hap-epson-page h1 {
+                    max-width: 930px;
+                    margin: 0 auto;
+                    font-size: clamp(2.45rem, 5vw, 5rem);
+                    text-align: center;
+                }
+
+                .hap-epson-page h2 {
+                    max-width: 980px;
+                    margin: 0 auto;
+                    font-size: clamp(2rem, 4vw, 4rem);
+                    text-align: center;
+                }
+
+                .hap-epson-page h3 {
+                    font-size: 1.28rem;
+                    line-height: 1.25;
+                    letter-spacing: -.02em;
+                }
+
+                .hap-epson-page p {
+                    margin: 0;
+                    color: var(--muted);
+                }
+
+                .hap-epson-page strong {
+                    color: var(--text);
+                }
+
+                .hap-epson-page .eyebrow,
+                .hap-epson-page .kicker,
+                .hap-epson-page .label {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--gold-light);
+                    text-transform: uppercase;
+                    letter-spacing: .14em;
+                    font-size: .72rem;
+                    font-weight: 900;
+                }
+
+                .hap-epson-page .eyebrow,
+                .hap-epson-page .kicker {
+                    padding: 8px 14px;
+                    border-radius: 999px;
+                    border: 1px solid rgba(216, 184, 111, .28);
+                    background: rgba(216, 184, 111, .08);
+                }
+
+                .hap-epson-page .section-head {
+                    max-width: 980px;
+                    margin: 0 auto 40px;
+                    text-align: center;
+                }
+
+                .hap-epson-page .section-head .kicker {
+                    margin-bottom: 16px;
+                }
+
+                .hap-epson-page .section-head p {
+                    max-width: 820px;
+                    margin: 18px auto 0;
+                    font-size: 1.03rem;
+                }
+
+                .hap-epson-page .btn-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 12px;
+                    margin-top: 24px;
+                }
+
+                .hap-epson-page .btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 52px;
+                    padding: 13px 22px;
+                    border-radius: 999px;
+                    border: 1px solid var(--line);
+                    font-weight: 900;
+                    text-align: center;
+                    transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+                }
+
+                .hap-epson-page .btn:hover {
+                    transform: translateY(-2px);
+                }
+
+                .hap-epson-page .btn-primary {
+                    border: 0;
+                    color: #11100c !important;
+                    background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+                    box-shadow: 0 18px 42px rgba(216, 184, 111, .24);
+                }
+
+                .hap-epson-page .btn-ghost {
+                    background: rgba(255, 255, 255, .05);
+                    color: var(--text) !important;
+                }
+
+                .hap-epson-page .btn-ghost:hover {
+                    border-color: rgba(216, 184, 111, .42);
+                    background: rgba(216, 184, 111, .08);
+                }
+
+                .hap-epson-page .btn:focus-visible,
+                .hap-epson-page .quick-link:focus-visible,
+                .hap-epson-page summary:focus-visible,
+                .hap-epson-page .comparison:focus-visible {
+                    outline: 3px solid var(--gold-light);
+                    outline-offset: 4px;
+                }
+
+                .hap-epson-page .hero {
+                    position: relative;
+                    min-height: 690px;
+                    display: flex;
+                    align-items: center;
+                    padding: 92px 0 70px;
+                    border-bottom: 1px solid rgba(216, 184, 111, .16);
+                    background:
+                        linear-gradient(180deg, rgba(0, 0, 0, .58), rgba(0, 0, 0, .90)),
+                        url("https://www.hap.sg/web/image/28585-0469993c/width%282560%29.webp") center/cover no-repeat;
+                }
+
+                .hap-epson-page .hero-content {
+                    max-width: 1040px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                .hap-epson-page .hero .eyebrow {
+                    margin-bottom: 20px;
+                }
+
+                .hap-epson-page .hero-lead {
+                    max-width: 820px;
+                    margin: 20px auto 0;
+                    color: rgba(251, 247, 238, .82);
+                    font-size: clamp(1rem, 1.3vw, 1.16rem);
+                }
+
+                .hap-epson-page .hero-proof {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 12px;
+                    max-width: 920px;
+                    margin: 36px auto 0;
+                    padding: 16px;
+                    border-radius: 28px;
+                    border: 1px solid rgba(216, 184, 111, .28);
+                    background: rgba(0, 0, 0, .54);
+                    backdrop-filter: blur(8px);
+                }
+
+                .hap-epson-page .hero-proof div {
+                    min-height: 96px;
+                    padding: 18px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(255, 255, 255, .10);
+                    background: rgba(255, 255, 255, .035);
+                }
+
+                .hap-epson-page .hero-proof strong,
+                .hap-epson-page .hero-proof span {
+                    display: block;
+                }
+
+                .hap-epson-page .hero-proof strong {
+                    margin-bottom: 5px;
+                    font-size: 1rem;
+                }
+
+                .hap-epson-page .hero-proof span {
+                    color: var(--soft);
+                    font-size: .9rem;
+                    line-height: 1.5;
+                }
+
+                .hap-epson-page .quick-links {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 14px;
+                }
+
+                .hap-epson-page .quick-link {
+                    padding: 24px;
+                    border-radius: 24px;
+                    border: 1px solid var(--line);
+                    background: var(--panel);
+                    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+                }
+
+                .hap-epson-page .quick-link:hover {
+                    transform: translateY(-3px);
+                    border-color: rgba(216, 184, 111, .42);
+                    background: var(--panel-2);
+                }
+
+                .hap-epson-page .quick-link .label {
+                    margin-bottom: 12px;
+                }
+
+                .hap-epson-page .quick-link p {
+                    margin-top: 8px;
+                    font-size: .94rem;
+                }
+
+                .hap-epson-page .model-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 18px;
+                }
+
+                .hap-epson-page .model-card {
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 30px;
+                    border: 1px solid var(--line);
+                    background: var(--panel);
+                    box-shadow: 0 22px 60px rgba(0, 0, 0, .22);
+                }
+
+                .hap-epson-page .model-card.featured {
+                    border-color: rgba(216, 184, 111, .44);
+                    background: #14120d;
+                }
+
+                .hap-epson-page .model-media {
+                    aspect-ratio: 16 / 10;
+                    padding: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #080808;
+                    border-bottom: 1px solid rgba(255, 255, 255, .08);
+                }
+
+                .hap-epson-page .model-media img {
+                    height: 100%;
+                    object-fit: contain;
+                    filter: drop-shadow(0 20px 34px rgba(0, 0, 0, .52));
+                }
+
+                .hap-epson-page .model-copy {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                    padding: 26px;
+                }
+
+                .hap-epson-page .model-copy .label {
+                    margin-bottom: 12px;
+                }
+
+                .hap-epson-page .model-copy h3 {
+                    font-size: 1.65rem;
+                }
+
+                .hap-epson-page .model-copy p {
+                    margin-top: 10px;
+                }
+
+                .hap-epson-page .tag-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 7px;
+                    margin-top: 18px;
+                }
+
+                .hap-epson-page .tag-row span {
+                    display: inline-flex;
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    border: 1px solid rgba(216, 184, 111, .18);
+                    color: rgba(251, 247, 238, .78);
+                    background: rgba(0, 0, 0, .18);
+                    font-size: .7rem;
+                    font-weight: 800;
+                    letter-spacing: .06em;
+                    text-transform: uppercase;
+                }
+
+                .hap-epson-page .check-list {
+                    list-style: none;
+                    display: grid;
+                    gap: 10px;
+                    margin: 20px 0 0;
+                    padding: 0;
+                }
+
+                .hap-epson-page .check-list li {
+                    display: grid;
+                    grid-template-columns: 24px 1fr;
+                    gap: 9px;
+                    color: var(--muted);
+                    font-size: .94rem;
+                }
+
+                .hap-epson-page .check-list li:before {
+                    content: "\2713";
+                    width: 24px;
+                    height: 24px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    color: var(--gold-light);
+                    background: rgba(216, 184, 111, .12);
+                    font-weight: 900;
+                }
+
+                .hap-epson-page .model-copy .btn-row {
+                    margin-top: auto;
+                    padding-top: 24px;
+                    justify-content: flex-start;
+                }
+
+                .hap-epson-page .comparison {
+                    margin-top: 22px;
+                    overflow-x: auto;
+                    border: 1px solid var(--line);
+                    border-radius: 24px;
+                    background: var(--panel);
+                }
+
+                .hap-epson-page table {
+                    width: 100%;
+                    min-width: 760px;
+                    border-collapse: collapse;
+                }
+
+                .hap-epson-page th,
+                .hap-epson-page td {
+                    padding: 17px 18px;
+                    text-align: left;
+                    border-bottom: 1px solid rgba(255, 255, 255, .08);
+                    color: var(--muted);
+                    vertical-align: top;
+                }
+
+                .hap-epson-page th {
+                    color: var(--gold-light);
+                    background: rgba(216, 184, 111, .07);
+                    font-size: .78rem;
+                    letter-spacing: .08em;
+                    text-transform: uppercase;
+                }
+
+                .hap-epson-page tr:last-child td {
+                    border-bottom: 0;
+                }
+
+                .hap-epson-page td:first-child {
+                    color: var(--text);
+                    font-weight: 800;
+                }
+
+                .hap-epson-page .split {
+                    display: grid;
+                    grid-template-columns: .9fr 1.1fr;
+                    gap: 28px;
+                    align-items: stretch;
+                }
+
+                .hap-epson-page .feature-panel,
+                .hap-epson-page .info-card,
+                .hap-epson-page .service-card,
+                .hap-epson-page .proof-card,
+                .hap-epson-page .showroom-card,
+                .hap-epson-page .map-frame,
+                .hap-epson-page details {
+                    border-radius: 28px;
+                    border: 1px solid var(--line);
+                    background: var(--panel);
+                }
+
+                .hap-epson-page .feature-panel {
+                    padding: 34px;
+                    border-color: rgba(216, 184, 111, .34);
+                    background: #14120d;
+                }
+
+                .hap-epson-page .feature-panel h2 {
+                    text-align: left;
+                    font-size: clamp(2rem, 3.2vw, 3.4rem);
+                }
+
+                .hap-epson-page .feature-panel p {
+                    margin-top: 18px;
+                }
+
+                .hap-epson-page .feature-panel .kicker {
+                    margin-bottom: 16px;
+                }
+
+                .hap-epson-page .info-stack {
+                    display: grid;
+                    gap: 14px;
+                }
+
+                .hap-epson-page .info-card {
+                    padding: 24px;
+                }
+
+                .hap-epson-page .info-card p {
+                    margin-top: 8px;
+                    font-size: .95rem;
+                }
+
+                .hap-epson-page .service-grid,
+                .hap-epson-page .proof-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 16px;
+                }
+
+                .hap-epson-page .service-card,
+                .hap-epson-page .proof-card {
+                    padding: 26px;
+                }
+
+                .hap-epson-page .service-card .label,
+                .hap-epson-page .proof-card .label {
+                    margin-bottom: 12px;
+                }
+
+                .hap-epson-page .service-card p,
+                .hap-epson-page .proof-card p {
+                    margin-top: 9px;
+                    font-size: .95rem;
+                }
+
+                .hap-epson-page .cost-note {
+                    margin-top: 22px;
+                    padding: 22px;
+                    border-radius: 22px;
+                    border: 1px solid rgba(216, 184, 111, .24);
+                    background: rgba(216, 184, 111, .06);
+                }
+
+                .hap-epson-page .cost-note p {
+                    margin-top: 7px;
+                }
+
+                .hap-epson-page .link-panel {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 16px;
+                }
+
+                .hap-epson-page .link-card {
+                    padding: 28px;
+                    border-radius: 26px;
+                    border: 1px solid rgba(216, 184, 111, .22);
+                    background: #11110f;
+                }
+
+                .hap-epson-page .link-card p {
+                    margin-top: 9px;
+                }
+
+                .hap-epson-page .link-card .btn-row {
+                    justify-content: flex-start;
+                }
+
+                .hap-epson-page .showroom {
+                    display: grid;
+                    grid-template-columns: .9fr 1.1fr;
+                    gap: 22px;
+                    align-items: stretch;
+                }
+
+                .hap-epson-page .showroom-card {
+                    padding: 32px;
+                    border-color: rgba(216, 184, 111, .30);
+                    background: #14120d;
+                }
+
+                .hap-epson-page .showroom-card h2 {
+                    text-align: left;
+                    font-size: clamp(2rem, 3.2vw, 3.35rem);
+                }
+
+                .hap-epson-page .showroom-card p {
+                    margin-top: 16px;
+                }
+
+                .hap-epson-page .details {
+                    display: grid;
+                    gap: 10px;
+                    margin-top: 22px;
+                }
+
+                .hap-epson-page .detail {
+                    padding: 13px 15px;
+                    border-radius: 16px;
+                    border: 1px solid rgba(255, 255, 255, .09);
+                    background: rgba(0, 0, 0, .20);
+                    color: var(--muted);
+                }
+
+                .hap-epson-page .showroom-card .btn-row {
+                    justify-content: flex-start;
+                }
+
+                .hap-epson-page .map-frame {
+                    overflow: hidden;
+                    min-height: 500px;
+                }
+
+                .hap-epson-page .map-frame iframe {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 500px;
+                    border: 0;
+                    filter: grayscale(.18) brightness(.84) contrast(1.06);
+                }
+
+                .hap-epson-page .faq-list {
+                    max-width: 980px;
+                    margin: 0 auto;
+                    display: grid;
+                    gap: 12px;
+                }
+
+                .hap-epson-page details {
+                    overflow: hidden;
+                }
+
+                .hap-epson-page details[open] {
+                    border-color: rgba(216, 184, 111, .38);
+                    background: #14120d;
+                }
+
+                .hap-epson-page summary {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 18px;
+                    padding: 20px 22px;
+                    color: var(--text);
+                    cursor: pointer;
+                    font-weight: 850;
+                }
+
+                .hap-epson-page summary::-webkit-details-marker {
+                    display: none;
+                }
+
+                .hap-epson-page summary:after {
+                    content: "+";
+                    width: 32px;
+                    height: 32px;
+                    min-width: 32px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    color: var(--gold-light);
+                    border: 1px solid rgba(216, 184, 111, .28);
+                    background: rgba(216, 184, 111, .08);
+                    font-size: 1.1rem;
+                }
+
+                .hap-epson-page details[open] summary:after {
+                    content: "-";
+                }
+
+                .hap-epson-page .faq-answer {
+                    padding: 0 22px 22px;
+                }
+
+                .hap-epson-page .cta {
+                    padding: 62px 40px;
+                    border-radius: 34px;
+                    border: 1px solid rgba(216, 184, 111, .38);
+                    background: #14120d;
+                    text-align: center;
+                }
+
+                .hap-epson-page .cta p {
+                    max-width: 800px;
+                    margin: 18px auto 0;
+                    font-size: 1.04rem;
+                }
+
+                @media (max-width: 980px) {
+                    .hap-epson-page .hero-proof,
+                    .hap-epson-page .quick-links,
+                    .hap-epson-page .model-grid,
+                    .hap-epson-page .service-grid,
+                    .hap-epson-page .proof-grid,
+                    .hap-epson-page .split,
+                    .hap-epson-page .showroom {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .hap-epson-page .hero {
+                        min-height: auto;
+                    }
+
+                    .hap-epson-page .map-frame,
+                    .hap-epson-page .map-frame iframe {
+                        min-height: 380px;
+                    }
+                }
+
+                @media (max-width: 680px) {
+                    .hap-epson-page .wrap {
+                        width: calc(100% - 28px);
+                    }
+
+                    .hap-epson-page .section {
+                        padding: 62px 0;
+                    }
+
+                    .hap-epson-page .hero {
+                        padding: 68px 0 54px;
+                        background-position: 60% center;
+                    }
+
+                    .hap-epson-page h1 {
+                        font-size: clamp(2.15rem, 10.4vw, 3rem);
+                    }
+
+                    .hap-epson-page h2,
+                    .hap-epson-page .feature-panel h2,
+                    .hap-epson-page .showroom-card h2 {
+                        font-size: clamp(1.85rem, 9vw, 2.6rem);
+                    }
+
+                    .hap-epson-page .section-head {
+                        margin-bottom: 28px;
+                    }
+
+                    .hap-epson-page .btn {
+                        width: 100%;
+                    }
+
+                    .hap-epson-page .hero-proof,
+                    .hap-epson-page .feature-panel,
+                    .hap-epson-page .showroom-card,
+                    .hap-epson-page .cta {
+                        padding: 22px 18px;
+                        border-radius: 22px;
+                    }
+
+                    .hap-epson-page .model-card,
+                    .hap-epson-page .quick-link,
+                    .hap-epson-page .service-card,
+                    .hap-epson-page .proof-card,
+                    .hap-epson-page .info-card,
+                    .hap-epson-page .link-card,
+                    .hap-epson-page details {
+                        border-radius: 20px;
+                    }
+
+                    .hap-epson-page .model-copy {
+                        padding: 22px 18px;
+                    }
+
+                    .hap-epson-page .model-copy .btn-row,
+                    .hap-epson-page .link-card .btn-row,
+                    .hap-epson-page .showroom-card .btn-row {
+                        justify-content: center;
+                    }
+
+                    .hap-epson-page .link-panel {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .hap-epson-page summary {
+                        padding: 18px 16px;
+                        align-items: flex-start;
+                    }
+
+                    .hap-epson-page .faq-answer {
+                        padding: 0 16px 18px;
+                    }
+                }
+            </style>
+
+            <div class="hap-epson-page" id="epson-projector-singapore">
+                <section class="hero o_colored_level">
+                    <div class="wrap">
+                        <div class="hero-content">
+                            <div class="eyebrow">Epson Projector Singapore</div>
+                            <h1>Epson Projector Singapore: Consultation, Supply &amp; Installation</h1>
+                            <p class="hero-lead">HAP supplies and installs Epson projectors in Singapore for living rooms, media spaces and dedicated home theatres. Compare the EH-LS670B, EH-LS970B and EH-LS12000B, then plan the screen, placement, wiring, audio and control around your room.</p>
+
+                            <div class="btn-row">
+                                <a class="btn btn-primary" href="https://www.hap.sg/appointment/5?" target="_blank" rel="noopener">Book an Epson Projector Consultation</a>
+                                <a class="btn btn-ghost" href="#epson-models">Compare Epson Models</a>
+                            </div>
+
+                            <div class="hero-proof" aria-label="HAP Epson projector services">
+                                <div>
+                                    <strong>Model Selection</strong>
+                                    <span>EH-LS670B, EH-LS970B and EH-LS12000B guidance based on the room.</span>
+                                </div>
+                                <div>
+                                    <strong>Screen and Installation</strong>
+                                    <span>Screen size, throw distance, mounting, cabling and alignment planning.</span>
+                                </div>
+                                <div>
+                                    <strong>Complete AV Integration</strong>
+                                    <span>Audio, sources, networking, lighting and smart control planned together.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-soft o_colored_level">
+                    <div class="wrap">
+                        <div class="quick-links">
+                            <a class="quick-link" href="#epson-models">
+                                <span class="label">Compare</span>
+                                <h3>Epson Projector Models</h3>
+                                <p>Compare the room fit and installation style of the EH-LS670B, EH-LS970B and EH-LS12000B.</p>
+                            </a>
+                            <a class="quick-link" href="#epson-projector-price">
+                                <span class="label">Budget</span>
+                                <h3>Price and Installation Cost</h3>
+                                <p>See what affects the complete quotation alongside the projector itself.</p>
+                            </a>
+                            <a class="quick-link" href="#showroom">
+                                <span class="label">Visit HAP</span>
+                                <h3>Singapore Showroom Consultation</h3>
+                                <p>Discuss your room, screen size, viewing distance, audio system and renovation plans.</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section o_colored_level" id="epson-models">
+                    <div class="wrap">
+                        <div class="section-head">
+                            <div class="kicker">Epson Projector Models Singapore</div>
+                            <h2>Compare Epson EH-LS670B, EH-LS970B and EH-LS12000B</h2>
+                            <p>Each projector serves a different room and installation approach. Compare ultra short throw options for living spaces with a long-throw projector planned for a dedicated private cinema.</p>
+                        </div>
+
+                        <div class="model-grid">
+                            <article class="model-card">
+                                <div class="model-media">
+                                    <img src="https://www.hap.sg/web/image/product.product/6345/image_1024/%5BV11HB82152%5D%20Epson%20Lifestudio%20Grand%20EH-LS670B%204K%20PRO-UHD%20Laser%20Projection%20TV?unique=f93c3e2" alt="Epson EH-LS670B ultra short throw projector Singapore" loading="lazy"/>
+                                </div>
+                                <div class="model-copy">
+                                    <span class="label">Lifestyle Ultra Short Throw</span>
+                                    <h3>Epson EH-LS670B</h3>
+                                    <p>An ultra short throw projection TV for modern living rooms that want a large image without mounting a projector at the back of the room.</p>
+                                    <div class="tag-row">
+                                        <span>Living room</span>
+                                        <span>Ultra short throw</span>
+                                        <span>Daily entertainment</span>
+                                    </div>
+                                    <ul class="check-list">
+                                        <li>Suitable for streaming, sports and everyday family viewing.</li>
+                                        <li>Requires the correct cabinet height and a flat screen surface.</li>
+                                        <li>Useful where a ceiling-mounted projector is not preferred.</li>
+                                    </ul>
+                                    <div class="btn-row">
+                                        <a class="btn btn-primary" href="https://www.hap.sg/shop?search=Epson%20EH-LS670B" target="_blank" rel="noopener">Check EH-LS670B Price</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="model-card featured">
+                                <div class="model-media">
+                                    <img src="https://www.hap.sg/web/image/product.product/6718/image_1024/%5BLS970B%5D%20Epson%20LS970%20TV%204K%20PRO-UHD%20Ultra%20Short%20Throw%20AI%20Laser%20Projection?unique=f27b555" alt="Epson EH-LS970B premium ultra short throw projector Singapore" loading="lazy"/>
+                                </div>
+                                <div class="model-copy">
+                                    <span class="label">Premium Ultra Short Throw</span>
+                                    <h3>Epson Lifestudio Grand Plus EH-LS970B</h3>
+                                    <p>An ultra short throw projection TV for larger, carefully planned living rooms and media spaces where the screen, cabinet, lighting and audio form one considered installation.</p>
+                                    <div class="tag-row">
+                                        <span>Premium living room</span>
+                                        <span>Ultra short throw</span>
+                                        <span>Large-screen media</span>
+                                    </div>
+                                    <ul class="check-list">
+                                        <li>Suitable for a polished front-wall projector installation.</li>
+                                        <li>Best considered with screen type and ambient light control.</li>
+                                        <li>Pairs naturally with upgraded audio and smart control.</li>
+                                    </ul>
+                                    <div class="btn-row">
+                                        <a class="btn btn-primary" href="https://www.hap.sg/shop?search=Epson%20EH-LS970B" target="_blank" rel="noopener">Check EH-LS970B Price</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="model-card">
+                                <div class="model-media">
+                                    <img src="https://www.hap.sg/web/image/43916-ba9c6273/LS12000B_7%20%281%29.webp" alt="Epson EH-LS12000B home theater projector Singapore" loading="lazy"/>
+                                </div>
+                                <div class="model-copy">
+                                    <span class="label">Dedicated Home Theatre</span>
+                                    <h3>Epson EH-LS12000B</h3>
+                                    <p>A long-throw projector direction for private cinema rooms where the projector, screen, seating, sound and lighting are designed as one experience.</p>
+                                    <div class="tag-row">
+                                        <span>Private cinema</span>
+                                        <span>Long throw</span>
+                                        <span>External AV system</span>
+                                    </div>
+                                    <ul class="check-list">
+                                        <li>Suitable for a dedicated room with controlled lighting.</li>
+                                        <li>Requires correct throw distance, mounting and cable planning.</li>
+                                        <li>Best paired with a proper screen and surround sound system.</li>
+                                    </ul>
+                                    <div class="btn-row">
+                                        <a class="btn btn-primary" href="https://www.hap.sg/shop/eh-ls12000b-epson-home-theater-eh-ls12000b-4k-3lcd-laser-projector-204?category=95" target="_blank" rel="noopener">Check EH-LS12000B Price</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="comparison" role="region" aria-label="Epson projector model comparison" tabindex="0">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comparison</th>
+                                        <th>EH-LS670B</th>
+                                        <th>EH-LS970B</th>
+                                        <th>EH-LS12000B</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Typical room fit</td>
+                                        <td>Everyday living-room entertainment</td>
+                                        <td>Premium living room or media space</td>
+                                        <td>Dedicated private cinema</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Projector style</td>
+                                        <td>Ultra short throw</td>
+                                        <td>Ultra short throw</td>
+                                        <td>Long throw</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Placement direction</td>
+                                        <td>Near the screen wall</td>
+                                        <td>Near the screen wall</td>
+                                        <td>Mounted farther from the screen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Planning priority</td>
+                                        <td>Cabinet height and screen flatness</td>
+                                        <td>Screen, cabinet, lighting and room finish</td>
+                                        <td>Throw distance, mounting, seating and AV rack</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Typical system</td>
+                                        <td>Projector, screen and simple audio</td>
+                                        <td>Projector, premium screen, audio and control</td>
+                                        <td>Projector, cinema screen, surround sound and sources</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entertainment approach</td>
+                                        <td>Integrated Google TV and Sound by Bose</td>
+                                        <td>Integrated Google TV, Sound by Bose and AI image processing</td>
+                                        <td>Planned with external sources and a dedicated AV system</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="btn-row">
+                            <a class="btn btn-ghost" href="https://www.hap.sg/epson-ultra-short-throw-projector" target="_blank" rel="noopener">Compare Epson Ultra Short Throw Projectors</a>
+                            <a class="btn btn-primary" href="https://www.hap.sg/appointment/5?" target="_blank" rel="noopener">Ask HAP Which Model Fits</a>
+                        </div>
+
+                        <div class="cost-note">
+                            <strong>What does Epson 3LCD laser projection mean?</strong>
+                            <p>3LCD refers to Epson's three-panel image system, while laser refers to the light source. All three models on this page use Epson 3LCD and laser projection, but room conditions, screen selection and installation remain central to the final result.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-soft o_colored_level" id="epson-projector-price">
+                    <div class="wrap">
+                        <div class="split">
+                            <article class="feature-panel">
+                                <div class="kicker">Epson Projector Price Singapore</div>
+                                <h2>What Affects the Projector and Installation Cost?</h2>
+                                <p>The complete cost depends on more than the projector model. A proper quotation may also include the projector screen, brackets, cabling, power points, ceiling work, audio connection, source devices, control and final setup.</p>
+                                <div class="btn-row" style="justify-content:flex-start;">
+                                    <a class="btn btn-primary" href="https://www.hap.sg/appointment/5?" target="_blank" rel="noopener">Request a Project Quotation</a>
+                                </div>
+                            </article>
+
+                            <div class="info-stack">
+                                <article class="info-card">
+                                    <h3>Projector Model and Performance Level</h3>
+                                    <p>Ultra short throw lifestyle projectors and dedicated home theater projectors require different budgets and installation approaches.</p>
+                                </article>
+                                <article class="info-card">
+                                    <h3>Screen Type and Screen Size</h3>
+                                    <p>The screen surface, frame, motorisation and size affect both image quality and the installation scope.</p>
+                                </article>
+                                <article class="info-card">
+                                    <h3>Placement, Cabling and Site Conditions</h3>
+                                    <p>Throw distance, ceiling access, concealed cable routes, power location, cabinetry and renovation stage can change the work required.</p>
+                                </article>
+                                <article class="info-card">
+                                    <h3>Audio, Sources and Smart Control</h3>
+                                    <p>Speakers, AV receivers, streaming devices, Kaleidescape, networking, lighting scenes and control can be quoted as one complete system.</p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="cost-note">
+                            <strong>For an accurate quotation</strong>
+                            <p>Share your floor plan, room photos, preferred screen size, ceiling height, viewing distance and whether the project is a new renovation or an upgrade to an existing room.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section o_colored_level" id="epson-projector-installation">
+                    <div class="wrap">
+                        <div class="section-head">
+                            <div class="kicker">Epson Projector Installation Singapore</div>
+                            <h2>Projector, Screen and AV Planning for the Actual Room</h2>
+                            <p>HAP checks how the room will be used before recommending a projector. This reduces the risk of choosing a model that does not suit the light level, throw distance, screen size or installation condition.</p>
+                        </div>
+
+                        <div class="service-grid">
+                            <article class="service-card">
+                                <span class="label">01 Room Review</span>
+                                <h3>Room Size, Daylight and Viewing Distance</h3>
+                                <p>We review the wall, windows, seating, room depth and daily viewing habits before deciding on the projector direction.</p>
+                            </article>
+                            <article class="service-card">
+                                <span class="label">02 Screen Planning</span>
+                                <h3>Screen Size, Surface and Position</h3>
+                                <p>The projector and screen need to work together. Ultra short throw setups especially require a suitable and properly aligned surface.</p>
+                            </article>
+                            <article class="service-card">
+                                <span class="label">03 Installation</span>
+                                <h3>Placement, Mounting and Cabling</h3>
+                                <p>We plan projector position, brackets, power, signal cables, ventilation and service access for a cleaner handover.</p>
+                            </article>
+                            <article class="service-card">
+                                <span class="label">04 Audio</span>
+                                <h3>Speakers and AV System Integration</h3>
+                                <p>The audio system should match the screen scale and room. HAP can coordinate speakers, subwoofers, AV receivers and sources.</p>
+                            </article>
+                            <article class="service-card">
+                                <span class="label">05 Control</span>
+                                <h3>Simple Source, Lighting and Projector Control</h3>
+                                <p>Projector power, source selection, lighting scenes and blinds can be made easier through an integrated control approach.</p>
+                            </article>
+                            <article class="service-card">
+                                <span class="label">06 Handover</span>
+                                <h3>Alignment, Testing and User Guidance</h3>
+                                <p>After installation, the system is checked and explained so the household or team can use it confidently.</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-soft o_colored_level">
+                    <div class="wrap">
+                        <div class="section-head">
+                            <div class="kicker">Ultra Short Throw or Long Throw</div>
+                            <h2>Choose the Projector Style Before Choosing the Model</h2>
+                            <p>The projector layout is usually decided by the room first. Ultra short throw is useful when the projector needs to stay near the front wall, while long throw suits a dedicated cinema with planned placement, cabling and light control.</p>
+                        </div>
+
+                        <div class="link-panel">
+                            <article class="link-card">
+                                <span class="label">Living Room and Media Space</span>
+                                <h3>Epson Ultra Short Throw Projectors</h3>
+                                <p>Consider the EH-LS670B or EH-LS970B when you want a large image with the projector positioned near the screen wall. Cabinet height, screen flatness and daylight remain important.</p>
+                                <div class="btn-row">
+                                    <a class="btn btn-ghost" href="https://www.hap.sg/epson-ultra-short-throw-projector" target="_blank" rel="noopener">View Epson UST Guide</a>
+                                </div>
+                            </article>
+                            <article class="link-card">
+                                <span class="label">Dedicated Cinema and Wider Projector Planning</span>
+                                <h3>Projector Singapore Guide</h3>
+                                <p>For broader advice on projector screens, home cinema layouts, office installations and other projector requirements, use HAP's main projector planning page.</p>
+                                <div class="btn-row">
+                                    <a class="btn btn-ghost" href="https://www.hap.sg/projector-singapore" target="_blank" rel="noopener">View Projector Singapore Guide</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section o_colored_level">
+                    <div class="wrap">
+                        <div class="section-head">
+                            <div class="kicker">Why HAP</div>
+                            <h2>Why Buy and Install an Epson Projector Through HAP?</h2>
+                            <p>HAP focuses on the complete result rather than a standalone product purchase. The recommendation is connected to the room, screen, audio, sources, cabling and long-term usability.</p>
+                        </div>
+
+                        <div class="proof-grid">
+                            <article class="proof-card">
+                                <span class="label">Room-First Advice</span>
+                                <h3>Selection Based on Real Installation Conditions</h3>
+                                <p>We compare the Epson model against room depth, daylight, viewing distance, screen size and the renovation stage.</p>
+                            </article>
+                            <article class="proof-card">
+                                <span class="label">Complete System Planning</span>
+                                <h3>Projector, Screen, Sound and Sources Together</h3>
+                                <p>The projector can be planned with speakers, AV electronics, streaming, Kaleidescape, network and control.</p>
+                            </article>
+                            <article class="proof-card">
+                                <span class="label">Clean Installation</span>
+                                <h3>Cabling and Placement Considered Early</h3>
+                                <p>Planning before renovation helps reduce visible wiring, awkward equipment placement and avoidable changes later.</p>
+                            </article>
+                            <article class="proof-card">
+                                <span class="label">Local Consultation</span>
+                                <h3>Singapore Showroom and Site Discussion</h3>
+                                <p>Customers can discuss floor plans, photos, room constraints and system goals with HAP before committing.</p>
+                            </article>
+                            <article class="proof-card">
+                                <span class="label">Integration Experience</span>
+                                <h3>Lighting and Smart Home Coordination</h3>
+                                <p>For integrated homes, the projector experience can be coordinated with lighting scenes, blinds and source control.</p>
+                            </article>
+                            <article class="proof-card">
+                                <span class="label">After-Sales Support</span>
+                                <h3>Practical Help After Handover</h3>
+                                <p>HAP remains available for system questions, adjustments and future AV upgrades after the installation is completed.</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-soft o_colored_level" id="showroom">
+                    <div class="wrap">
+                        <div class="showroom">
+                            <article class="showroom-card">
+                                <div class="kicker" style="margin-bottom:16px;">Showroom Consultation</div>
+                                <h2>Discuss Your Epson Projector Setup in Singapore</h2>
+                                <p>Bring your floor plan, room photos or renovation drawings. HAP can help you compare the projector style, screen size, placement, audio system and installation scope before you decide.</p>
+
+                                <div class="details">
+                                    <div class="detail"><strong>Address:</strong> 55 Ubi Avenue 3, Aspial One, Unit 01-04, Singapore 408864</div>
+                                    <div class="detail"><strong>Contact:</strong> <a href="https://api.whatsapp.com/send?phone=6597626815" target="_blank" rel="noopener">+65 9762 6815</a></div>
+                                    <div class="detail"><strong>Email:</strong> <a href="mailto:contact@hap.sg">contact@hap.sg</a></div>
+                                    <div class="detail"><strong>Hours:</strong> Monday to Friday, 9am to 6pm. Appointment recommended.</div>
+                                </div>
+
+                                <div class="btn-row">
+                                    <a class="btn btn-primary" href="https://www.hap.sg/appointment/5?" target="_blank" rel="noopener">Book a Showroom Appointment</a>
+                                    <a class="btn btn-ghost" href="https://api.whatsapp.com/send?phone=6597626815" target="_blank" rel="noopener">WhatsApp HAP</a>
+                                </div>
+                            </article>
+
+                            <div class="map-frame">
+                                <iframe aria-label="HAP showroom map" src="https://maps.google.com/maps?q=55%20Ubi%20Avenue%203%20Singapore%20408864%20Singapore&amp;t=m&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section o_colored_level">
+                    <div class="wrap">
+                        <div class="section-head">
+                            <div class="kicker">Frequently Asked Questions</div>
+                            <h2>Epson Projector Singapore FAQs</h2>
+                            <p>Clear answers to common questions about Epson projector selection, pricing, screens and installation in Singapore.</p>
+                        </div>
+
+                        <div class="faq-list">
+                            <details name="epson-faq" open="">
+                                <summary>Which Epson projector is suitable for a living room?</summary>
+                                <div class="faq-answer">
+                                    <p>The EH-LS670B and EH-LS970B suit many living rooms because both are ultra short throw projectors positioned near the screen wall. Choose between them after considering the required image size, room brightness, cabinet dimensions, screen, audio and overall finish.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>Which Epson projector is suitable for a dedicated home theater?</summary>
+                                <div class="faq-answer">
+                                    <p>The EH-LS12000B is the dedicated home theatre option on this page. Plan it with the correct throw distance, a cinema screen, controlled lighting, fixed placement and an external surround sound system.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>What is the difference between EH-LS670B and EH-LS970B?</summary>
+                                <div class="faq-answer">
+                                    <p>Both are 4K ultra short throw laser projection TVs with Google TV and Sound by Bose. Epson lists the EH-LS670B for images up to 120 inches, while the EH-LS970B supports up to 150 inches and includes AI image processing. The room, screen and cabinet dimensions should still determine suitability.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>Do I need a projector screen?</summary>
+                                <div class="faq-answer">
+                                    <p>A proper projector screen is recommended for better flatness, alignment, brightness and contrast. Ultra short throw projectors are particularly sensitive to an uneven wall, so the screen choice should be planned with the projector.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>How do I choose the correct projector screen size?</summary>
+                                <div class="faq-answer">
+                                    <p>Start with viewing distance, available wall area, seating layout, room brightness and the type of content you watch. Then confirm that the projector's throw requirements, screen position and cabinet or mounting location can produce that image size before renovation or cabling is finalised.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>How much does Epson projector installation cost in Singapore?</summary>
+                                <div class="faq-answer">
+                                    <p>The installation cost depends on projector type, screen size, mounting method, cable route, ceiling condition, power location, audio connection, cabinetry and control requirements. HAP provides a project quotation after reviewing the room and scope.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>Can HAP supply the projector, screen and audio as one package?</summary>
+                                <div class="faq-answer">
+                                    <p>Yes. HAP can plan the Epson projector together with the screen, speakers, AV receiver, source devices, networking and smart control where required.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>Can HAP install Epson projectors for offices, classrooms and commercial spaces?</summary>
+                                <div class="faq-answer">
+                                    <p>HAP can discuss projector requirements for meeting rooms, training rooms, classrooms and selected commercial spaces. The correct projector family should be confirmed from room size, brightness, screen size, mounting and presentation needs.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>What should I prepare before asking for a quotation?</summary>
+                                <div class="faq-answer">
+                                    <p>Prepare a floor plan or room dimensions, photos of the screen wall and ceiling, viewing distance, preferred screen size, renovation stage and a short description of the audio and source devices you want to use.</p>
+                                </div>
+                            </details>
+
+                            <details name="epson-faq">
+                                <summary>Can I visit HAP before deciding?</summary>
+                                <div class="faq-answer">
+                                    <p>Yes. A showroom consultation can be booked so HAP can understand your room, intended use, screen size, installation constraints and budget direction before recommending the next step.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section section-soft o_colored_level">
+                    <div class="wrap">
+                        <div class="cta">
+                            <div class="kicker">Plan with Confidence</div>
+                            <h2>Plan the Epson Projector Around Your Room</h2>
+                            <p>Speak with HAP before finalising the projector, screen, placement, audio and cabling. A short planning discussion can help avoid an unsuitable model, screen size or installation approach.</p>
+                            <div class="btn-row">
+                                <a class="btn btn-primary" href="https://www.hap.sg/appointment/5?" target="_blank" rel="noopener">Book Epson Projector Consultation</a>
+                                <a class="btn btn-ghost" href="https://api.whatsapp.com/send?phone=6597626815" target="_blank" rel="noopener">WhatsApp HAP</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+</t>
