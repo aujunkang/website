@@ -1,0 +1,1559 @@
+<style>
+  .ev-page {
+    background: #050505;
+    color: #ffffff;
+    font-family: inherit;
+    overflow: hidden;
+  }
+
+  .ev-page * {
+    box-sizing: border-box;
+  }
+
+  .ev-container {
+    width: min(1180px, calc(100% - 36px));
+    margin: 0 auto;
+  }
+
+  .ev-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.34) 100%),
+      linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.96) 100%),
+      url("https://outgoing-oyster-428.convex.cloud/api/storage/555b2d82-16c7-4105-aeee-2464539a5f43") center / cover no-repeat;
+  }
+
+  .ev-hero-inner {
+    width: min(1180px, calc(100% - 36px));
+    margin: 0 auto;
+    padding: 112px 0 92px;
+  }
+
+  .ev-hero-copy {
+    max-width: 840px;
+  }
+
+  .ev-eyebrow {
+    display: inline-block;
+    color: #c8a45d;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .ev-hero h1,
+  .ev-section-title h2,
+  .ev-split-copy h2,
+  .ev-review-copy h2,
+  .ev-final-cta h2,
+  .ev-faq-head h2,
+  .ev-compare-head h2,
+  .ev-hap-way-copy h2,
+  .ev-model-finder-head h2 {
+    color: #ffffff;
+    letter-spacing: -0.045em;
+  }
+
+  .ev-hero h1 {
+    font-size: clamp(42px, 6vw, 86px);
+    line-height: 0.95;
+    margin: 0 0 24px;
+  }
+
+  .ev-hero p {
+    color: rgba(255,255,255,0.82);
+    font-size: 18px;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0 0 34px;
+  }
+
+  .ev-hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 34px;
+  }
+
+  .ev-hero-points span {
+    color: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .ev-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .ev-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 14px 25px;
+    border-radius: 999px;
+    font-weight: 850;
+    line-height: 1.2;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+  }
+
+  .ev-btn-primary {
+    background: #b8914d;
+    color: #ffffff !important;
+    box-shadow: 0 16px 34px rgba(184,145,77,0.28);
+  }
+
+  .ev-btn-primary:hover {
+    background: #a47f3f;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+  }
+
+  .ev-btn-secondary {
+    border: 1px solid rgba(255,255,255,0.38);
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .ev-btn-secondary:hover {
+    background: rgba(255,255,255,0.16);
+    color: #ffffff !important;
+  }
+
+  .ev-text-link {
+    display: inline-flex;
+    color: #c8a45d !important;
+    font-weight: 850;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(200,164,93,0.45);
+    padding-bottom: 4px;
+  }
+
+  .ev-text-link:hover {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255,255,255,0.55);
+  }
+
+  .ev-section-title {
+    background: #050505;
+    padding: 78px 0 36px;
+    text-align: center;
+  }
+
+  .ev-section-title h2 {
+    font-size: clamp(31px, 4vw, 54px);
+    line-height: 1.07;
+    margin: 0;
+  }
+
+  .ev-section-title p {
+    color: rgba(255,255,255,0.64);
+    max-width: 900px;
+    margin: 18px auto 0;
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+
+  .ev-model-finder {
+    background: #050505;
+    padding: 24px 0 82px;
+  }
+
+  .ev-model-finder-head {
+    max-width: 900px;
+    margin: 0 auto 28px;
+    text-align: center;
+  }
+
+  .ev-model-finder-head h2 {
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.07;
+    margin: 0 0 16px;
+  }
+
+  .ev-model-finder-head p {
+    color: rgba(255,255,255,0.64);
+    font-size: 16.5px;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .ev-model-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .ev-model-card {
+    position: relative;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.015)),
+      #111111;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 30px 24px;
+    min-height: 250px;
+    overflow: hidden;
+  }
+
+  .ev-model-card:before {
+    content: "";
+    position: absolute;
+    inset: auto 24px 0 24px;
+    height: 2px;
+    background: #c8a45d;
+    opacity: 0.75;
+  }
+
+  .ev-model-card:hover {
+    border-color: rgba(200,164,93,0.34);
+  }
+
+  .ev-model-tag {
+    color: #c8a45d;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .ev-model-card h3 {
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    margin: 0 0 12px;
+  }
+
+  .ev-model-card p {
+    color: rgba(255,255,255,0.68);
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 18px;
+  }
+
+  .ev-model-reco {
+    color: rgba(255,255,255,0.9);
+    font-weight: 850;
+    font-size: 14px;
+  }
+
+  .ev-hap-way {
+    background: #050505;
+    padding: 0 0 82px;
+  }
+
+  .ev-hap-way-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 0;
+    background: #111111;
+    border: 1px solid rgba(255,255,255,0.09);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+  }
+
+  .ev-hap-way-copy {
+    padding: 60px 48px;
+    background:
+      radial-gradient(circle at top left, rgba(200,164,93,0.18), transparent 42%),
+      #111111;
+  }
+
+  .ev-hap-way-copy h2 {
+    font-size: clamp(30px, 4vw, 56px);
+    line-height: 1.05;
+    margin: 0 0 18px;
+  }
+
+  .ev-hap-way-copy p {
+    color: rgba(255,255,255,0.72);
+    font-size: 16.5px;
+    line-height: 1.78;
+    margin: 0;
+  }
+
+  .ev-hap-way-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ev-step {
+    padding: 34px 28px;
+    border-left: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+  }
+
+  .ev-step:nth-child(3),
+  .ev-step:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  .ev-step-num {
+    color: #c8a45d;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .ev-step h3 {
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0 0 10px;
+  }
+
+  .ev-step p {
+    color: rgba(255,255,255,0.66);
+    font-size: 15px;
+    line-height: 1.68;
+    margin: 0;
+  }
+
+  .ev-product-section {
+    background: #050505;
+    padding: 0 0 82px;
+  }
+
+  .ev-product-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .ev-product-card {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255,255,255,0.06);
+    text-decoration: none !important;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .ev-product-card.large {
+    grid-column: span 6;
+    min-height: 530px;
+  }
+
+  .ev-product-card.small {
+    grid-column: span 4;
+  }
+
+  .ev-product-card:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.88) 100%),
+      radial-gradient(circle at center, rgba(200,164,93,0.08), transparent 58%);
+    z-index: 1;
+  }
+
+  .ev-product-card:hover {
+    filter: brightness(1.08);
+  }
+
+  .ev-product-card:hover:before {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.94) 100%),
+      radial-gradient(circle at center, rgba(200,164,93,0.16), transparent 60%);
+  }
+
+  .ev-product-content {
+    position: relative;
+    z-index: 2;
+    padding: 42px 30px;
+    max-width: 620px;
+  }
+
+  .ev-product-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #050505;
+    background: #c8a45d;
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .ev-product-content h3 {
+    color: #ffffff;
+    font-size: clamp(25px, 3vw, 42px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    margin: 0 0 14px;
+  }
+
+  .ev-product-content .ev-product-name {
+    color: #ffffff;
+    font-size: clamp(25px, 3vw, 42px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    margin: 0 0 14px;
+    font-weight: 700;
+  }
+
+  .ev-product-content p {
+    color: rgba(255,255,255,0.76);
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin: 0 0 22px;
+  }
+
+  .ev-mini-link {
+    color: #c8a45d;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .ev-compare-section {
+    background: #050505;
+    padding: 84px 0;
+  }
+
+  .ev-compare-head {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 36px;
+  }
+
+  .ev-compare-head h2 {
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.07;
+    margin: 0 0 16px;
+  }
+
+  .ev-compare-head p {
+    color: rgba(255,255,255,0.64);
+    font-size: 16.5px;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .ev-compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .ev-compare-card {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012)),
+      #111111;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 30px;
+    min-height: 100%;
+  }
+
+  .ev-compare-card h3 {
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  .ev-compare-card p {
+    color: rgba(255,255,255,0.68);
+    font-size: 15.5px;
+    line-height: 1.72;
+    margin: 0;
+  }
+
+  .ev-split-section {
+    background: #050505;
+  }
+
+  .ev-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    min-height: 580px;
+  }
+
+  .ev-split-bg {
+    min-height: 580px;
+    background-size: cover;
+    background-position: center;
+    background-color: #111111;
+    position: relative;
+  }
+
+  .ev-split-bg:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.18));
+  }
+
+  .ev-pairing-visual {
+    min-height: 580px;
+    background:
+      radial-gradient(circle at 32% 30%, rgba(200,164,93,0.2), transparent 26%),
+      radial-gradient(circle at 72% 72%, rgba(255,255,255,0.08), transparent 24%),
+      linear-gradient(135deg, #111111 0%, #050505 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 46px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ev-pairing-visual:before {
+    content: "";
+    position: absolute;
+    inset: 28px;
+    border: 1px solid rgba(200,164,93,0.22);
+  }
+
+  .ev-pairing-box {
+    position: relative;
+    z-index: 2;
+    width: min(520px, 100%);
+    display: grid;
+    gap: 18px;
+  }
+
+  .ev-device-line {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ev-device {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.13);
+    padding: 24px 20px;
+    text-align: center;
+    min-height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ev-device strong {
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  .ev-device span {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 8px;
+  }
+
+  .ev-plus {
+    color: #c8a45d;
+    font-size: 34px;
+    font-weight: 900;
+  }
+
+  .ev-hap-match {
+    background: rgba(200,164,93,0.12);
+    border: 1px solid rgba(200,164,93,0.3);
+    padding: 22px 24px;
+    text-align: center;
+  }
+
+  .ev-hap-match span {
+    display: block;
+    color: #c8a45d;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .ev-hap-match strong {
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .ev-split-copy {
+    padding: 74px 72px;
+    max-width: 700px;
+    align-self: center;
+  }
+
+  .ev-split-copy h2 {
+    font-size: clamp(31px, 4vw, 56px);
+    line-height: 1.06;
+    margin: 0 0 20px;
+  }
+
+  .ev-split-copy p {
+    color: rgba(255,255,255,0.72);
+    font-size: 16.5px;
+    line-height: 1.8;
+    margin: 0 0 20px;
+  }
+
+  .ev-points {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+  }
+
+  .ev-points li {
+    position: relative;
+    color: rgba(255,255,255,0.76);
+    padding: 12px 0 12px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+    line-height: 1.6;
+  }
+
+  .ev-points li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c8a45d;
+    box-shadow: 0 0 0 5px rgba(200,164,93,0.16);
+  }
+
+  .ev-showroom-section {
+    background: #050505;
+    padding: 88px 0;
+  }
+
+  .ev-showroom-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    width: min(1180px, calc(100% - 36px));
+    margin: 0 auto;
+    background: #111111;
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    box-shadow: 0 28px 80px rgba(0,0,0,0.35);
+  }
+
+  .ev-logo-panel {
+    min-height: 440px;
+    background:
+      radial-gradient(circle at center, rgba(200,164,93,0.17), transparent 50%),
+      linear-gradient(135deg, #111111 0%, #050505 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 42px;
+  }
+
+  .ev-hap-logo-box {
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 56px 42px;
+    width: min(430px, 100%);
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+  }
+
+  .ev-hap-logo-main {
+    font-size: clamp(31px, 4vw, 48px);
+    line-height: 0.95;
+    font-weight: 950;
+    letter-spacing: -0.045em;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  .ev-hap-logo-main span {
+    color: #d5221f;
+  }
+
+  .ev-hap-logo-sub {
+    margin-top: 17px;
+    color: rgba(255,255,255,0.64);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .ev-showroom-content {
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ev-showroom-content h2 {
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+    margin: 0 0 18px;
+  }
+
+  .ev-showroom-content p {
+    color: rgba(255,255,255,0.72);
+    font-size: 16.5px;
+    line-height: 1.78;
+    margin: 0 0 18px;
+  }
+
+  .ev-address-box {
+    color: rgba(255,255,255,0.68);
+    border-left: 2px solid #c8a45d;
+    padding-left: 16px;
+    margin: 6px 0 28px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .ev-demo-section {
+    background: #050505;
+    padding: 0 0 88px;
+  }
+
+  .ev-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .ev-demo-card {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012)),
+      #111111;
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    padding-bottom: 30px;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .ev-demo-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200,164,93,0.28);
+  }
+
+  .ev-demo-visual {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background:
+      radial-gradient(circle at center, rgba(200,164,93,0.18), transparent 58%),
+      linear-gradient(135deg, #151515 0%, #050505 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    overflow: hidden;
+  }
+
+  .ev-demo-visual:before {
+    content: "";
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(200,164,93,0.18);
+  }
+
+  .ev-demo-icon {
+    position: relative;
+    z-index: 2;
+    width: min(250px, 100%);
+    min-height: 130px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.045);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 950;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .ev-demo-icon span {
+    color: #c8a45d;
+  }
+
+  .ev-demo-card h3 {
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.2;
+    margin: 26px 20px 10px;
+  }
+
+  .ev-demo-card p {
+    color: rgba(255,255,255,0.66);
+    font-size: 15px;
+    line-height: 1.68;
+    margin: 0 24px 24px;
+  }
+
+  .ev-review-section {
+    background: #050505;
+    padding: 8px 0 88px;
+  }
+
+  .ev-review-card {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+    gap: 44px;
+    align-items: center;
+    background:
+      radial-gradient(circle at top left, rgba(200,164,93,0.18), transparent 42%),
+      #111111;
+    border: 1px solid rgba(200,164,93,0.22);
+    padding: 48px;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+  }
+
+  .ev-review-score {
+    text-align: center;
+    border: 1px solid rgba(200,164,93,0.34);
+    padding: 42px 24px;
+    background:
+      radial-gradient(circle at center, rgba(200,164,93,0.15), transparent 60%),
+      rgba(255,255,255,0.04);
+  }
+
+  .ev-google-word {
+    font-size: 16px;
+    font-weight: 850;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .ev-stars {
+    color: #f5b640;
+    font-size: 31px;
+    letter-spacing: 2px;
+    margin: 8px 0 12px;
+  }
+
+  .ev-rating-number {
+    color: #ffffff;
+    font-size: clamp(78px, 8vw, 118px);
+    line-height: 0.9;
+    font-weight: 950;
+    letter-spacing: -0.08em;
+    margin: 0 0 14px;
+    text-shadow: 0 18px 45px rgba(200,164,93,0.22);
+  }
+
+  .ev-rating-label {
+    color: rgba(255,255,255,0.72);
+    font-size: 14px;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .ev-review-copy h2 {
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.06;
+    margin: 0 0 18px;
+  }
+
+  .ev-review-copy p {
+    color: rgba(255,255,255,0.72);
+    font-size: 16.5px;
+    line-height: 1.78;
+    margin: 0 0 24px;
+  }
+
+  .ev-final-cta {
+    background:
+      linear-gradient(135deg, rgba(184,145,77,0.3), rgba(0,0,0,0.95)),
+      #050505;
+    padding: 92px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .ev-final-cta h2 {
+    font-size: clamp(34px, 5vw, 70px);
+    line-height: 1;
+    margin: 0 0 18px;
+  }
+
+  .ev-final-cta p {
+    color: rgba(255,255,255,0.72);
+    font-size: 17px;
+    line-height: 1.78;
+    max-width: 780px;
+    margin: 0 auto 32px;
+  }
+
+  .ev-faq-section {
+    background: #0b0b0b;
+    padding: 82px 0;
+  }
+
+  .ev-faq-head {
+    max-width: 860px;
+    margin-bottom: 36px;
+  }
+
+  .ev-faq-head h2 {
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.08;
+    margin: 0 0 14px;
+  }
+
+  .ev-faq-head p {
+    color: rgba(255,255,255,0.64);
+    font-size: 16px;
+    line-height: 1.72;
+    margin: 0;
+  }
+
+  .ev-faq-item {
+    border: 1px solid rgba(255,255,255,0.09);
+    background: #111111;
+    margin-bottom: 14px;
+  }
+
+  .ev-faq-item summary {
+    color: #ffffff;
+    padding: 22px 24px;
+    font-size: 17px;
+    font-weight: 850;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .ev-faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ev-faq-item summary:after {
+    content: "+";
+    float: right;
+    color: #c8a45d;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .ev-faq-item[open] summary:after {
+    content: "-";
+  }
+
+  .ev-faq-item p {
+    color: rgba(255,255,255,0.66);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0 24px 24px;
+  }
+
+  @media (max-width: 991px) {
+    .ev-hero {
+      min-height: auto;
+    }
+
+    .ev-hero-inner {
+      padding: 86px 0 70px;
+    }
+
+    .ev-model-grid,
+    .ev-hap-way-card,
+    .ev-hap-way-steps,
+    .ev-compare-grid,
+    .ev-split,
+    .ev-showroom-card,
+    .ev-review-card,
+    .ev-demo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ev-step {
+      border-left: 0;
+    }
+
+    .ev-product-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 16px;
+    }
+
+    .ev-product-card,
+    .ev-product-card.large,
+    .ev-product-card.small {
+      min-width: 82%;
+      min-height: 480px;
+      grid-column: auto;
+      scroll-snap-align: center;
+    }
+
+    .ev-split-copy,
+    .ev-showroom-content,
+    .ev-hap-way-copy {
+      padding: 52px 28px;
+    }
+
+    .ev-split-bg,
+    .ev-pairing-visual {
+      min-height: 390px;
+    }
+
+    .ev-device-line {
+      grid-template-columns: 1fr;
+    }
+
+    .ev-plus {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .ev-hero h1 {
+      font-size: 40px;
+    }
+
+    .ev-hero p {
+      font-size: 16px;
+    }
+
+    .ev-btn-row {
+      flex-direction: column;
+    }
+
+    .ev-btn {
+      width: 100%;
+    }
+
+    .ev-section-title {
+      padding: 54px 0 24px;
+    }
+
+    .ev-product-card,
+    .ev-product-card.large,
+    .ev-product-card.small {
+      min-width: 88%;
+      min-height: 430px;
+    }
+
+    .ev-model-card,
+    .ev-review-card {
+      padding: 28px 20px;
+    }
+
+    .ev-showroom-section,
+    .ev-faq-section {
+      padding: 58px 0;
+    }
+  }
+</style>
+
+<div class="ev-page">
+
+  <section class="ev-hero">
+    <div class="ev-hero-inner">
+      <div class="ev-hero-copy">
+        <span class="ev-eyebrow">Premium Hi-Fi Streaming Experience</span>
+        <h1>Eversolo Singapore Music Streamers &amp; Hi-Fi Demo</h1>
+        <p>Discover Eversolo in Singapore with HAP. Compare Eversolo music streamers, DAC streamers, streaming amplifiers and transports including Eversolo Play, DMP-A6 Gen 2, DMP-A6 Master Edition, DMP-A8 Gen 2, DMP-A10 and T8 for your living room Hi-Fi, private listening room or smart home audio system.</p>
+
+        <div class="ev-hero-points">
+          <span>Eversolo demo Singapore</span>
+          <span>Bowers &amp; Wilkins pairing</span>
+          <span>Hi-Fi system matching</span>
+          <span>Premium home audio planning</span>
+        </div>
+
+        <div class="ev-btn-row">
+          <a class="ev-btn ev-btn-primary" href="https://www.hap.sg/contact-us" target="_blank" rel="noopener">Book an Eversolo Demo</a>
+          <a class="ev-btn ev-btn-secondary" href="https://www.hap.sg/shop/category/shop-by-brand-eversolo-160" target="_blank" rel="noopener">Shop Eversolo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-section-title">
+    <div class="ev-container">
+      <span class="ev-eyebrow">Eversolo Music Streamer Singapore</span>
+      <h2>Choose the Right Eversolo System</h2>
+      <p>Not sure whether to choose Eversolo Play, DMP-A6 Gen 2, DMP-A6 Master Edition, DMP-A8 Gen 2, DMP-A10 or T8? HAP helps you match the correct Eversolo streamer to your speakers, amplifier, room, music platform and smart home setup.</p>
+    </div>
+  </section>
+
+  <section class="ev-model-finder">
+    <div class="ev-container">
+      <div class="ev-model-finder-head">
+        <span class="ev-eyebrow">Find Your Starting Point</span>
+        <h2>Which Eversolo Type Fits Your Home?</h2>
+        <p>A quick way to shortlist the right Eversolo before a private HAP demo or system consultation.</p>
+      </div>
+
+      <div class="ev-model-grid">
+        <div class="ev-model-card">
+          <div class="ev-model-tag">Simple Setup</div>
+          <h3>I want fewer boxes.</h3>
+          <p>Best for rooms where you want streaming and amplification in one compact unit.</p>
+          <div class="ev-model-reco">Recommended: Eversolo Play</div>
+        </div>
+
+        <div class="ev-model-card">
+          <div class="ev-model-tag">Existing Amplifier</div>
+          <h3>I already have an amp.</h3>
+          <p>Best if your amplifier and speakers are staying, but the digital source needs upgrading.</p>
+          <div class="ev-model-reco">Recommended: DMP-A6 Gen 2 or DMP-A8 Gen 2</div>
+        </div>
+
+        <div class="ev-model-card">
+          <div class="ev-model-tag">External DAC</div>
+          <h3>I already own a DAC.</h3>
+          <p>Best if your DAC is already strong and you mainly need a clean streaming transport.</p>
+          <div class="ev-model-reco">Recommended: Eversolo T8</div>
+        </div>
+
+        <div class="ev-model-card">
+          <div class="ev-model-tag">Flagship System</div>
+          <h3>I want the best source.</h3>
+          <p>Best for serious Hi-Fi rooms, premium speakers and higher-end system planning.</p>
+          <div class="ev-model-reco">Recommended: DMP-A10</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-hap-way">
+    <div class="ev-container">
+      <div class="ev-hap-way-card">
+        <div class="ev-hap-way-copy">
+          <span class="ev-eyebrow">Why Buy Through HAP</span>
+          <h2>Not Just a Product Listing. A Proper Hi-Fi System Plan.</h2>
+          <p>Many buyers compare Eversolo by model name and price only. HAP helps you choose based on the full system: speakers, amplifier, DAC, room, music service, network and future upgrade plan.</p>
+        </div>
+
+        <div class="ev-hap-way-steps">
+          <div class="ev-step">
+            <div class="ev-step-num">Step 01</div>
+            <h3>Check Your System</h3>
+            <p>We look at your existing speakers, amplifier, DAC and room before recommending a model.</p>
+          </div>
+
+          <div class="ev-step">
+            <div class="ev-step-num">Step 02</div>
+            <h3>Compare Models</h3>
+            <p>We help compare Play, DMP-A6 Gen 2, DMP-A8 Gen 2, DMP-A10 and T8 based on actual use case.</p>
+          </div>
+
+          <div class="ev-step">
+            <div class="ev-step-num">Step 03</div>
+            <h3>Plan Setup</h3>
+            <p>We consider music services, network stability, connection type and upgrade direction.</p>
+          </div>
+
+          <div class="ev-step">
+            <div class="ev-step-num">Step 04</div>
+            <h3>Future Ready</h3>
+            <p>We plan the system so you can upgrade speakers, DAC or amplifier without starting over.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-product-section">
+    <div class="ev-product-grid">
+
+      <a class="ev-product-card large" href="https://www.hap.sg/shop/shop-by-brand-eversolo-160/dmp-a6-gen-2-eversolo-dmp-a6-gen-2-high-fidelity-music-streamer-2512" target="_blank" rel="noopener" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/555b2d82-16c7-4105-aeee-2464539a5f43');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">Streamer + DAC</span>
+          <h3>Eversolo DMP-A6 Gen 2</h3>
+          <p>A serious Eversolo music streamer and DAC for homeowners who already own a quality amplifier or active speaker system.</p>
+          <span class="ev-mini-link">View Product</span>
+        </div>
+      </a>
+
+      <a class="ev-product-card large" href="https://www.hap.sg/shop/shop-by-brand-eversolo-160/dmp-a8-eversolo-dmp-a8-music-streamer-2513" target="_blank" rel="noopener" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/ee57b86c-9ba6-4573-a787-d32b847b2bd6');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">Premium Source</span>
+          <h3>Eversolo DMP-A8</h3>
+          <p>A premium streamer, DAC and preamp platform for stronger stereo systems and more refined listening spaces.</p>
+          <span class="ev-mini-link">View Product</span>
+        </div>
+      </a>
+
+      <a class="ev-product-card small" href="https://www.hap.sg/shop/shop-by-brand-eversolo-160/eversolo-play-eversolo-play-normal-edition-all-in-one-streaming-amplifier-2515" target="_blank" rel="noopener" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/b55e46e8-ced4-4887-97bd-ef868ef5853b');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">All-In-One</span>
+          <h3>Eversolo Play</h3>
+          <p>A compact all-in-one streaming amplifier for living rooms, studies and secondary listening spaces.</p>
+          <span class="ev-mini-link">View Product</span>
+        </div>
+      </a>
+
+      <a class="ev-product-card small" href="https://www.hap.sg/shop/shop-by-brand-eversolo-160/eversolo-play-cd-edition-eversolo-play-cd-edition-all-in-one-streaming-amplifier-2516" target="_blank" rel="noopener" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/2bcb1580-88c4-4a50-a21a-0a5829d8d140');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">Streaming + CD</span>
+          <h3>Eversolo Play CD Edition</h3>
+          <p>Streaming convenience with CD playback for homeowners who still enjoy physical music collections.</p>
+          <span class="ev-mini-link">View Product</span>
+        </div>
+      </a>
+
+      <a class="ev-product-card small" href="https://www.hap.sg/contact-us" target="_blank" rel="noopener" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/58f88e34-de26-4ada-a718-3e0c9f5a044d');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">Flagship</span>
+          <h3>Eversolo DMP-A10</h3>
+          <p>A flagship Eversolo streamer for premium Hi-Fi systems, private listening rooms and serious source upgrades.</p>
+          <span class="ev-mini-link">Enquire Product</span>
+        </div>
+      </a>
+
+      <a class="ev-product-card small" href="https://www.hap.sg/shop/eversolo-t8-eversolo-t8-streaming-transport-2616" target="_blank" rel="noopener" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/0c94ad96-a88d-468c-9b43-f696e22b5dda');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">Transport</span>
+          <h3>Eversolo T8</h3>
+          <p>A dedicated streaming transport for systems that already have a high-quality external DAC.</p>
+          <span class="ev-mini-link">View Product</span>
+        </div>
+      </a>
+
+      <a class="ev-product-card small" href="https://www.hap.sg/shop/shop-by-brand-eversolo-160/dmp-a8-gen-2-eversolo-dmp-a8-gen-2-high-fidelity-music-streamer-3198" target="_blank" rel="noopener" style="background-image:url('https://fillion.ca/cdn/shop/files/EversoloDMP-A8Gen21.jpg?v=1784215770');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">New Gen 2</span>
+          <div class="ev-product-name">Eversolo DMP-A8 Gen 2</div>
+          <p>A next-generation high-fidelity streamer, DAC and preamplifier with flagship AKM conversion, an 8.6-inch touchscreen and expanded system connectivity.</p>
+          <span class="ev-mini-link">View Product</span>
+        </div>
+      </a>
+
+      <a class="ev-product-card small" href="https://www.hap.sg/shop/category/shop-by-brand-eversolo-160" target="_blank" rel="noopener" style="background-image:url('https://bloomaudio.com/cdn/shop/files/evso-0-amp-a8-mst-gen2-thumb.webp?v=1783957721&amp;width=1080');">
+        <div class="ev-product-content">
+          <span class="ev-product-badge">Master Gen 2</span>
+          <div class="ev-product-name">Eversolo DMP-A8 Master Gen 2</div>
+          <p>A premium streamer, DAC, CD player and analogue preamplifier with OCXO clocking, CD playback and ripping, and high-resolution music support.</p>
+          <span class="ev-mini-link">View Product</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="ev-compare-section">
+    <div class="ev-container">
+      <div class="ev-compare-head">
+        <span class="ev-eyebrow">Quick Comparison</span>
+        <h2>Eversolo Model Comparison for Singapore Buyers</h2>
+        <p>Use this as a simple guide before speaking with HAP. The right Eversolo model depends on whether you need an amplifier, DAC, streamer or transport.</p>
+      </div>
+
+      <div class="ev-compare-grid">
+        <div class="ev-compare-card">
+          <h3>Eversolo Play vs DMP-A6 Gen 2</h3>
+          <p>Choose Eversolo Play if you want an all-in-one streaming amplifier that can drive passive speakers. Choose DMP-A6 Gen 2 if you already have an amplifier or active speakers and want a dedicated streamer and DAC.</p>
+        </div>
+
+        <div class="ev-compare-card">
+          <h3>DMP-A6 Gen 2 vs DMP-A8 Gen 2</h3>
+          <p>DMP-A6 Gen 2 is the more accessible route into serious Hi-Fi streaming. DMP-A8 Gen 2 steps up to a larger 8.6-inch interface, flagship AKM conversion, a fully balanced analogue preamp, more system connectivity and up to 8TB SSD expansion.</p>
+        </div>
+
+        <div class="ev-compare-card">
+          <h3>DMP-A8 Gen 2 vs DMP-A8 Master Gen 2</h3>
+          <p>Both share the flagship AKM DAC platform and core streaming features. Choose DMP-A8 Gen 2 if streaming, DAC and preamp duties are your priority. Choose DMP-A8 Master Gen 2 if you also want integrated CD playback and ripping, upgraded OCXO clocking and support for an external 10MHz master clock.</p>
+        </div>
+
+        <div class="ev-compare-card">
+          <h3>DMP-A8 Gen 2 vs DMP-A10</h3>
+          <p>DMP-A8 Gen 2 is a strong choice for premium two-channel systems that need a modern streamer, DAC and preamp in one. DMP-A10 remains the higher-tier option for flagship systems where source quality, system flexibility and a more ambitious component platform are the priority.</p>
+        </div>
+
+        <div class="ev-compare-card">
+          <h3>Eversolo T8 vs DMP-A8 Gen 2</h3>
+          <p>Choose Eversolo T8 if you already own a high-quality external DAC and mainly need a dedicated streaming transport. Choose DMP-A8 Gen 2 if you want streaming, DAC conversion and analogue preamplifier functions together in one component.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-split-section">
+    <div class="ev-split">
+      <div class="ev-split-bg" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/cf04370a-a827-4e50-9c36-6efed876dd7b');"></div>
+      <div class="ev-split-copy">
+        <span class="ev-eyebrow">Streamer and DAC Systems</span>
+        <h2>Eversolo for Serious Hi-Fi Listening</h2>
+        <p>If you already own a quality amplifier and speakers, an Eversolo DMP music streamer can modernise your system without replacing everything.</p>
+        <p>HAP helps you decide whether DMP-A6 Gen 2, DMP-A6 Master Edition, DMP-A8 Gen 2 or DMP-A10 fits your current system and future upgrade path.</p>
+        <ul class="ev-points">
+          <li>Eversolo DAC streamer Singapore setup for two-channel Hi-Fi systems</li>
+          <li>Suitable for premium speakers, amplifiers and dedicated listening rooms</li>
+          <li>Useful for modern music streaming and local music playback</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-split-section">
+    <div class="ev-split">
+      <div class="ev-split-copy">
+        <span class="ev-eyebrow">All-In-One Streaming Amplifier</span>
+        <h2>Eversolo Play for Simple Living Room Audio</h2>
+        <p>Eversolo Play is ideal when you want a cleaner and simpler music setup. It combines streaming and amplification in one compact unit.</p>
+        <p>For homeowners who still enjoy CDs, the Eversolo Play CD Edition adds physical disc playback while keeping the system modern and easy to use.</p>
+        <ul class="ev-points">
+          <li>Good for simple passive speaker systems</li>
+          <li>Less cabling and fewer boxes</li>
+          <li>Suitable for daily music streaming at home</li>
+        </ul>
+      </div>
+      <div class="ev-split-bg" style="background-image:url('https://outgoing-oyster-428.convex.cloud/api/storage/b55e46e8-ced4-4887-97bd-ef868ef5853b');"></div>
+    </div>
+  </section>
+
+  <section class="ev-split-section">
+    <div class="ev-split">
+      <div class="ev-pairing-visual">
+        <div class="ev-pairing-box">
+          <div class="ev-device-line">
+            <div class="ev-device">
+              <strong>Eversolo</strong>
+              <span>Streamer, DAC or transport</span>
+            </div>
+
+            <div class="ev-plus">+</div>
+
+            <div class="ev-device">
+              <strong>Bowers &amp; Wilkins</strong>
+              <span>Premium loudspeaker pairing</span>
+            </div>
+          </div>
+
+          <div class="ev-hap-match">
+            <span>Planned by HAP</span>
+            <strong>Source + Amplifier + Speaker + Room</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="ev-split-copy">
+        <span class="ev-eyebrow">HAP Audio Matching</span>
+        <h2>Eversolo with Bowers &amp; Wilkins Speakers</h2>
+        <p>HAP can help you pair Eversolo with Bowers &amp; Wilkins 600 Series, 700 Series and 800 Series speakers depending on your room, amplifier and listening style.</p>
+        <p>For premium homes, the streamer should be planned together with the speakers, amplifier, network and control system.</p>
+        <ul class="ev-points">
+          <li>Eversolo for Bowers and Wilkins Singapore living room Hi-Fi</li>
+          <li>Eversolo Bowers Wilkins pairing for premium stereo systems</li>
+          <li>Eversolo with B&amp;W speakers for private listening rooms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-showroom-section">
+    <div class="ev-showroom-card">
+      <div class="ev-logo-panel">
+        <div class="ev-hap-logo-box">
+          <div class="ev-hap-logo-main">Home <span>Action</span><br>Party</div>
+          <div class="ev-hap-logo-sub">Design Meets Technology</div>
+        </div>
+      </div>
+
+      <div class="ev-showroom-content">
+        <span class="ev-eyebrow">Private Listening Experience</span>
+        <h2>Experience Eversolo at HAP Singapore</h2>
+        <p>Contact HAP to hear Eversolo, discuss your current system and plan the right music streamer, streaming amplifier or transport for your home.</p>
+        <div class="ev-address-box">
+          HAP Singapore Showroom<br>
+          55 Ubi Avenue 3, Aspial One, Unit 01-04, Singapore 408864<br>
+          Appointment recommended for private Hi-Fi and Eversolo demo consultation.
+        </div>
+        <a class="ev-text-link" href="https://www.hap.sg/contact-us" target="_blank" rel="noopener">Contact HAP for Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-section-title">
+    <div class="ev-container">
+      <span class="ev-eyebrow">Demo and Setup Planning</span>
+      <h2>Eversolo Home Audio Setup Options</h2>
+      <p>Whether you are upgrading one room or planning a new home, HAP helps you design the full streaming, audio, network and control experience.</p>
+    </div>
+  </section>
+
+  <section class="ev-demo-section">
+    <div class="ev-container">
+      <div class="ev-demo-grid">
+        <div class="ev-demo-card">
+          <div class="ev-demo-visual">
+            <div class="ev-demo-icon">Living Room<br><span>Hi-Fi</span></div>
+          </div>
+          <h3>Living Room Hi-Fi</h3>
+          <p>Clean streaming setup for homeowners who want better sound without making the living room complicated.</p>
+          <a class="ev-text-link" href="https://www.hap.sg/contact-us" target="_blank" rel="noopener">Discuss Living Room Hi-Fi</a>
+        </div>
+
+        <div class="ev-demo-card">
+          <div class="ev-demo-visual">
+            <div class="ev-demo-icon">Private<br><span>Listening Room</span></div>
+          </div>
+          <h3>Private Listening Room</h3>
+          <p>Higher-performance streamer and DAC planning for premium speakers, amplifiers and dedicated listening spaces.</p>
+          <a class="ev-text-link" href="https://www.hap.sg/contact-us" target="_blank" rel="noopener">Plan Listening Room</a>
+        </div>
+
+        <div class="ev-demo-card">
+          <div class="ev-demo-visual">
+            <div class="ev-demo-icon">Smart Home<br><span>Audio</span></div>
+          </div>
+          <h3>Smart Home Audio</h3>
+          <p>Plan Eversolo as part of a wider home cinema, multi-room audio or smart home system.</p>
+          <a class="ev-text-link" href="https://www.hap.sg/smart-home-installation-singapore" target="_blank" rel="noopener">Explore Integration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-review-section">
+    <div class="ev-container">
+      <div class="ev-review-card">
+        <div class="ev-review-score">
+          <div class="ev-google-word">Google Review</div>
+          <div class="ev-stars">★★★★★</div>
+          <div class="ev-rating-number">4.9</div>
+          <div class="ev-rating-label">Star Rating on Google Review</div>
+        </div>
+
+        <div class="ev-review-copy">
+          <span class="ev-eyebrow">Trusted by Singapore Homeowners</span>
+          <h2>Plan Your Eversolo System with a Highly Rated HAP Team</h2>
+          <p>HAP is rated 4.9 stars on Google Review. For customers choosing Eversolo in Singapore, this means you are working with a team that understands premium audio, home theatre, smart home integration, network planning and clean installation for real homes.</p>
+          <a class="ev-text-link" href="https://www.hap.sg/project-portfolio" target="_blank" rel="noopener">View HAP Projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-final-cta">
+    <div class="ev-container">
+      <span class="ev-eyebrow">Final Step</span>
+      <h2>Ready to Plan Your Eversolo Setup?</h2>
+      <p>Speak with HAP before choosing your Eversolo music streamer, streaming amplifier or transport. We will help match the right model to your speakers, amplifier, DAC, room and home audio plan.</p>
+      <a class="ev-btn ev-btn-primary" href="https://www.hap.sg/contact-us" target="_blank" rel="noopener">Contact HAP</a>
+    </div>
+  </section>
+
+  <section class="ev-faq-section">
+    <div class="ev-container">
+      <div class="ev-faq-head">
+        <span class="ev-eyebrow">FAQ</span>
+        <h2>Eversolo Singapore FAQ</h2>
+        <p>Answers to common questions about Eversolo music streamers, streaming amplifiers, DAC streamers, transports and private demo appointments at HAP Singapore.</p>
+      </div>
+
+      <details class="ev-faq-item" open="">
+        <summary>Is Eversolo available in Singapore?</summary>
+        <p>Yes. HAP helps Singapore customers explore Eversolo music streamers, streaming amplifiers and transports, including Eversolo Play, DMP-A6 Gen 2, DMP-A6 Master Edition, DMP-A8 Gen 2, DMP-A10 and T8.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>Where can I demo Eversolo in Singapore?</summary>
+        <p>You can contact HAP Singapore to discuss Eversolo demo options, compare models and plan the right setup for your speakers, amplifier, DAC and room.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>Which Eversolo model should I choose?</summary>
+        <p>Choose Eversolo Play if you want an all-in-one streaming amplifier, DMP-A6 Gen 2 or DMP-A8 Gen 2 if you already have an amplifier, DMP-A10 for flagship systems, and T8 if you already own a separate DAC.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>What is the difference between Eversolo Play and DMP-A6 Gen 2?</summary>
+        <p>Eversolo Play is an all-in-one streaming amplifier that can drive passive speakers. Eversolo DMP-A6 Gen 2 is a music streamer and DAC for systems that already have an amplifier or active speakers.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>What is the difference between Eversolo DMP-A6 Gen 2 and DMP-A8 Gen 2?</summary>
+        <p>Eversolo DMP-A6 Gen 2 is a strong entry point for serious Hi-Fi streaming. Eversolo DMP-A8 Gen 2 is better suited for premium systems where stronger DAC, preamp and source planning matter.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>Should I choose Eversolo DMP-A8 Gen 2 or DMP-A10?</summary>
+        <p>Eversolo DMP-A8 Gen 2 suits premium stereo systems. Eversolo DMP-A10 is better for flagship Hi-Fi systems, private listening rooms and homeowners who want a higher-level source component.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>What is Eversolo T8 used for?</summary>
+        <p>Eversolo T8 is a dedicated streaming transport. It is best for Hi-Fi systems that already have a high-quality external DAC and only need a clean digital streaming source.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>Can Eversolo work with Bowers &amp; Wilkins speakers?</summary>
+        <p>Yes. HAP can help match Eversolo with Bowers &amp; Wilkins speakers, including 600 Series, 700 Series and 800 Series systems.</p>
+      </details>
+
+      <details class="ev-faq-item">
+        <summary>Can HAP help install and set up Eversolo?</summary>
+        <p>Yes. HAP can help with Eversolo model selection, speaker and amplifier matching, DAC planning, network planning, app setup and home audio integration.</p>
+      </details>
+    </div>
+  </section>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Eversolo available in Singapore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. HAP helps Singapore customers explore Eversolo music streamers, streaming amplifiers and transports, including Eversolo Play, DMP-A6 Gen 2, DMP-A6 Master Edition, DMP-A8 Gen 2, DMP-A10 and T8."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I demo Eversolo in Singapore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can contact HAP Singapore to discuss Eversolo demo options, compare models and plan the right setup for your speakers, amplifier, DAC and room."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Eversolo model should I choose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose Eversolo Play if you want an all-in-one streaming amplifier, DMP-A6 Gen 2 or DMP-A8 Gen 2 if you already have an amplifier, DMP-A10 for flagship systems, and T8 if you already own a separate DAC."
+      }
+    }
+  ]
+}
+</script>
