@@ -30,7 +30,7 @@
                     background: var(--hap-bg) !important;
                     color: var(--hap-cream);
                     font-family: inherit;
-                    overflow: hidden;
+                    overflow-x: hidden;
                 }
 
                 .hap-secure-page,
@@ -175,10 +175,14 @@
                     align-items: center;
                     overflow: hidden;
                     border-bottom: 1px solid var(--hap-line);
-                    background:
-                        linear-gradient(90deg, rgba(5, 7, 6, 0.97) 0%, rgba(5, 7, 6, 0.88) 43%, rgba(5, 7, 6, 0.42) 100%),
-                        linear-gradient(180deg, rgba(5, 7, 6, 0.12) 0%, rgba(5, 7, 6, 0.78) 100%),
-                        url("https://www.hap.sg/web/image/77926-8742a3ef/Rack.jpeg?height=1200") center / cover no-repeat;
+                    background-color: #050706 !important;
+                    background-image:
+                        linear-gradient(90deg, rgba(5, 7, 6, 0.98) 0%, rgba(5, 7, 6, 0.9) 43%, rgba(5, 7, 6, 0.48) 100%),
+                        linear-gradient(180deg, rgba(5, 7, 6, 0.08) 0%, rgba(5, 7, 6, 0.8) 100%),
+                        url("https://www.hap.sg/web/image/14527-69ee7fa4/408392239_834351168700394_7248065967231418087_n.jpg");
+                    background-position: center, center, right center;
+                    background-size: cover, cover, contain;
+                    background-repeat: no-repeat;
                 }
 
                 .hap-secure-hero:before {
@@ -189,6 +193,59 @@
                     background:
                         radial-gradient(circle at 76% 32%, rgba(216, 181, 109, 0.13), transparent 32%),
                         linear-gradient(180deg, transparent 62%, var(--hap-bg) 100%);
+                }
+
+                .hap-secure-hero:after {
+                    content: "";
+                    position: absolute;
+                    z-index: 0;
+                    top: 17%;
+                    right: -110px;
+                    width: 390px;
+                    height: 390px;
+                    border: 1px solid rgba(216, 181, 109, 0.18);
+                    border-radius: 50%;
+                    box-shadow:
+                        0 0 0 54px rgba(216, 181, 109, 0.025),
+                        0 0 90px rgba(216, 181, 109, 0.11);
+                    pointer-events: none;
+                    animation: hapSecureHalo 12s ease-in-out infinite;
+                }
+
+                @keyframes hapSecureHalo {
+                    0%, 100% {
+                        opacity: 0.55;
+                        transform: translate3d(0, 0, 0) scale(0.96);
+                    }
+
+                    50% {
+                        opacity: 0.9;
+                        transform: translate3d(-28px, 18px, 0) scale(1.04);
+                    }
+                }
+
+                @keyframes hapSecureRise {
+                    from {
+                        opacity: 0;
+                        transform: translate3d(0, 26px, 0);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+
+                @keyframes hapSecureLayerIn {
+                    from {
+                        opacity: 0;
+                        transform: translate3d(28px, 0, 0);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                    }
                 }
 
                 .hap-secure-hero .hap-secure-container {
@@ -202,6 +259,26 @@
 
                 .hap-secure-hero-copy .hap-secure-lead {
                     margin-top: 25px;
+                }
+
+                .hap-secure-hero-copy .hap-secure-eyebrow {
+                    animation: hapSecureRise 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+                }
+
+                .hap-secure-hero-copy h1 {
+                    animation: hapSecureRise 0.82s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+                }
+
+                .hap-secure-hero-copy .hap-secure-lead {
+                    animation: hapSecureRise 0.82s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+                }
+
+                .hap-secure-hero-copy .hap-secure-actions {
+                    animation: hapSecureRise 0.82s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+                }
+
+                .hap-secure-hero-copy .hap-secure-badges {
+                    animation: hapSecureRise 0.82s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
                 }
 
                 .hap-secure-actions {
@@ -272,14 +349,62 @@
                 }
 
                 .hap-secure-stack {
+                    position: relative;
                     padding: 24px;
+                    overflow: hidden;
                     border: 1px solid rgba(216, 181, 109, 0.28);
                     border-radius: 28px;
                     background: rgba(5, 7, 6, 0.64) !important;
                     backdrop-filter: blur(14px);
+                    animation: hapSecureRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.26s both;
+                    isolation: isolate;
+                }
+
+                .hap-secure-stack:before {
+                    content: "";
+                    position: absolute;
+                    z-index: 0;
+                    top: 73px;
+                    bottom: 36px;
+                    left: 44px;
+                    width: 1px;
+                    background: linear-gradient(180deg, transparent, rgba(216, 181, 109, 0.72) 12%, rgba(216, 181, 109, 0.3) 88%, transparent);
+                }
+
+                .hap-secure-stack:after {
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    top: 73px;
+                    left: 40px;
+                    width: 9px;
+                    height: 28px;
+                    border-radius: 999px;
+                    background: linear-gradient(180deg, transparent, var(--hap-gold), #ffffff, transparent);
+                    filter: drop-shadow(0 0 8px rgba(216, 181, 109, 0.9));
+                    pointer-events: none;
+                    animation: hapSecureSignal 4.8s cubic-bezier(0.45, 0, 0.3, 1) 1.1s infinite;
+                }
+
+                @keyframes hapSecureSignal {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-12px);
+                    }
+
+                    12%, 82% {
+                        opacity: 1;
+                    }
+
+                    100% {
+                        opacity: 0;
+                        transform: translateY(232px);
+                    }
                 }
 
                 .hap-secure-stack-label {
+                    position: relative;
+                    z-index: 1;
                     color: var(--hap-gold) !important;
                     font-size: 12px;
                     font-weight: 700;
@@ -290,6 +415,7 @@
 
                 .hap-secure-layer {
                     position: relative;
+                    z-index: 1;
                     padding: 14px 14px 14px 40px;
                     border: 1px solid rgba(216, 181, 109, 0.17);
                     border-radius: 13px;
@@ -297,7 +423,14 @@
                     color: rgba(245, 240, 230, 0.84) !important;
                     font-size: 14px;
                     font-weight: 650;
+                    animation: hapSecureLayerIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
                 }
+
+                .hap-secure-layer:nth-child(2) { animation-delay: 0.42s; }
+                .hap-secure-layer:nth-child(3) { animation-delay: 0.5s; }
+                .hap-secure-layer:nth-child(4) { animation-delay: 0.58s; }
+                .hap-secure-layer:nth-child(5) { animation-delay: 0.66s; }
+                .hap-secure-layer:nth-child(6) { animation-delay: 0.74s; }
 
                 .hap-secure-layer + .hap-secure-layer {
                     margin-top: 9px;
@@ -316,7 +449,7 @@
                     box-shadow: 0 0 14px rgba(216, 181, 109, 0.4);
                 }
 
-                /* Trust strip and navigation */
+                /* Trust strip */
                 .hap-secure-trust {
                     display: grid;
                     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -349,30 +482,8 @@
                     line-height: 1.5;
                 }
 
-                .hap-secure-nav {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 10px;
-                }
-
-                .hap-secure-nav a,
                 .hap-secure-text-link {
                     color: var(--hap-gold) !important;
-                }
-
-                .hap-secure-nav a {
-                    padding: 10px 14px;
-                    border: 1px solid rgba(216, 181, 109, 0.27);
-                    border-radius: 999px;
-                    background: rgba(216, 181, 109, 0.065) !important;
-                    font-size: 14px;
-                    line-height: 1.35;
-                    transition: background 0.2s ease, color 0.2s ease;
-                }
-
-                .hap-secure-nav a:hover {
-                    background: var(--hap-gold) !important;
-                    color: #080807 !important;
                 }
 
                 .hap-secure-text-link {
@@ -396,9 +507,21 @@
                 }
 
                 .hap-secure-card {
+                    position: relative;
                     height: 100%;
                     padding: 25px;
+                    overflow: hidden;
                     transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+                }
+
+                .hap-secure-card:after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(115deg, transparent 20%, rgba(216, 181, 109, 0.09) 48%, transparent 76%);
+                    transform: translate3d(-120%, 0, 0);
+                    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+                    pointer-events: none;
                 }
 
                 .hap-secure-card:hover {
@@ -407,6 +530,10 @@
                     background:
                         radial-gradient(circle at top left, rgba(216, 181, 109, 0.1), transparent 48%),
                         linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)) !important;
+                }
+
+                .hap-secure-card:hover:after {
+                    transform: translate3d(120%, 0, 0);
                 }
 
                 .hap-secure-card h3 {
@@ -426,6 +553,142 @@
                     color: var(--hap-gold) !important;
                     font-size: 13px;
                     font-weight: 800;
+                }
+
+                /* Connected architecture timeline adapted from HAP's drawn-line design */
+                .hap-secure-architecture-flow {
+                    position: relative;
+                    display: grid;
+                    gap: 14px;
+                    padding-left: 42px;
+                }
+
+                .hap-secure-architecture-flow:before {
+                    content: "";
+                    position: absolute;
+                    top: 25px;
+                    bottom: 25px;
+                    left: 13px;
+                    width: 1px;
+                    background: linear-gradient(180deg, rgba(216, 181, 109, 0.12), rgba(216, 181, 109, 0.78), rgba(216, 181, 109, 0.12));
+                }
+
+                .hap-secure-architecture-flow:after {
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    top: 22px;
+                    left: 8px;
+                    width: 11px;
+                    height: 11px;
+                    border: 2px solid #050706;
+                    border-radius: 50%;
+                    background: var(--hap-gold) !important;
+                    box-shadow: 0 0 0 5px rgba(216, 181, 109, 0.1), 0 0 18px rgba(216, 181, 109, 0.66);
+                    animation: hapSecureFlowPulse 5.4s cubic-bezier(0.45, 0, 0.28, 1) infinite;
+                }
+
+                @keyframes hapSecureFlowPulse {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(0) scale(0.76);
+                    }
+
+                    10%, 86% {
+                        opacity: 1;
+                    }
+
+                    100% {
+                        opacity: 0;
+                        transform: translateY(390px) scale(1);
+                    }
+                }
+
+                .hap-secure-architecture-flow .hap-secure-card {
+                    min-height: 0;
+                    overflow: visible;
+                    padding: 21px 23px;
+                }
+
+                .hap-secure-architecture-flow .hap-secure-card:before {
+                    content: "";
+                    position: absolute;
+                    top: 31px;
+                    left: -35px;
+                    width: 9px;
+                    height: 9px;
+                    border: 2px solid var(--hap-gold);
+                    border-radius: 50%;
+                    background: #050706 !important;
+                    box-shadow: 0 0 0 5px rgba(216, 181, 109, 0.08);
+                }
+
+                .hap-secure-architecture-flow .hap-secure-card:after {
+                    display: none;
+                }
+
+                .hap-secure-architecture-flow .hap-secure-card-number {
+                    width: auto;
+                    height: auto;
+                    margin-bottom: 8px;
+                    justify-content: flex-start;
+                    border: 0;
+                    border-radius: 0;
+                    background: transparent !important;
+                    font-size: 11px;
+                    letter-spacing: 0.15em;
+                }
+
+                .hap-secure-architecture-flow .hap-secure-card h3 {
+                    font-size: clamp(19px, 2vw, 24px);
+                }
+
+                /* Four remote-access controls shown as a connected path */
+                .hap-secure-control-path {
+                    position: relative;
+                }
+
+                .hap-secure-path-step {
+                    display: inline-flex;
+                    width: 34px;
+                    height: 34px;
+                    margin-bottom: 18px;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid rgba(216, 181, 109, 0.42);
+                    border-radius: 50%;
+                    background: #0b0e0b !important;
+                    color: var(--hap-gold) !important;
+                    font-size: 11px;
+                    font-weight: 800;
+                    letter-spacing: 0.08em;
+                    box-shadow: 0 0 0 6px rgba(216, 181, 109, 0.055);
+                }
+
+                @media (min-width: 981px) {
+                    .hap-secure-control-path:before {
+                        content: "";
+                        position: absolute;
+                        z-index: 0;
+                        top: 42px;
+                        right: 10%;
+                        left: 10%;
+                        height: 1px;
+                        background: linear-gradient(90deg, transparent, rgba(216, 181, 109, 0.72) 12%, rgba(216, 181, 109, 0.72) 88%, transparent);
+                        transform: scaleX(1);
+                        transform-origin: left center;
+                        animation: hapSecureLineDraw 1.8s ease-out both;
+                    }
+
+                    @keyframes hapSecureLineDraw {
+                        to {
+                            transform: scaleX(1);
+                        }
+                    }
+
+                    .hap-secure-control-path .hap-secure-card {
+                        z-index: 1;
+                    }
                 }
 
                 .hap-secure-page ul,
@@ -540,7 +803,14 @@
                     display: block;
                     width: 100%;
                     aspect-ratio: 4 / 3;
-                    object-fit: cover;
+                    padding: 12px;
+                    object-fit: contain;
+                    background: #080b09 !important;
+                    transition: filter 0.28s ease;
+                }
+
+                .hap-secure-image-card:hover img {
+                    filter: brightness(1.045);
                 }
 
                 .hap-secure-image-caption {
@@ -555,6 +825,105 @@
                     grid-template-columns: minmax(0, 1.07fr) minmax(300px, 0.73fr);
                     gap: 42px;
                     align-items: center;
+                }
+
+                /* HAP project proof gallery */
+                .hap-secure-gallery {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 18px;
+                    align-items: stretch;
+                }
+
+                .hap-secure-gallery-item {
+                    position: relative;
+                    display: grid;
+                    grid-template-rows: auto 1fr;
+                    min-height: 0;
+                    margin: 0;
+                    overflow: hidden;
+                    border: 1px solid var(--hap-line);
+                    border-radius: 24px;
+                    background: #080b09 !important;
+                }
+
+                .hap-secure-gallery-item:first-child {
+                    grid-column: auto;
+                    grid-row: auto;
+                }
+
+                .hap-secure-gallery-item:after {
+                    display: none;
+                }
+
+                .hap-secure-gallery-item img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 16 / 10;
+                    padding: 10px;
+                    object-fit: contain;
+                    object-position: center;
+                    background: #080b09 !important;
+                    transition: filter 0.28s ease;
+                }
+
+                .hap-secure-gallery-item:hover img {
+                    filter: brightness(1.045);
+                }
+
+                .hap-secure-gallery-caption {
+                    position: relative;
+                    padding: 18px 20px 20px;
+                    border-top: 1px solid rgba(216, 181, 109, 0.14);
+                    background: linear-gradient(180deg, rgba(216, 181, 109, 0.055), rgba(255, 255, 255, 0.018)) !important;
+                }
+
+                .hap-secure-gallery-caption span {
+                    display: inline-flex;
+                    margin-bottom: 8px;
+                    color: var(--hap-gold) !important;
+                    font-size: 11px;
+                    font-weight: 750;
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                }
+
+                .hap-secure-gallery-caption strong {
+                    display: block;
+                    max-width: 440px;
+                    color: #ffffff !important;
+                    font-size: clamp(16px, 1.7vw, 21px);
+                    line-height: 1.3;
+                }
+
+                /* Reliability and risk comparison */
+                .hap-secure-compare-grid {
+                    gap: 24px;
+                    align-items: stretch;
+                }
+
+                .hap-secure-compare-card {
+                    height: 100%;
+                    padding: 32px;
+                    border: 1px solid var(--hap-line);
+                    border-radius: 24px;
+                    background:
+                        radial-gradient(circle at 100% 0%, rgba(216, 181, 109, 0.09), transparent 34%),
+                        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)) !important;
+                }
+
+                .hap-secure-compare-card .hap-secure-section-head {
+                    margin-bottom: 24px;
+                }
+
+                .hap-secure-compare-card h2 {
+                    max-width: 520px;
+                    font-size: clamp(29px, 3vw, 40px);
+                }
+
+                .hap-secure-compare-card .hap-secure-list {
+                    margin-bottom: 0;
                 }
 
                 .hap-secure-inline-cta {
@@ -673,9 +1042,13 @@
                     position: relative;
                     padding: 90px 0;
                     text-align: center;
-                    background:
-                        linear-gradient(180deg, rgba(5, 7, 6, 0.63), rgba(5, 7, 6, 0.94)),
-                        url("https://www.hap.sg/web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png") center / cover no-repeat;
+                    background-color: #050706 !important;
+                    background-image:
+                        linear-gradient(90deg, rgba(5, 7, 6, 0.96) 0%, rgba(5, 7, 6, 0.88) 55%, rgba(5, 7, 6, 0.72) 100%),
+                        url("https://www.hap.sg/web/image/78428-1a0e8c5b/Control4_T5_SmartHomeExperience.png");
+                    background-position: center, right center;
+                    background-size: cover, auto 100%;
+                    background-repeat: no-repeat;
                 }
 
                 .hap-secure-final .hap-secure-container {
@@ -731,6 +1104,10 @@
                     .hap-secure-grid-3 {
                         grid-template-columns: repeat(2, minmax(0, 1fr));
                     }
+
+                    .hap-secure-gallery {
+                        grid-template-columns: 1fr;
+                    }
                 }
 
                 @media (max-width: 720px) {
@@ -744,7 +1121,8 @@
 
                     .hap-secure-hero {
                         padding: 112px 0 62px;
-                        background-position: 61% center;
+                        background-position: center, center, center;
+                        background-size: cover, cover, contain;
                     }
 
                     .hap-secure-grid-2,
@@ -782,12 +1160,32 @@
                         width: 100%;
                     }
 
-                    .hap-secure-nav {
-                        display: grid;
+                    .hap-secure-architecture-flow {
+                        padding-left: 38px;
                     }
 
-                    .hap-secure-nav a {
-                        border-radius: 14px;
+                    .hap-secure-architecture-flow .hap-secure-card:before {
+                        left: -31px;
+                    }
+
+                    .hap-secure-gallery {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: none;
+                    }
+
+                    .hap-secure-gallery-item,
+                    .hap-secure-gallery-item:first-child {
+                        grid-column: auto;
+                        grid-row: auto;
+                    }
+
+                    .hap-secure-gallery-caption {
+                        padding: 20px;
+                    }
+
+                    .hap-secure-final {
+                        background-position: center, bottom center;
+                        background-size: cover, contain;
                     }
                 }
 
@@ -796,7 +1194,12 @@
                     .hap-secure-page *:before,
                     .hap-secure-page *:after {
                         scroll-behavior: auto !important;
+                        animation: none !important;
                         transition-duration: 0.01ms !important;
+                    }
+
+                    .hap-secure-control-path:before {
+                        transform: scaleX(1) !important;
                     }
                 }
             </style>
@@ -861,31 +1264,6 @@
                                 <span>Network, control, privacy and reliability planned as one system.</span>
                             </div>
                         </div>
-                    </div>
-                </section>
-
-                <!-- GUIDE NAVIGATION -->
-                <section class="hap-secure-section-sm" id="secure-smart-home-guide">
-                    <div class="hap-secure-container">
-                        <div class="hap-secure-section-head">
-                            <div class="hap-secure-eyebrow">2026 Homeowner Guide</div>
-                            <h2>What this secure smart home guide covers</h2>
-                            <p>
-                                Use these sections to understand the decisions that affect smart
-                                home cybersecurity, privacy and reliability before installation.
-                            </p>
-                        </div>
-                        <nav class="hap-secure-nav" aria-label="Page contents">
-                            <a href="#key-takeaways">Key takeaways</a>
-                            <a href="#system-architecture">System architecture</a>
-                            <a href="#network-security">Network security</a>
-                            <a href="#local-vs-cloud">Local vs cloud</a>
-                            <a href="#remote-access">Remote access</a>
-                            <a href="#privacy">Data privacy</a>
-                            <a href="#device-lifecycle">Device lifecycle</a>
-                            <a href="#most-secure-system">Most secure system</a>
-                            <a href="#faq">FAQ</a>
-                        </nav>
                     </div>
                 </section>
 
@@ -993,7 +1371,7 @@
                                     <a class="hap-secure-text-link" href="/smart-home-installation-singapore" target="_blank" rel="noopener">smart home installation in Singapore</a>.
                                 </p>
                             </div>
-                            <div class="hap-secure-grid-2">
+                            <div class="hap-secure-architecture-flow" aria-label="Four connected secure smart home design considerations">
                                 <article class="hap-secure-card">
                                     <span class="hap-secure-card-number">01</span>
                                     <h3>Trust boundaries</h3>
@@ -1078,6 +1456,53 @@
                             entertainment through
                             <a class="hap-secure-text-link" href="/whole-home-automation" target="_blank" rel="noopener">whole-home automation</a>.
                         </p>
+                    </div>
+                </section>
+
+                <!-- HAP PROJECT PROOF GALLERY -->
+                <section class="hap-secure-section">
+                    <div class="hap-secure-container">
+                        <div class="hap-secure-section-head">
+                            <div class="hap-secure-eyebrow">Designed, Installed &amp; Supported by HAP</div>
+                            <h2>What professional smart home integration looks like</h2>
+                            <p>
+                                Security and reliability are built into the parts homeowners rarely
+                                see—from the rack and network backbone to centralised control and
+                                dependable physical keypads.
+                            </p>
+                        </div>
+
+                        <div class="hap-secure-gallery" aria-label="HAP smart home project and showroom images">
+                            <figure class="hap-secure-gallery-item">
+                                <img src="https://www.hap.sg/web/image/77926-8742a3ef/Rack.jpeg?height=1200" alt="HAP smart home equipment rack and network backbone in Singapore" loading="lazy" decoding="async"/>
+                                <figcaption class="hap-secure-gallery-caption">
+                                    <span>Infrastructure</span>
+                                    <strong>The rack, network and control backbone planned as one maintainable system.</strong>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="hap-secure-gallery-item">
+                                <img src="https://www.hap.sg/web/image/14525-e51a7652/393180087_834351088700402_3332061368118317965_n.jpg" alt="Control4 touchscreen interface at the HAP smart home showroom" loading="lazy" decoding="async"/>
+                                <figcaption class="hap-secure-gallery-caption">
+                                    <span>Centralised Control</span>
+                                    <strong>One clear interface instead of scattered apps and accounts.</strong>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="hap-secure-gallery-item">
+                                <img src="https://www.hap.sg/web/image/71714-4de09dcb/Ekinex%20Button.png?height=900" alt="Ekinex smart home keypad for dependable physical scene control" loading="lazy" decoding="async"/>
+                                <figcaption class="hap-secure-gallery-caption">
+                                    <span>Physical Fallback</span>
+                                    <strong>Daily control remains familiar, visible and easy for the household.</strong>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="hap-secure-actions">
+                            <a class="hap-secure-btn hap-secure-btn-secondary" href="/project-portfolio" target="_blank" rel="noopener">
+                                Explore HAP Smart Home Projects
+                            </a>
+                        </div>
                     </div>
                 </section>
 
@@ -1191,20 +1616,24 @@
                                 directly to the internet when a controlled access method is available.
                             </p>
                         </div>
-                        <div class="hap-secure-grid-4">
+                        <div class="hap-secure-grid-4 hap-secure-control-path">
                             <article class="hap-secure-card">
+                                <span class="hap-secure-path-step">01</span>
                                 <h3>Reachability</h3>
                                 <p>Define which services can be reached externally and remove access that is not needed.</p>
                             </article>
                             <article class="hap-secure-card">
+                                <span class="hap-secure-path-step">02</span>
                                 <h3>Authentication</h3>
                                 <p>Use strong, unique credentials and multi-factor authentication where the platform supports it.</p>
                             </article>
                             <article class="hap-secure-card">
+                                <span class="hap-secure-path-step">03</span>
                                 <h3>Permissions</h3>
                                 <p>Limit what household, service and temporary users can view or control.</p>
                             </article>
                             <article class="hap-secure-card">
+                                <span class="hap-secure-path-step">04</span>
                                 <h3>Application access</h3>
                                 <p>Prefer managed application-level access over opening raw device ports.</p>
                             </article>
@@ -1352,8 +1781,8 @@
                 <!-- RELIABILITY + RISKS -->
                 <section class="hap-secure-section">
                     <div class="hap-secure-container">
-                        <div class="hap-secure-grid-2">
-                            <div>
+                        <div class="hap-secure-grid-2 hap-secure-compare-grid">
+                            <article class="hap-secure-compare-card">
                                 <div class="hap-secure-section-head">
                                     <div class="hap-secure-eyebrow">Reliability</div>
                                     <h2>Keep critical functions working</h2>
@@ -1372,8 +1801,8 @@
                                     <li><strong>Network resilience</strong> that avoids a single weak wireless link disrupting the whole home.</li>
                                     <li><strong>Practical fallback controls</strong> that remain familiar to the household.</li>
                                 </ul>
-                            </div>
-                            <div>
+                            </article>
+                            <article class="hap-secure-compare-card">
                                 <div class="hap-secure-section-head">
                                     <div class="hap-secure-eyebrow">Practical Risk Reduction</div>
                                     <h2>Common hacking risks we plan against</h2>
@@ -1390,7 +1819,7 @@
                                     <li><strong>Outdated firmware</strong> and unsupported products.</li>
                                     <li><strong>Over-broad permissions</strong> for household members, staff and integrations.</li>
                                 </ul>
-                            </div>
+                            </article>
                         </div>
                         <div class="hap-secure-pullquote">
                             The goal is not to promise a “100% secure” or “unhackable” home. It is to
@@ -1473,49 +1902,49 @@
                             </p>
                         </div>
                         <div class="hap-secure-faq">
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>Can smart homes be hacked?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>Any connected system can carry risk. Common weaknesses include reused passwords, exposed device ports, unsupported firmware and flat networks. Professional design reduces avoidable exposure and limits the effect one compromised device could have on the rest of the home.</p>
                                 </div>
                             </details>
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>How do I make my smart home more secure in Singapore?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>Start with the network and system architecture. Use unique credentials, multi-factor authentication where supported, timely updates, device isolation where appropriate, controlled remote access and clear household permissions. Critical local functions should also have practical fallback controls.</p>
                                 </div>
                             </details>
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>Is a professional smart home system more secure than DIY Wi-Fi devices?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>It can be, because professional integration considers the complete architecture, access paths, commissioning and long-term maintenance. A DIY setup is not automatically insecure, but many independent products, apps and accounts can make consistency and lifecycle management more difficult.</p>
                                 </div>
                             </details>
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>Should smart home devices be exposed directly to the internet?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>Generally, internal devices and raw management ports should not be exposed directly when a controlled vendor application, securely configured gateway or other managed access method is available. The right method depends on the system and should be configured by a qualified professional.</p>
                                 </div>
                             </details>
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>What happens to a smart home when the internet goes down?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>It depends on the products and architecture. A well-designed system keeps supported critical functions working locally, such as physical lighting control and selected scenes, while internet-dependent remote access, voice services or cloud features may pause until connectivity returns.</p>
                                 </div>
                             </details>
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>How do I protect smart home privacy?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>Use clear user permissions, unique accounts, careful camera and microphone settings, sensible recording retention and only the integrations you need. Remove former users promptly and review access whenever household staff, tenants or service providers change.</p>
                                 </div>
                             </details>
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>Which smart home system is the most secure?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>No brand is automatically the most secure in every project. Look for a supported ecosystem with local control for critical functions, strong account and permission options, a sound update policy and professional installation on a properly designed network.</p>
                                 </div>
                             </details>
-                            <details>
+                            <details name="hap-secure-faq">
                                 <summary>Can I have secure home automation without cloud dependency?</summary>
                                 <div class="hap-secure-faq-answer">
                                     <p>You can reduce cloud dependency by choosing platforms and integrations that keep critical functions local. Some remote, voice or third-party services may still use the cloud, so HAP maps which features require internet access and plans the household’s fallback experience accordingly.</p>
@@ -1541,38 +1970,6 @@
                     </div>
                 </section>
 
-                <script>
-                    (function () {
-                        function initialiseSecureFaq() {
-                            var faq = document.querySelector(".hap-secure-faq");
-
-                            if (!faq || faq.getAttribute("data-hap-faq-ready") === "true") {
-                                return;
-                            }
-
-                            faq.setAttribute("data-hap-faq-ready", "true");
-                            var questions = faq.querySelectorAll("details");
-
-                            questions.forEach(function (active) {
-                                active.addEventListener("toggle", function () {
-                                    if (active.open) {
-                                        questions.forEach(function (item) {
-                                            if (item !== active) {
-                                                item.removeAttribute("open");
-                                            }
-                                        });
-                                    }
-                                });
-                            });
-                        }
-
-                        if (document.readyState === "loading") {
-                            document.addEventListener("DOMContentLoaded", initialiseSecureFaq, { once: true });
-                        } else {
-                            initialiseSecureFaq();
-                        }
-                    }());
-                </script>
 
                 <!-- STRUCTURED DATA -->
                 <script type="application/ld+json">
