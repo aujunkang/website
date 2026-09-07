@@ -555,6 +555,21 @@
                     font-weight: 800;
                 }
 
+                .hap-secure-property-tag {
+                    display: inline-flex;
+                    margin-bottom: 18px;
+                    padding: 7px 11px;
+                    border: 1px solid rgba(216, 181, 109, 0.32);
+                    border-radius: 999px;
+                    background: rgba(216, 181, 109, 0.08) !important;
+                    color: var(--hap-gold) !important;
+                    font-size: 11px;
+                    font-weight: 800;
+                    letter-spacing: 0.11em;
+                    line-height: 1.2;
+                    text-transform: uppercase;
+                }
+
                 /* Connected architecture timeline adapted from HAP's drawn-line design */
                 .hap-secure-architecture-flow {
                     position: relative;
@@ -981,8 +996,13 @@
                     letter-spacing: -0.055em;
                 }
 
+                .hap-secure-authority h2,
                 .hap-secure-authority h3 {
                     margin-bottom: 11px;
+                }
+
+                .hap-secure-authority h2 {
+                    font-size: clamp(28px, 3.4vw, 42px);
                 }
 
                 /* FAQ */
@@ -1067,6 +1087,12 @@
                     margin-top: 18px;
                 }
 
+                .hap-secure-final .hap-secure-location {
+                    max-width: 680px;
+                    color: rgba(245, 240, 230, 0.62) !important;
+                    font-size: 14px;
+                }
+
                 .hap-secure-final .hap-secure-actions {
                     justify-content: center;
                 }
@@ -1111,18 +1137,114 @@
                 }
 
                 @media (max-width: 720px) {
+                    .hap-secure-container,
+                    .hap-secure-narrow {
+                        width: calc(100% - 32px);
+                    }
+
                     .hap-secure-section {
-                        padding: 58px 0;
+                        padding: 50px 0;
                     }
 
                     .hap-secure-section-sm {
-                        padding: 39px 0;
+                        padding: 34px 0;
+                    }
+
+                    .hap-secure-page h1 {
+                        max-width: none;
+                        font-size: clamp(35px, 10.7vw, 44px);
+                        line-height: 1.02;
+                        letter-spacing: -0.038em;
+                    }
+
+                    .hap-secure-page h1 span {
+                        margin-top: 10px;
+                        font-size: 0.52em;
+                        line-height: 1.2;
+                        letter-spacing: -0.015em;
+                    }
+
+                    .hap-secure-page h2 {
+                        font-size: clamp(28px, 8.4vw, 36px);
+                        line-height: 1.12;
+                        letter-spacing: -0.028em;
+                    }
+
+                    .hap-secure-page h3 {
+                        font-size: 20px;
+                        line-height: 1.2;
+                    }
+
+                    .hap-secure-page p {
+                        font-size: 16px;
+                        line-height: 1.68;
+                    }
+
+                    .hap-secure-lead {
+                        font-size: 17px !important;
+                        line-height: 1.62 !important;
+                    }
+
+                    .hap-secure-eyebrow {
+                        margin-bottom: 11px;
+                        font-size: 11px;
+                        letter-spacing: 0.11em;
+                    }
+
+                    .hap-secure-section-head {
+                        margin-bottom: 27px;
                     }
 
                     .hap-secure-hero {
-                        padding: 112px 0 62px;
-                        background-position: center, center, center;
-                        background-size: cover, cover, contain;
+                        min-height: auto;
+                        padding: 82px 0 48px;
+                        align-items: flex-start;
+                        background-position: center, center, 62% center;
+                        background-size: cover, cover, cover;
+                    }
+
+                    .hap-secure-hero:after {
+                        display: none;
+                    }
+
+                    .hap-secure-hero-copy .hap-secure-lead {
+                        margin-top: 19px;
+                    }
+
+                    .hap-secure-hero .hap-secure-container {
+                        gap: 30px;
+                    }
+
+                    .hap-secure-stack {
+                        width: 100%;
+                        padding: 18px;
+                        border-radius: 20px;
+                        backdrop-filter: none;
+                    }
+
+                    .hap-secure-stack:before,
+                    .hap-secure-stack:after {
+                        display: none;
+                    }
+
+                    .hap-secure-layer {
+                        padding: 13px 14px;
+                        font-size: 13px;
+                    }
+
+                    .hap-secure-layer:before {
+                        display: none;
+                    }
+
+                    .hap-secure-badges {
+                        gap: 7px;
+                        margin-top: 23px;
+                    }
+
+                    .hap-secure-badge {
+                        padding: 7px 10px;
+                        font-size: 12px;
+                        backdrop-filter: none;
                     }
 
                     .hap-secure-grid-2,
@@ -1145,7 +1267,8 @@
                     .hap-secure-inline-cta,
                     .hap-secure-answer,
                     .hap-secure-authority {
-                        padding: 27px;
+                        padding: 22px;
+                        border-radius: 20px;
                     }
 
                     .hap-secure-authority-mark {
@@ -1154,18 +1277,153 @@
 
                     .hap-secure-actions {
                         display: grid;
+                        gap: 10px;
+                        margin-top: 26px;
                     }
 
                     .hap-secure-btn {
                         width: 100%;
+                        min-height: 50px;
+                        padding: 13px 18px;
+                        font-size: 15px;
+                    }
+
+                    .hap-secure-grid-2,
+                    .hap-secure-grid-3,
+                    .hap-secure-grid-4,
+                    .hap-secure-media-grid {
+                        gap: 15px;
+                    }
+
+                    .hap-secure-card,
+                    .hap-secure-note {
+                        padding: 21px;
+                        border-radius: 18px;
+                    }
+
+                    .hap-secure-card:hover {
+                        transform: none;
+                    }
+
+                    .hap-secure-card:after {
+                        display: none;
+                    }
+
+                    .hap-secure-list li {
+                        padding-left: 22px;
+                        font-size: 15px;
+                        line-height: 1.62;
+                    }
+
+                    .hap-secure-list li:before {
+                        width: 7px;
+                        height: 7px;
                     }
 
                     .hap-secure-architecture-flow {
-                        padding-left: 38px;
+                        gap: 12px;
+                        padding-left: 30px;
                     }
 
                     .hap-secure-architecture-flow .hap-secure-card:before {
-                        left: -31px;
+                        left: -25px;
+                    }
+
+                    .hap-secure-architecture-flow:before {
+                        left: 8px;
+                    }
+
+                    .hap-secure-architecture-flow:after {
+                        display: none;
+                    }
+
+                    /* Tables become labelled cards instead of forcing sideways scrolling. */
+                    .hap-secure-table-wrap {
+                        overflow: visible;
+                        border: 0 !important;
+                        border-radius: 0;
+                        background: transparent !important;
+                    }
+
+                    .hap-secure-table,
+                    .hap-secure-table tbody,
+                    .hap-secure-table tr,
+                    .hap-secure-table td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .hap-secure-table {
+                        min-width: 0;
+                    }
+
+                    .hap-secure-table thead {
+                        position: absolute;
+                        width: 1px;
+                        height: 1px;
+                        padding: 0;
+                        margin: -1px;
+                        overflow: hidden;
+                        clip: rect(0, 0, 0, 0);
+                        white-space: nowrap;
+                        border: 0;
+                    }
+
+                    .hap-secure-table tbody {
+                        display: grid;
+                        gap: 14px;
+                    }
+
+                    .hap-secure-table tr {
+                        padding: 18px;
+                        border: 1px solid var(--hap-line);
+                        border-radius: 18px;
+                        background:
+                            linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.018)) !important;
+                    }
+
+                    .hap-secure-table td {
+                        padding: 0 !important;
+                        border: 0 !important;
+                        font-size: 15px;
+                        line-height: 1.58;
+                    }
+
+                    .hap-secure-table td + td {
+                        margin-top: 14px;
+                        padding-top: 14px !important;
+                        border-top: 1px solid rgba(216, 181, 109, 0.13) !important;
+                    }
+
+                    .hap-secure-table td:before {
+                        content: attr(data-label);
+                        display: block;
+                        margin-bottom: 5px;
+                        color: var(--hap-gold) !important;
+                        font-size: 10px;
+                        font-weight: 800;
+                        letter-spacing: 0.11em;
+                        line-height: 1.35;
+                        text-transform: uppercase;
+                    }
+
+                    .hap-secure-compare-grid {
+                        gap: 15px;
+                    }
+
+                    .hap-secure-compare-card {
+                        padding: 22px;
+                        border-radius: 20px;
+                    }
+
+                    .hap-secure-compare-card h2 {
+                        font-size: clamp(27px, 8vw, 34px);
+                    }
+
+                    .hap-secure-pullquote {
+                        padding: 20px;
+                        font-size: 18px;
+                        line-height: 1.5;
                     }
 
                     .hap-secure-gallery {
@@ -1177,15 +1435,105 @@
                     .hap-secure-gallery-item:first-child {
                         grid-column: auto;
                         grid-row: auto;
+                        border-radius: 18px;
+                    }
+
+                    .hap-secure-gallery-item img,
+                    .hap-secure-image-card img {
+                        height: auto;
+                        min-height: 0;
+                        aspect-ratio: auto;
+                        padding: 8px;
+                        object-fit: contain;
+                        object-position: center;
                     }
 
                     .hap-secure-gallery-caption {
-                        padding: 20px;
+                        padding: 17px 18px 19px;
+                    }
+
+                    .hap-secure-gallery-caption strong {
+                        font-size: 17px;
+                    }
+
+                    .hap-secure-faq {
+                        gap: 9px;
+                    }
+
+                    .hap-secure-faq details {
+                        border-radius: 18px;
+                    }
+
+                    .hap-secure-faq summary {
+                        min-height: 52px;
+                        padding: 17px 52px 17px 18px;
+                        font-size: 16px;
+                        line-height: 1.42;
+                    }
+
+                    .hap-secure-faq summary:after {
+                        right: 18px;
+                    }
+
+                    .hap-secure-faq-answer {
+                        padding: 0 18px 19px;
                     }
 
                     .hap-secure-final {
+                        padding: 58px 0;
                         background-position: center, bottom center;
-                        background-size: cover, contain;
+                        background-size: cover, cover;
+                    }
+
+                    /* Continuous decorative motion is unnecessary on phones. */
+                    .hap-secure-hero-copy .hap-secure-eyebrow,
+                    .hap-secure-hero-copy h1,
+                    .hap-secure-hero-copy .hap-secure-lead,
+                    .hap-secure-hero-copy .hap-secure-actions,
+                    .hap-secure-hero-copy .hap-secure-badges,
+                    .hap-secure-layer {
+                        animation: none !important;
+                    }
+                }
+
+                @media (max-width: 380px) {
+                    .hap-secure-container,
+                    .hap-secure-narrow {
+                        width: calc(100% - 24px);
+                    }
+
+                    .hap-secure-page h1 {
+                        font-size: 34px;
+                    }
+
+                    .hap-secure-page h2 {
+                        font-size: 27px;
+                    }
+
+                    .hap-secure-hero {
+                        padding-top: 72px;
+                    }
+
+                    .hap-secure-card,
+                    .hap-secure-note,
+                    .hap-secure-compare-card,
+                    .hap-secure-inline-cta,
+                    .hap-secure-answer,
+                    .hap-secure-authority {
+                        padding: 18px;
+                    }
+                }
+
+                @media (hover: none) {
+                    .hap-secure-card:hover,
+                    .hap-secure-btn-primary:hover,
+                    .hap-secure-btn-secondary:hover {
+                        transform: none;
+                    }
+
+                    .hap-secure-image-card:hover img,
+                    .hap-secure-gallery-item:hover img {
+                        filter: none;
                     }
                 }
 
@@ -1215,16 +1563,16 @@
                                 <span>Cybersecurity, Privacy &amp; Reliable Automation</span>
                             </h1>
                             <p class="hap-secure-lead">
-                                In 2026, the biggest gap in many secure smart homes is not the
-                                devices. It is the system thinking behind them. HAP designs the
-                                network, access, integrations and local control together, so smart
-                                living remains private, dependable and simple to use.
+                                The biggest gap in many secure smart homes is not the devices. It is
+                                the system thinking behind them. For landed homes and condominiums,
+                                HAP designs the network, access, integrations and local control
+                                together, so smart living remains private, dependable and simple to use.
                             </p>
                             <div class="hap-secure-actions">
                                 <a class="hap-secure-btn hap-secure-btn-primary" href="/contact-us" target="_blank" rel="noopener">
                                     Request a Security Consultation
                                 </a>
-                                <a class="hap-secure-btn hap-secure-btn-secondary" href="#secure-smart-home-guide">
+                                <a class="hap-secure-btn hap-secure-btn-secondary" href="#key-takeaways">
                                     Read the Security Guide
                                 </a>
                             </div>
@@ -1279,7 +1627,7 @@
                             </p>
                         </div>
                         <div class="hap-secure-table-wrap">
-                            <table class="hap-secure-table">
+                            <table class="hap-secure-table hap-secure-table--priorities">
                                 <thead>
                                     <tr>
                                         <th>What to prioritise</th>
@@ -1289,42 +1637,42 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><strong>System design, not isolated devices</strong></td>
-                                        <td>Security weakens when products, accounts and control flows are planned separately.</td>
-                                        <td>We design the complete control architecture and commission how its parts communicate.</td>
+                                        <td data-label="Priority"><strong>System design, not isolated devices</strong></td>
+                                        <td data-label="Why it matters">Security weakens when products, accounts and control flows are planned separately.</td>
+                                        <td data-label="HAP approach">We design the complete control architecture and commission how its parts communicate.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Secure network foundations</strong></td>
-                                        <td>Segmentation and access rules can limit the impact of a compromised device.</td>
-                                        <td>We plan the wired and Wi-Fi backbone, with isolation where appropriate.</td>
+                                        <td data-label="Priority"><strong>Secure network foundations</strong></td>
+                                        <td data-label="Why it matters">Segmentation and access rules can limit the impact of a compromised device.</td>
+                                        <td data-label="HAP approach">We plan the wired and Wi-Fi backbone, with isolation where appropriate.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Controlled remote access</strong></td>
-                                        <td>Unnecessary direct exposure of devices increases avoidable risk.</td>
-                                        <td>We use controlled, application-level access paths and appropriate authentication.</td>
+                                        <td data-label="Priority"><strong>Controlled remote access</strong></td>
+                                        <td data-label="Why it matters">Unnecessary direct exposure of devices increases avoidable risk.</td>
+                                        <td data-label="HAP approach">We use controlled, application-level access paths and appropriate authentication.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Local operation</strong></td>
-                                        <td>Core household functions should not depend entirely on internet or cloud availability.</td>
-                                        <td>We identify which lighting, comfort and control functions should remain local.</td>
+                                        <td data-label="Priority"><strong>Local operation</strong></td>
+                                        <td data-label="Why it matters">Core household functions should not depend entirely on internet or cloud availability.</td>
+                                        <td data-label="HAP approach">We identify which lighting, comfort and control functions should remain local.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Device lifecycle</strong></td>
-                                        <td>Unsupported products and outdated firmware can become weak links.</td>
-                                        <td>We favour maintainable ecosystems and plan for updates, support and replacement.</td>
+                                        <td data-label="Priority"><strong>Device lifecycle</strong></td>
+                                        <td data-label="Why it matters">Unsupported products and outdated firmware can become weak links.</td>
+                                        <td data-label="HAP approach">We favour maintainable ecosystems and plan for updates, support and replacement.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Privacy by design</strong></td>
-                                        <td>Cameras, microphones, apps and cloud accounts can create personal data trails.</td>
-                                        <td>We plan permissions, users, integrations and data handling intentionally.</td>
+                                        <td data-label="Priority"><strong>Privacy by design</strong></td>
+                                        <td data-label="Why it matters">Cameras, microphones, apps and cloud accounts can create personal data trails.</td>
+                                        <td data-label="HAP approach">We plan permissions, users, integrations and data handling intentionally.</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="hap-secure-note" style="margin-top: 22px;">
                             <p>
-                                <strong>Singapore project context:</strong> In landed homes,
-                                condominiums and HDB flats, security outcomes depend on early
+                                <strong>Singapore project context:</strong> In landed homes and
+                                condominiums, security outcomes depend on early
                                 planning for the network, structured cabling, equipment locations
                                 and access—not on adding more apps after renovation.
                             </p>
@@ -1397,6 +1745,53 @@
                     </div>
                 </section>
 
+                <!-- PROPERTY-SPECIFIC PLANNING -->
+                <section class="hap-secure-section" id="property-planning">
+                    <div class="hap-secure-container">
+                        <div class="hap-secure-section-head">
+                            <div class="hap-secure-eyebrow">Designed for the Property</div>
+                            <h2>Secure smart home design for Singapore landed homes and condominiums</h2>
+                            <p>
+                                The same security principles apply to every connected home, but the
+                                practical boundaries change with the property. HAP plans around the
+                                places, people and infrastructure that actually need protection.
+                            </p>
+                        </div>
+                        <div class="hap-secure-grid-2">
+                            <article class="hap-secure-card">
+                                <span class="hap-secure-property-tag">Landed homes</span>
+                                <h3>Protect the perimeter without exposing the core network</h3>
+                                <ul class="hap-secure-list">
+                                    <li><strong>Outdoor cable routes:</strong> position PoE camera, gate and intercom cabling so accessible terminations are reduced and service points remain controlled.</li>
+                                    <li><strong>Perimeter isolation:</strong> separate exposed or outdoor devices from trusted controllers and personal devices where appropriate.</li>
+                                    <li><strong>Equipment security:</strong> plan lockable, ventilated and maintainable locations for network, control and recording equipment.</li>
+                                    <li><strong>Role-based access:</strong> define sensible permissions for family members, household staff, guests and service teams.</li>
+                                </ul>
+                            </article>
+                            <article class="hap-secure-card">
+                                <span class="hap-secure-property-tag">Condominiums &amp; apartments</span>
+                                <h3>Coordinate the private home with shared-estate boundaries</h3>
+                                <ul class="hap-secure-list">
+                                    <li><strong>MCST coordination:</strong> check estate by-laws and any required approvals before work affects common property or corridor-facing equipment.</li>
+                                    <li><strong>Privacy-aware views:</strong> plan doorbell and camera fields of view, recording access and retention with neighbouring spaces in mind.</li>
+                                    <li><strong>Controlled integration:</strong> connect the unit’s intercom, access and security functions without creating unnecessary external access paths.</li>
+                                    <li><strong>Everyday fallback:</strong> keep essential lighting, comfort and entry workflows understandable when an app or online service is unavailable.</li>
+                                </ul>
+                            </article>
+                        </div>
+                        <div class="hap-secure-note" style="margin-top: 22px;">
+                            <p>
+                                <strong>Plan before installation:</strong> Estate requirements vary.
+                                Confirm the current MCST by-laws and approvals for the specific
+                                development before installing equipment that affects shared areas or
+                                common property. See the
+                                <a class="hap-secure-text-link" href="https://www1.bca.gov.sg/home-and-building-owners/condo-strata/mcst-strata-management/strata-management-guides/" target="_blank" rel="noopener noreferrer">BCA strata management guides</a>
+                                for official Singapore context.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- PROFESSIONAL VS DIY -->
                 <section class="hap-secure-section">
                     <div class="hap-secure-container">
@@ -1410,7 +1805,7 @@
                             </p>
                         </div>
                         <div class="hap-secure-table-wrap">
-                            <table class="hap-secure-table">
+                            <table class="hap-secure-table hap-secure-table--comparison">
                                 <thead>
                                     <tr>
                                         <th>Design area</th>
@@ -1420,29 +1815,29 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><strong>Control</strong></td>
-                                        <td>Multiple apps, hubs and independent automations.</td>
-                                        <td>Centralised control with defined and tested flows.</td>
+                                        <td data-label="Design area"><strong>Control</strong></td>
+                                        <td data-label="DIY setup">Multiple apps, hubs and independent automations.</td>
+                                        <td data-label="Professional approach">Centralised control with defined and tested flows.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Network</strong></td>
-                                        <td>Devices added to the main Wi-Fi network as needed.</td>
-                                        <td>Planned cabling, access points, network groups and equipment locations.</td>
+                                        <td data-label="Design area"><strong>Network</strong></td>
+                                        <td data-label="DIY setup">Devices added to the main Wi-Fi network as needed.</td>
+                                        <td data-label="Professional approach">Planned cabling, access points, network groups and equipment locations.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Remote access</strong></td>
-                                        <td>Separate vendor accounts with inconsistent security settings.</td>
-                                        <td>Controlled access paths, clear permissions and fewer unnecessary connections.</td>
+                                        <td data-label="Design area"><strong>Remote access</strong></td>
+                                        <td data-label="DIY setup">Separate vendor accounts with inconsistent security settings.</td>
+                                        <td data-label="Professional approach">Controlled access paths, clear permissions and fewer unnecessary connections.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Outage behaviour</strong></td>
-                                        <td>Essential functions may depend on an app, internet service or vendor cloud.</td>
-                                        <td>Critical local control and practical physical fallbacks are planned where possible.</td>
+                                        <td data-label="Design area"><strong>Outage behaviour</strong></td>
+                                        <td data-label="DIY setup">Essential functions may depend on an app, internet service or vendor cloud.</td>
+                                        <td data-label="Professional approach">Critical local control and practical physical fallbacks are planned where possible.</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Long-term support</strong></td>
-                                        <td>Ownership is spread across many products and support channels.</td>
-                                        <td>Commissioning, documentation and a maintainable lifecycle plan.</td>
+                                        <td data-label="Design area"><strong>Long-term support</strong></td>
+                                        <td data-label="DIY setup">Ownership is spread across many products and support channels.</td>
+                                        <td data-label="Professional approach">Commissioning, documentation and a maintainable lifecycle plan.</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1525,7 +1920,7 @@
                                     <li><strong>Device isolation where appropriate:</strong> cameras, guest devices and non-critical IoT products should not automatically have access to trusted personal devices or controllers.</li>
                                     <li><strong>Controlled remote access paths:</strong> avoid casually exposing internal services or raw device ports to the public internet.</li>
                                     <li><strong>Clear addressing and documentation:</strong> stable device discovery and maintainable records make troubleshooting safer and faster.</li>
-                                    <li><strong>Outdoor infrastructure planning:</strong> gate, camera and access-point cabling should be positioned and protected with physical access in mind.</li>
+                                    <li><strong>Outdoor infrastructure hardening:</strong> route gate, camera and access-point cabling with physical access and tampering in mind, avoid casually exposed terminations, and isolate perimeter devices where appropriate.</li>
                                 </ul>
                                 <p style="margin-top: 24px;">
                                     Reliability is not just internet speed. It is how predictably
@@ -1664,8 +2059,8 @@
                                 </div>
                                 <div class="hap-secure-prose">
                                     <p>
-                                        HAP treats privacy as a design requirement in landed homes,
-                                        condominiums and HDB apartments. The objective is clear access,
+                                        HAP treats privacy as a design requirement in landed homes
+                                        and condominiums. The objective is clear access,
                                         sensible data handling and fewer unnecessary integrations.
                                     </p>
                                     <p>
@@ -1841,15 +2236,25 @@
                             <div class="hap-secure-authority-mark" aria-hidden="true">SG</div>
                             <div>
                                 <div class="hap-secure-eyebrow">Singapore Cybersecurity Context</div>
-                                <h3>Use recognised product information—then secure the whole system</h3>
+                                <h2>Use Singapore’s cybersecurity label as evidence—not a shortcut</h2>
                                 <p>
                                     Singapore’s Cyber Security Agency introduced the Cybersecurity
                                     Labelling Scheme for consumer smart devices to help buyers compare
                                     their cybersecurity provisions. It covers categories including
                                     routers, smart home hubs, IP cameras, smart door locks and smart
-                                    lighting. Where applicable, the label can inform product selection,
-                                    but it does not replace correct network design, updates, permissions
-                                    and commissioning.
+                                    lighting.
+                                </p>
+                                <ul class="hap-secure-list" style="margin-top: 18px;">
+                                    <li><strong>Level 1:</strong> baseline requirements addressing common weaknesses such as default passwords, security updates and vulnerability reporting.</li>
+                                    <li><strong>Level 2:</strong> assessment against the scheme’s international-standard requirements.</li>
+                                    <li><strong>Level 3:</strong> additional lifecycle requirements and software binary analysis.</li>
+                                    <li><strong>Level 4:</strong> penetration testing for resistance to common cybersecurity attacks.</li>
+                                </ul>
+                                <p style="margin-top: 18px;">
+                                    A higher label reflects additional product assessment; it does not
+                                    make the complete home automatically secure. Where a proposed model
+                                    is covered, HAP can consider its current CLS information alongside
+                                    vendor support, network placement, permissions, updates and commissioning.
                                 </p>
                                 <p style="margin-top: 15px;">
                                     <a class="hap-secure-text-link" href="https://www.csa.gov.sg/our-programmes/certification-and-labelling-schemes/cybersecurity-labelling-scheme/about/" target="_blank" rel="noopener noreferrer">Read about the CSA Cybersecurity Labelling Scheme</a>
@@ -1950,6 +2355,24 @@
                                     <p>You can reduce cloud dependency by choosing platforms and integrations that keep critical functions local. Some remote, voice or third-party services may still use the cloud, so HAP maps which features require internet access and plans the household’s fallback experience accordingly.</p>
                                 </div>
                             </details>
+                            <details name="hap-secure-faq">
+                                <summary>What should condo owners check before installing corridor-facing smart devices?</summary>
+                                <div class="hap-secure-faq-answer">
+                                    <p>Check the development’s current MCST by-laws and whether approval is needed for work affecting common property or corridor-facing equipment. Camera and doorbell placement should also consider field of view, recording access and neighbouring privacy. Requirements vary by estate, so these checks should happen before equipment is specified.</p>
+                                </div>
+                            </details>
+                            <details name="hap-secure-faq">
+                                <summary>Does a CSA Cybersecurity Label make a smart device secure?</summary>
+                                <div class="hap-secure-faq-answer">
+                                    <p>The label helps compare the cybersecurity provisions assessed for an eligible consumer IoT product. It does not secure the whole installation by itself. Network design, account permissions, remote access, updates, integration choices and ongoing maintenance still determine the security of the complete smart home.</p>
+                                </div>
+                            </details>
+                            <details name="hap-secure-faq">
+                                <summary>How should outdoor smart home cabling be protected in a landed home?</summary>
+                                <div class="hap-secure-faq-answer">
+                                    <p>Outdoor PoE camera, gate and intercom cable routes should reduce accessible terminations, use suitable physical protection and keep service points controlled. Perimeter devices should also be separated from trusted controllers and personal devices where appropriate, so physical access to one cable does not provide broad network access.</p>
+                                </div>
+                            </details>
                         </div>
                     </div>
                 </section>
@@ -1962,6 +2385,15 @@
                         <p>
                             Speak with HAP about cybersecurity, privacy, network design, reliable
                             local control and long-term support before your renovation decisions are fixed.
+                        </p>
+                        <p>
+                            Bring or upload your floor plan and HAP can map the proposed network
+                            zones, access roles, local-versus-cloud dependencies and practical
+                            fallback controls as one coordinated scope.
+                        </p>
+                        <p class="hap-secure-location">
+                            Consultations and showroom visits are by appointment at 55 Ubi Avenue 3,
+                            Aspial One #01-04, Singapore 408864.
                         </p>
                         <div class="hap-secure-actions">
                             <a class="hap-secure-btn hap-secure-btn-primary" href="/contact-us" target="_blank" rel="noopener">Request a Consultation</a>
@@ -1999,7 +2431,7 @@
                   "@type": "Article",
                   "headline": "Secure Smart Home Singapore: Cybersecurity, Privacy &amp; Reliable Automation",
                   "description": "A Singapore homeowner guide to smart home cybersecurity, privacy, network design, remote access, cloud dependency and reliable local control.",
-                  "dateModified": "2026-09-03",
+                  "dateModified": "2026-09-07",
                   "author": {
                     "@type": "Organization",
                     "name": "HAP",
@@ -2081,6 +2513,30 @@
                       "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "You can reduce cloud dependency by choosing platforms and integrations that keep critical functions local. Some remote, voice or third-party services may still use the cloud, so HAP maps which features require internet access and plans the household's fallback experience accordingly."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What should condo owners check before installing corridor-facing smart devices?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Check the development's current MCST by-laws and whether approval is needed for work affecting common property or corridor-facing equipment. Camera and doorbell placement should also consider field of view, recording access and neighbouring privacy. Requirements vary by estate, so these checks should happen before equipment is specified."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Does a CSA Cybersecurity Label make a smart device secure?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The label helps compare the cybersecurity provisions assessed for an eligible consumer IoT product. It does not secure the whole installation by itself. Network design, account permissions, remote access, updates, integration choices and ongoing maintenance still determine the security of the complete smart home."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How should outdoor smart home cabling be protected in a landed home?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Outdoor PoE camera, gate and intercom cable routes should reduce accessible terminations, use suitable physical protection and keep service points controlled. Perimeter devices should also be separated from trusted controllers and personal devices where appropriate, so physical access to one cable does not provide broad network access."
                       }
                     }
                   ]
